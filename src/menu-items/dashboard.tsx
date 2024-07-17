@@ -20,13 +20,13 @@ const icons = {
 
 const loadingMenu: NavItemType = {
   id: 'group-dashboard-loading',
-  title: <FormattedMessage id="dashboard" />,
+  title: <FormattedMessage id="dashboardxx" />,
   type: 'group',
   icon: icons.loading,
   children: [
     {
       id: 'dashboard1',
-      title: <FormattedMessage id="dashboard" />,
+      title: <FormattedMessage id="dashboardXX" />,
       type: 'collapse',
       icon: icons.loading,
       children: [

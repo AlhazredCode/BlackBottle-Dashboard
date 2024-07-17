@@ -4,13 +4,13 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {ChromeOutlined, AppstoreOutlined } from '@ant-design/icons';
+import {ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined  } from '@ant-design/icons';
 
 // type
 import { NavItemType } from 'types/menu';
 
 // icons
-const icons = { ChromeOutlined, AppstoreOutlined };
+const icons = { ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined };
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE ||============================== //
 
@@ -18,7 +18,7 @@ const icons = { ChromeOutlined, AppstoreOutlined };
 
 const samplePage: NavItemType = {
   id: 'group-applications',
-  title: <FormattedMessage id="applications" />,
+  title: <FormattedMessage id="applicationsxx" />,
   icon: icons.AppstoreOutlined,
   type: 'group',
   children: [
@@ -33,12 +33,40 @@ const samplePage: NavItemType = {
 
     {
       id: 'main-menu',
-      title: <FormattedMessage id="main-menu" />,
+      title: <FormattedMessage id="Main Menu" />,
       type: 'item',
       url: '/mainmenu',
-      icon: icons.AppstoreOutlined,
+      icon: icons.ReadOutlined,
       breadcrumbs: false
     },
+
+    {
+      id: 'bar-health',
+      title: <FormattedMessage id="Bar Health" />,
+      type: 'item',
+      url: '/bar-health',
+      icon: icons.DotChartOutlined,
+      breadcrumbs: false
+    },
+
+    {
+      id: 'inventory',
+      title: <FormattedMessage id="Inventory" />,
+      type: 'item',
+      url: '/inventory',
+      icon: icons.ProductOutlined,
+      breadcrumbs: false
+    },
+
+    {
+      id: 'chat',
+      title: <FormattedMessage id="Chat" />,
+      type: 'item',
+      url: '/chat',
+      icon: icons.MessageOutlined,
+      breadcrumbs: false
+    },
+    
     
       ]
     };
