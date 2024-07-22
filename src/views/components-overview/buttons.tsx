@@ -77,7 +77,7 @@ export default function Buttons() {
               <MainCard title="Basic Button">
                 <Grid container spacing={2}>
                   <Grid item>
-                    <Button variant="contained">Default</Button>
+                    <Button variant="contained" >Default</Button>
                   </Grid>
                   <Grid item>
                     <Button variant="contained" color="secondary">

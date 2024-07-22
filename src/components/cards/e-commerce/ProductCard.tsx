@@ -149,15 +149,10 @@ export default function ProductCard({
                         </Typography>
                       )}
                     </Stack>
-                    <Stack direction="row" alignItems="flex-start">
-                      <Rating precision={0.5} name="size-small" value={rating} size="small" readOnly />
-                      <Typography variant="caption">({rating?.toFixed(1)})</Typography>
-                    </Stack>
+                   
                   </Stack>
 
-                  <Button variant="contained" onClick={addCart} disabled={!isStock}>
-                    {!isStock ? 'Sold Out' : 'Add to Cart'}
-                  </Button>
+                 
                 </Stack>
               </Grid>
             </Grid>

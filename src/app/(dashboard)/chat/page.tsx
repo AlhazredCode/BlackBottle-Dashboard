@@ -1,7 +1,7 @@
-import SamplePage from 'views/sample-page';
 
+import ChatApp from 'views/apps/chat';
 // ==============================|| PAGE ||============================== //
 
 export default function ChatPage() {
-  return <SamplePage />;
+  return <ChatApp />;
 }

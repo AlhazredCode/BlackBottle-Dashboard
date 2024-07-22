@@ -4,13 +4,13 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined  } from '@ant-design/icons';
+import {ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined   } from '@ant-design/icons';
 
 // type
 import { NavItemType } from 'types/menu';
 
 // icons
-const icons = { ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined };
+const icons = { ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined };
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE ||============================== //
 
@@ -18,7 +18,7 @@ const icons = { ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutli
 
 const samplePage: NavItemType = {
   id: 'group-applications',
-  title: <FormattedMessage id="applicationsxx" />,
+  title: <FormattedMessage id="applications" />,
   icon: icons.AppstoreOutlined,
   type: 'group',
   children: [
@@ -30,16 +30,36 @@ const samplePage: NavItemType = {
       icon: icons.AppstoreOutlined,
       breadcrumbs: false
     },
+    {
+    id: 'Menu',
+    title: <FormattedMessage id="Menu" />,
+    type: 'collapse',
+    icon: icons.ReadOutlined,
+    children: [
+
+
 
     {
       id: 'main-menu',
       title: <FormattedMessage id="Main Menu" />,
       type: 'item',
       url: '/mainmenu',
-      icon: icons.ReadOutlined,
-      breadcrumbs: false
+      icon: icons.SnippetsOutlined,
+      target: false
     },
 
+
+    {
+      id: 'add-product',
+      title: <FormattedMessage id="Add Product" />,
+      type: 'item',
+      url: '/add-product',
+      icon: icons.DiffOutlined,
+      target: false
+    }
+
+  ]
+  },
     {
       id: 'bar-health',
       title: <FormattedMessage id="Bar Health" />,
@@ -70,6 +90,8 @@ const samplePage: NavItemType = {
     
       ]
     };
+
+
 
 
 export default samplePage;

@@ -1,7 +1,7 @@
-import SamplePage from 'views/sample-page';
+import ProductList from 'views/apps/e-commerce/products-list';
 
 // ==============================|| PAGE ||============================== //
 
-export default function InventoryPage() {
-  return <SamplePage />;
+export default function ProdListAppPage() {
+  return <ProductList />;
 }

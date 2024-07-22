@@ -111,7 +111,7 @@ export default function HeaderPage() {
                         href="/login"
                         target="_blank"
                         size="large"
-                        color="primary"
+                        color="secondary"
                         variant="contained"
                         startIcon={<EyeOutlined style={{ fontSize: '1.15rem' }} />}
                       >
