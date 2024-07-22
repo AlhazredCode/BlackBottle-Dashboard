@@ -80,7 +80,7 @@ export default function ProductsPage() {
     sort: 'low',
     gender: [],
     categories: ['all'],
-    colors: [],
+
     price: '',
     rating: 0
   };
@@ -111,7 +111,7 @@ export default function ProductsPage() {
           offerPrice={product.offerPrice}
           salePrice={product.salePrice}
           rating={product.rating}
-          color={product.colors ? product.colors[0] : undefined}
+        
         />
       </Grid>
     ));

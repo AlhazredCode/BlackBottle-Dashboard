@@ -13,61 +13,13 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
 // project imports
-import Colors from './Colors';
+
 
 // types
 import { ProductsFilter } from 'types/e-commerce';
 
 // ==============================|| PRODUCT GRID GENDER FILTER ||============================== //
 
-function Gender({ gender, handelFilter }: { gender: string[]; handelFilter: (type: string, params: string) => void }) {
-  const [isGenderLoading, setGenderLoading] = useState(true);
-
-  useEffect(() => {
-    setGenderLoading(false);
-  }, []);
-
-  return (
-    <Stack>
-      {isGenderLoading ? (
-        <Skeleton variant="rectangular" width="100%" height={42} />
-      ) : (
-        <>
-          <Typography variant="h5">Gender</Typography>
-          <Box sx={{ pl: 0.5 }}>
-            <Stack>
-              <FormControlLabel
-                control={<Checkbox checked={gender.some((item) => item === 'male')} />}
-                onChange={() => handelFilter('gender', 'male')}
-                label="Male"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={gender.some((item) => item === 'female')}
-                    onChange={() => handelFilter('gender', 'female')}
-                    color="secondary"
-                  />
-                }
-                label="Female"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={gender.some((item) => item === 'kids')}
-                    onChange={() => handelFilter('gender', 'kids')}
-                    color="error"
-                  />
-                }
-                label="Kids"
-              />
-            </Stack>
-          </Box>
-        </>
-      )}
-    </Stack>
-  );
-}
 
 // ==============================|| PRODUCT GRID - CATEGORIES FILTER ||============================== //
 
@@ -220,15 +172,11 @@ export default function ProductFilter({
 }) {
   return (
     <Grid container direction="column" rowSpacing={3}>
-      <Grid item>
-        <Gender gender={filter.gender} handelFilter={handelFilter} />
-      </Grid>
+     
       <Grid item>
         <Categories categories={filter.categories} handelFilter={handelFilter} />
       </Grid>
-      <Grid item>
-        <Colors colors={filter.colors} handelFilter={handelFilter} />
-      </Grid>
+     
       <Grid item>
         <Price handelFilter={handelFilter} />
       </Grid>

@@ -25,7 +25,6 @@ import ProductImages from 'sections/apps/e-commerce/product-details/ProductImage
 import ProductInfo from 'sections/apps/e-commerce/product-details/ProductInfo';
 import ProductReview from 'sections/apps/e-commerce/product-details/ProductReview';
 import ProductSpecifications from 'sections/apps/e-commerce/product-details/ProductSpecifications';
-import RelatedProducts from 'sections/apps/e-commerce/product-details/RelatedProducts';
 
 import { resetCart, useGetCart } from 'api/cart';
 import { handlerActiveItem, useGetMenuMaster } from 'api/menu';
@@ -93,7 +92,7 @@ export default function ProductDetails({ id }: Props) {
   }, []);
 
   const productImages = useMemo(() => <ProductImages product={product!} />, [product]);
-  const relatedProducts = useMemo(() => <RelatedProducts id={id} />, [id]);
+
 
   const loader = (
     <Box sx={{ height: 504 }}>
@@ -105,23 +104,23 @@ export default function ProductDetails({ id }: Props) {
 
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid container spacing={6}>
         <Grid item xs={12}>
           <MainCard>
             {isLoader && loader}
             {!isLoader && (
-              <Grid container spacing={3}>
-                <Grid item xs={12} sm={6}>
+              <Grid container spacing={6}>
+                <Grid item xs={12} sm={5}>
                   {productImages}
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={'auto'} sm={7}>
                   <ProductInfo product={product} />
                 </Grid>
               </Grid>
             )}
           </MainCard>
         </Grid>
-        <Grid item xs={12} md={7} xl={8}>
+        <Grid item xs={12} >
           <MainCard>
             <Stack spacing={3}>
               <Stack>
@@ -187,21 +186,7 @@ export default function ProductDetails({ id }: Props) {
             </Stack>
           </MainCard>
         </Grid>
-        <Grid item xs={12} md={5} xl={4} sx={{ position: 'relative' }}>
-          <MainCard
-            title="Related Products"
-            sx={{
-              height: 'calc(100% - 16px)',
-              position: { xs: 'relative', md: 'absolute' },
-              top: 16,
-              left: { xs: 0, md: 16 },
-              right: 0
-            }}
-            content={false}
-          >
-            {relatedProducts}
-          </MainCard>
-        </Grid>
+       
       </Grid>
 
       <FloatingCart />

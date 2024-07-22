@@ -6,17 +6,15 @@ import { useRouter } from 'next/navigation';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import ButtonBase from '@mui/material/ButtonBase';
+
 import Chip from '@mui/material/Chip';
-import FormControlLabel from '@mui/material/FormControlLabel';
+
 import FormHelperText from '@mui/material/FormHelperText';
-import Grid from '@mui/material/Grid';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
+
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
-import Tooltip from '@mui/material/Tooltip';
+
 import Typography from '@mui/material/Typography';
 
 // third-party
@@ -24,16 +22,13 @@ import { useFormik, Form, FormikProvider } from 'formik';
 import * as yup from 'yup';
 
 // project imports
-import ColorOptions from '../products/ColorOptions';
-import Avatar from 'components/@extended/Avatar';
 
-import { ThemeMode } from 'config';
 import { addToCart, useGetCart } from 'api/cart';
 import { openSnackbar } from 'api/snackbar';
 
 // types
 import { SnackbarProps } from 'types/snackbar';
-import { ColorsOptionsProps, Products } from 'types/e-commerce';
+import {  Products } from 'types/e-commerce';
 
 // assets
 import DownOutlined from '@ant-design/icons/DownOutlined';
@@ -42,9 +37,7 @@ import StarOutlined from '@ant-design/icons/StarOutlined';
 import UpOutlined from '@ant-design/icons/UpOutlined';
 
 // product color select
-function getColor(color: string) {
-  return ColorOptions.filter((item) => item.value === color);
-}
+
 
 const validationSchema = yup.object({
   color: yup.string().required('Color selection is required')
@@ -52,38 +45,6 @@ const validationSchema = yup.object({
 
 // ==============================|| COLORS OPTION ||============================== //
 
-function Colors({ checked, colorsData }: { checked?: boolean; colorsData: ColorsOptionsProps[] }) {
-  const theme = useTheme();
-
-  return (
-    <Grid item>
-      <Tooltip title={colorsData.length && colorsData[0] && colorsData[0].label ? colorsData[0].label : ''}>
-        <ButtonBase
-          sx={{
-            borderRadius: '50%',
-            '&:focus-visible': {
-              outline: `2px solid ${theme.palette.secondary.dark}`,
-              outlineOffset: 2
-            }
-          }}
-        >
-          <Avatar
-            color="inherit"
-            size="sm"
-            sx={{
-              bgcolor: colorsData[0]?.bg,
-              color: theme.palette.mode === ThemeMode.DARK ? theme.palette.grey[800] : theme.palette.grey[50],
-              border: '3px solid',
-              borderColor: checked ? theme.palette.secondary.light : theme.palette.background.paper
-            }}
-          >
-            {' '}
-          </Avatar>
-        </ButtonBase>
-      </Tooltip>
-    </Grid>
-  );
-}
 
 // ==============================|| PRODUCT DETAILS - INFORMATION ||============================== //
 
@@ -102,7 +63,7 @@ export default function ProductInfo({ product }: { product: Products }) {
       image: product.image,
       salePrice: product.salePrice,
       offerPrice: product.offerPrice,
-      color: '',
+     
       size: '',
       quantity: 1
     },
@@ -123,21 +84,9 @@ export default function ProductInfo({ product }: { product: Products }) {
     }
   });
 
-  const { errors, values, handleSubmit, handleChange } = formik;
+  const {  handleSubmit } = formik;
 
-  const addCart = () => {
-    values.color = values.color ? values.color : 'primaryDark';
-    values.quantity = value;
-    addToCart(values, cart.products);
-    openSnackbar({
-      open: true,
-      message: 'Add To Cart Success',
-      variant: 'alert',
-      alert: {
-        color: 'success'
-      }
-    } as SnackbarProps);
-  };
+
 
   return (
     <Stack spacing={1}>
@@ -169,33 +118,9 @@ export default function ProductInfo({ product }: { product: Products }) {
           <Stack spacing={2.5}>
             <Stack direction="row" spacing={8} alignItems="center">
               <Typography color="text.secondary">Color</Typography>
-              <RadioGroup row value={values.color} onChange={handleChange} aria-label="colors" name="color" id="color" sx={{ ml: 1 }}>
-                {product.colors &&
-                  product.colors.map((item, index) => {
-                    const colorsData = getColor(item);
-                    return (
-                      <FormControlLabel
-                        key={index}
-                        value={item}
-                        control={
-                          <Radio
-                            sx={{ p: 0.25 }}
-                            disableRipple
-                            checkedIcon={<Colors checked colorsData={colorsData} />}
-                            icon={<Colors colorsData={colorsData} />}
-                          />
-                        }
-                        label=""
-                      />
-                    );
-                  })}
-              </RadioGroup>
+       
             </Stack>
-            {errors.color && (
-              <FormHelperText error id="standard-label-color">
-                {errors.color}
-              </FormHelperText>
-            )}
+       
             <Stack direction="row" alignItems="center" spacing={4.5}>
               <Typography color="text.secondary">Quantity</Typography>
               <Stack justifyContent="flex-end">
@@ -259,17 +184,7 @@ export default function ProductInfo({ product }: { product: Products }) {
               )}
             </Stack>
           </Stack>
-          <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 4 }}>
-            <Button type="submit" fullWidth disabled={value < 1 || !product.isStock} color="primary" variant="contained" size="large">
-              {!product.isStock ? 'Sold Out' : 'Buy Now'}
-            </Button>
-
-            {product.isStock && value > 0 && (
-              <Button fullWidth color="secondary" variant="outlined" size="large" onClick={addCart}>
-                Add to Cart
-              </Button>
-            )}
-          </Stack>
+       
         </Form>
       </FormikProvider>
     </Stack>

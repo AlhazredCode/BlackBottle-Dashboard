@@ -41,8 +41,7 @@ export default function ProductFilterDrawer({ filter, initialState, handleDrawer
       a1.price === a2.price &&
       a1.rating === a2.rating &&
       JSON.stringify(a1.gender) === JSON.stringify(a2.gender) &&
-      JSON.stringify(a1.categories) === JSON.stringify(a2.categories) &&
-      JSON.stringify(a1.colors) === JSON.stringify(a2.colors));
+      JSON.stringify(a1.categories) === JSON.stringify(a2.categories) );
 
   const handelFilter = (type: string, params: string, rating?: number) => {
     switch (type) {
@@ -63,13 +62,7 @@ export default function ProductFilterDrawer({ filter, initialState, handleDrawer
         }
 
         break;
-      case 'colors':
-        if (filter.colors.some((item) => item === params)) {
-          setFilter({ ...filter, colors: filter.colors.filter((item) => item !== params) });
-        } else {
-          setFilter({ ...filter, colors: [...filter.colors, params] });
-        }
-        break;
+     
       case 'price':
         setFilter({ ...filter, price: params });
         break;
@@ -122,7 +115,7 @@ export default function ProductFilterDrawer({ filter, initialState, handleDrawer
         title="Filter"
         sx={{
           bgcolor: matchDownLG ? 'transparent' : drawerBG,
-          borderRadius: '4px 0 0 4px',
+          borderRadius: '8px 0 0 8px',
           borderRight: 'none'
         }}
         border={!matchDownLG}

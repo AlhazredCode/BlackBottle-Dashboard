@@ -14,7 +14,7 @@ export type Products = {
   offerPrice?: number;
   gender?: string;
   categories?: string[];
-  colors?: string[];
+
   popularity?: number;
   date?: number;
   created: Date;
@@ -57,7 +57,7 @@ export type ProductsFilter = {
   sort: string;
   gender: string[];
   categories: string[];
-  colors: string[];
+ 
   price: string;
   rating: number;
 };
@@ -69,11 +69,6 @@ export type SortOptionsProps = {
 };
 
 // product shop filter - colors options
-export type ColorsOptionsProps = {
-  label: string;
-  value: string;
-  bg: string;
-};
 
 export type PaymentOptionsProps = {
   id: number;
