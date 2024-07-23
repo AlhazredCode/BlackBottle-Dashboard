@@ -4,13 +4,13 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined   } from '@ant-design/icons';
+import {ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined , PicCenterOutlined  } from '@ant-design/icons';
 
 // type
 import { NavItemType } from 'types/menu';
 
 // icons
-const icons = { ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined };
+const icons = { ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined, PicCenterOutlined };
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE ||============================== //
 
@@ -60,6 +60,16 @@ const samplePage: NavItemType = {
 
   ]
   },
+
+  {
+    id: 'bar-log',
+    title: <FormattedMessage id="Bar Log" />,
+    type: 'item',
+    url: '/barlog',
+    icon: icons.PicCenterOutlined,
+    breadcrumbs: false
+  },
+
     {
       id: 'bar-health',
       title: <FormattedMessage id="Bar Health" />,
