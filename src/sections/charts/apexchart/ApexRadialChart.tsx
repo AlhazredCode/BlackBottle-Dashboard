@@ -42,7 +42,7 @@ const redialBarChartOptions = {
       }
     }
   },
-  labels: ['Vimeo', 'Messenger', 'Facebook', 'LinkedIn'],
+  labels: ['Beer', 'Wine', 'Tequila', 'Others'],
   legend: {
     show: true,
     floating: true,

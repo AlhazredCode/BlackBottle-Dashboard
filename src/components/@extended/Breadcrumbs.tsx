@@ -22,6 +22,7 @@ import navigation from 'menu-items';
 import ApartmentOutlined from '@ant-design/icons/ApartmentOutlined';
 import HomeOutlined from '@ant-design/icons/HomeOutlined';
 import HomeFilled from '@ant-design/icons/HomeFilled';
+import JavaScriptOutlined from '@ant-design/icons/JavaScriptOutlined'; 
 
 // types
 import { OverrideIcon } from 'types/root';
@@ -140,7 +141,7 @@ export default function Breadcrumbs({
 
   // collapse item
   if (!custom && main && main.type === 'collapse' && main.breadcrumbs === true) {
-    CollapseIcon = main.icon ? main.icon : ApartmentOutlined;
+    CollapseIcon = main.icon ? main.icon : JavaScriptOutlined;
     mainContent = (
       <NextLink href={main.url as string} passHref legacyBehavior>
         <Typography
@@ -196,7 +197,7 @@ export default function Breadcrumbs({
   if ((item && item.type === 'item') || (item?.type === 'group' && item?.url) || custom) {
     itemTitle = item?.title;
 
-    ItemIcon = item?.icon ? item.icon : ApartmentOutlined;
+    ItemIcon = item?.icon ? item.icon : JavaScriptOutlined;
     itemContent = (
       <Typography variant="subtitle1" color="text.primary">
         {icons && <ItemIcon style={iconSX} />}
@@ -222,7 +223,7 @@ export default function Breadcrumbs({
       tempContent = (
         <MuiBreadcrumbs aria-label="breadcrumb" maxItems={maxItems || 8} separator={separatorIcon}>
           {links?.map((link: BreadcrumbLinkProps, index: number) => {
-            CollapseIcon = link.icon ? link.icon : ApartmentOutlined;
+            CollapseIcon = link.icon ? link.icon : JavaScriptOutlined;
             const key = index.toString();
             let breadcrumbLink = (
               <Typography

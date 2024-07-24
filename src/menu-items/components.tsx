@@ -7,7 +7,7 @@ import { NavItemType } from 'types/menu';
 // ==============================|| MENU ITEMS - COMPONENTS ||============================== //
 
 const menuItems: NavItemType[] = [
-  {
+  {/*
     id: 'group-inputs',
     title: <FormattedMessage id="inputs" />,
     type: 'group',
@@ -272,7 +272,7 @@ const menuItems: NavItemType[] = [
         url: '/components-overview/treeview'
       }
     ]
-  }
+   */}
 ];
 
 export default menuItems;

@@ -1,7 +1,7 @@
-import SamplePage from 'views/sample-page';
+import LogPage from 'views/apps/bar-log/inventory-log';
 
 // ==============================|| PAGE ||============================== //
 
-export default function BarLogPage() {
-  return <SamplePage />;
+export default function LogAppPage() {
+  return <LogPage />;
 }

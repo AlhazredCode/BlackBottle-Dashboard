@@ -4,13 +4,13 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined , PicCenterOutlined  } from '@ant-design/icons';
+import {ChromeOutlined,DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined , PicCenterOutlined  } from '@ant-design/icons';
 
 // type
 import { NavItemType } from 'types/menu';
 
 // icons
-const icons = { ChromeOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined, PicCenterOutlined };
+const icons = { ChromeOutlined,DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined, PicCenterOutlined };
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE ||============================== //
 
@@ -22,14 +22,7 @@ const samplePage: NavItemType = {
   icon: icons.AppstoreOutlined,
   type: 'group',
   children: [
-    {
-      id: 'sample-page',
-      title: <FormattedMessage id="sample-page" />,
-      type: 'item',
-      url: '/sample-page',
-      icon: icons.AppstoreOutlined,
-      breadcrumbs: false
-    },
+
     {
     id: 'Menu',
     title: <FormattedMessage id="Menu" />,
@@ -62,11 +55,53 @@ const samplePage: NavItemType = {
   },
 
   {
-    id: 'bar-log',
+    id: 'BarLog',
     title: <FormattedMessage id="Bar Log" />,
-    type: 'item',
-    url: '/barlog',
+    type: 'collapse',
     icon: icons.PicCenterOutlined,
+    children: [
+
+
+
+    {
+      id: 'bar-log',
+      title: <FormattedMessage id="Inventory Log" />,
+      type: 'item',
+      url: '/barlog', 
+      icon: icons.BookOutlined, 
+      target: false
+    },
+
+
+    {
+      id: 'add-product',
+      title: <FormattedMessage id="Start Inventory" />,
+      type: 'item',
+      url: '/start-inventory',
+      icon: icons.AuditOutlined, 
+      target: false
+    }
+
+  ]
+  },
+
+  
+
+  {
+    id: 'guest-log',
+    title: <FormattedMessage id="Guests" />,
+    type: 'item',
+    url: '/guest-log',
+    icon: icons.TeamOutlined,
+    breadcrumbs: false
+  },
+
+  {
+    id: 'sales',
+    title: <FormattedMessage id="Sales" />,
+    type: 'item',
+    url: '/sales',
+    icon: icons.DollarOutlined, 
     breadcrumbs: false
   },
 
