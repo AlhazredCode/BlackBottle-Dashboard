@@ -1,7 +1,17 @@
-import AddNewProduct from 'views/apps/e-commerce/add-product';
+
+import FormsWizard from 'views/forms/wizard';
+
+// ==============================|| PAGE ||============================== //
+
+
 
 // ==============================|| PAGE ||============================== //
 
 export default function MainMenuPage() {
-  return <AddNewProduct />;
+  return (
+  <>
+  <FormsWizard />
+ 
+  </>
+  );
 }

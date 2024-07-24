@@ -32,7 +32,7 @@ export default function ProductsSearch() {
     <MainCard  divider={true}>
       <Stack
 
-        sx={{ p: 2 }}
+        sx={{ p: 1 }}
         spacing={2}
       >
         <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={0.5}>
@@ -48,7 +48,7 @@ export default function ProductsSearch() {
               )
             }}
            
-            placeholder="Search Product"
+            placeholder="Search Bottles on the Database"
             fullWidth={true}
             size="medium"
             onChange={handleSearch}

@@ -2,20 +2,20 @@
 import Grid from '@mui/material/Grid';
 
 // project imports
-import BasicWizard from 'sections/forms/wizard/basic-wizard';
-import ValidationWizard from 'sections/forms/wizard/validation-wizard';
+import MainCard from 'components/MainCard';
+import ProductWizard from 'sections/forms/wizard/product-wizard';
 
 // ==============================|| FORMS WIZARD ||============================== //
 
 export default function FormsWizard() {
   return (
-    <Grid container spacing={2.5} justifyContent="center">
-      <Grid item xs={12} md={6} lg={7}>
-        <BasicWizard />
+    <MainCard>
+      <Grid container spacing={2.5} justifyContent="center">
+        <Grid item xs={12} md={6} lg={7}>
+          <ProductWizard />
+        </Grid>
+      
       </Grid>
-      <Grid item xs={12} md={6} lg={7}>
-        <ValidationWizard />
-      </Grid>
-    </Grid>
+    </MainCard>
   );
 }
