@@ -23,7 +23,7 @@ import FloatingCart from 'components/cards/e-commerce/FloatingCart';
 import ProductFeatures from 'sections/apps/e-commerce/product-details/ProductFeatures';
 import ProductImages from 'sections/apps/e-commerce/product-details/ProductImages';
 import ProductInfo from 'sections/apps/e-commerce/product-details/ProductInfo';
-import ProductReview from 'sections/apps/e-commerce/product-details/ProductReview';
+import ProductHistory from 'sections/dashboard/analytics/ProductHistory';
 import ProductSpecifications from 'sections/apps/e-commerce/product-details/ProductSpecifications';
 
 import { resetCart, useGetCart } from 'api/cart';
@@ -131,25 +131,11 @@ export default function ProductDetails({ id }: Props) {
                   aria-label="product description tabs example"
                   variant="scrollable"
                 >
-                  <Tab label="Features" {...a11yProps(0)} />
-                  <Tab label="Specifications" {...a11yProps(1)} />
-                  <Tab label="Overview" {...a11yProps(2)} />
+                  <Tab label="Item" {...a11yProps(0)} />
+                  <Tab label="Delivery" {...a11yProps(1)} />
+                  <Tab label="Settings" {...a11yProps(2)} />
                   <Tab
-                    label={
-                      <Stack direction="row" alignItems="center">
-                        Reviews{' '}
-                        <Chip
-                          label={isLoader ? <Skeleton width={30} /> : String(product.offerPrice?.toFixed(0))}
-                          size="small"
-                          sx={{
-                            ml: 0.5,
-                            color: value === 3 ? 'primary.main' : 'grey.0',
-                            bgcolor: value === 3 ? 'primary.lighter' : 'grey.400',
-                            borderRadius: '10px'
-                          }}
-                        />
-                      </Stack>
-                    }
+                    label='History'
                     {...a11yProps(3)}
                   />
                 </Tabs>
@@ -181,7 +167,7 @@ export default function ProductDetails({ id }: Props) {
                 </Stack>
               </TabPanel>
               <TabPanel value={value} index={3}>
-                {!isLoader && <ProductReview product={product} />}
+                <ProductHistory />
               </TabPanel>
             </Stack>
           </MainCard>

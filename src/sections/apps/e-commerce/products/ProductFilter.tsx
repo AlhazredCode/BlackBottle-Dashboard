@@ -180,9 +180,7 @@ export default function ProductFilter({
       <Grid item>
         <Price handelFilter={handelFilter} />
       </Grid>
-      <Grid item>
-        <RatingSection rating={filter.rating} handelFilter={handelFilter} />
-      </Grid>
+      
     </Grid>
   );
 }

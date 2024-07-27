@@ -124,35 +124,41 @@ export default function ProductCard({
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Stack>
+                <Stack spacing={1}>
                   <NextLink href={`/apps/e-commerce/product-details/${id}`} passHref legacyBehavior>
-                    <Typography
-                      color="text.primary"
-                      variant="h5"
-                      sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block', cursor: 'pointer' }}
-                    >
-                      {name}
-                    </Typography>
-                  </NextLink>
-                  <Typography variant="h6" color="text.secondary">
-                    {brand}
-                  </Typography>
+                   
+                      <Typography
+                        color="text.primary"
+                        variant="h5"
+                        sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block', cursor: 'pointer' }}
+                      >
+                        {name}
+                      </Typography>
+                                        </NextLink>
+                                        <Typography variant="h6" color="text.secondary">
+                      {brand}
+                                        </Typography>
+                    </Stack>
                 </Stack>
-              </Grid>
+                </Grid>
+                <Grid item xs={12} >
+
+                <Stack spacing={2} direction='row'>
+                  <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="medium" label="2 : Unit" />
+                  <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="medium" label="4 : Par" />
+                </Stack>
+                </Grid>
               <Grid item xs={12}>
                 <Stack direction="row" justifyContent="space-between" alignItems="flex-end" flexWrap="wrap" rowGap={1.75}>
                   <Stack>
                     <Stack direction="row" spacing={1} alignItems="center">
-                      <Typography variant="h5">${offerPrice}</Typography>
-                      {salePrice && (
-                        <Typography variant="h6" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
-                          ${salePrice}
-                        </Typography>
-                      )}
+                      <Typography variant="h2">${offerPrice}</Typography>
+                  
                     </Stack>
-                   
+
                   </Stack>
 
-                 
+
                 </Stack>
               </Grid>
             </Grid>

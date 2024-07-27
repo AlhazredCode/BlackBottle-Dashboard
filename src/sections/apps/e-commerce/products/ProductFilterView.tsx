@@ -145,36 +145,7 @@ export default function ProductFilterView({ filter, filterIsEqual, handelFilter,
               </Stack>
             </Grid>
           )}
-          {!(initialState.rating === filter.rating) && (
-            <Grid item>
-              <Stack>
-                <Typography variant="subtitle1">Rating</Typography>
-                <Grid item sx={{ ml: '-10px' }}>
-                  <Stack direction="row" alignItems="center">
-                    <Chip
-                      size={matchDownMD ? 'small' : undefined}
-                      label={String(filter.rating)}
-                      sx={{
-                        borderRadius: '4px',
-                        textTransform: 'capitalize',
-                        color: `grey.500`,
-                        bgcolor: 'inherit',
-                        '& .MuiSvgIcon-root': { color: `grey` }
-                      }}
-                    />
-                    <IconButton
-                      color="secondary"
-                      size="small"
-                      sx={{ '&:hover': { bgcolor: 'transparent' }, ml: -1.5 }}
-                      onClick={() => handelFilter('rating', '', 0)}
-                    >
-                      <CloseOutlined />
-                    </IconButton>
-                  </Stack>
-                </Grid>
-              </Stack>
-            </Grid>
-          )}
+          
           <Grid item>
             <Button variant="text" color="primary" sx={{ ml: '-10px' }} onClick={() => handelFilter('reset', '')}>
               Reset all filters
