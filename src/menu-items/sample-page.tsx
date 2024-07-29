@@ -113,16 +113,7 @@ const samplePage: NavItemType = {
       icon: icons.DotChartOutlined,
       breadcrumbs: false
     },
-
-    {
-      id: 'inventory',
-      title: <FormattedMessage id="Inventory" />,
-      type: 'item',
-      url: '/inventory',
-      icon: icons.ProductOutlined,
-      breadcrumbs: false
-    },
-
+    
     {
       id: 'chat',
       title: <FormattedMessage id="Chat" />,

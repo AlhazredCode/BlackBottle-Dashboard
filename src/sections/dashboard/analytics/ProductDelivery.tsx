@@ -39,10 +39,10 @@ const actionSX = {
 
 // ==============================|| Log HISTORY ||============================== //
 
-export default function ProductStettings() {
+export default function ProductDelivery() {
   return (
     <>
-     
+      
 
     </>
   );

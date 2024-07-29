@@ -23,9 +23,9 @@ import FloatingCart from 'components/cards/e-commerce/FloatingCart';
 import ProductFeatures from 'sections/apps/e-commerce/product-details/ProductFeatures';
 import ProductImages from 'sections/apps/e-commerce/product-details/ProductImages';
 import ProductInfo from 'sections/apps/e-commerce/product-details/ProductInfo';
+import ProductDelivery from 'sections/apps/e-commerce/product-details/ProductDelivery';
 import ProductHistory from 'sections/dashboard/analytics/ProductHistory';
-import ProductSpecifications from 'sections/apps/e-commerce/product-details/ProductSpecifications';
-
+import ProductSettings from 'sections/apps/e-commerce/product-details/ProductSettings';
 import { resetCart, useGetCart } from 'api/cart';
 import { handlerActiveItem, useGetMenuMaster } from 'api/menu';
 import { useGetProducts } from 'api/products';
@@ -145,26 +145,11 @@ export default function ProductDetails({ id }: Props) {
                 <ProductFeatures />
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <ProductSpecifications />
+                <ProductDelivery />
               </TabPanel>
               <TabPanel value={value} index={2}>
-                <Stack spacing={2.5}>
-                  <Typography color="text.secondary">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard
-                    dummy text ever since the 1500s,{' '}
-                    <Typography component="span" variant="subtitle1">
-                      {' '}
-                      &ldquo;When an unknown printer took a galley of type and scrambled it to make a type specimen book.&rdquo;
-                    </Typography>{' '}
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                  </Typography>
-                  <Typography color="text.secondary">
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                  </Typography>
-                </Stack>
+                <ProductSettings/>
+                
               </TabPanel>
               <TabPanel value={value} index={3}>
                 <ProductHistory />

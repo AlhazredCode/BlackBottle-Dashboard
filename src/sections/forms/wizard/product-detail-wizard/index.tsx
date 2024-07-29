@@ -19,7 +19,7 @@ import AnimateButton from 'components/@extended/AnimateButton';
 import InverotyForm from './InventoryForm';
 
 // step options
-const steps = ['Product Info', 'Details', 'Extra info', 'Inventory'];
+const steps = ['Product Info', 'Details', 'Extra info'];
 
 function getStepContent(step: number) {
   switch (step) {
@@ -29,8 +29,7 @@ function getStepContent(step: number) {
       return <DetailsForm />;
     case 2:
       return <Extra />;
-      case 3:
-        return <InverotyForm />;
+   
     default:
       throw new Error('Unknown step');
   }
@@ -38,7 +37,7 @@ function getStepContent(step: number) {
 
 // ==============================|| FORMS WIZARD - BASIC ||============================== //
 
-export default function ProductDetailWizard() {
+export default function ProductWizard() {
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {

@@ -14,7 +14,7 @@ import FormHelperText from '@mui/material/FormHelperText';
 
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
-
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 // third-party
@@ -113,351 +113,381 @@ export default function ProductInfo({ product }: { product: Products }) {
       <FormikProvider value={formik}>
         <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <Stack spacing={2}>
-           <Stack spacing={1}> 
-          <Typography  variant='h5'>Bar 1</Typography>
-            <Stack direction="row" alignItems="center" spacing={2}>
-              <Typography color="text.secondary">Bottles</Typography>
-              <Stack justifyContent="flex-end">
-                <Stack direction="row">
-                  <TextField
-                    name="rty-incre"
-                    value={value > 0 ? value : ''}
-                    onChange={(e: any) => setValue(Number(e.target.value))}
-                    sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
-                  />
-                  <Stack>
-                    <Button
-                      key="one"
-                      color="secondary"
-                      variant="outlined"
-                      onClick={() => setValue(value + 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderTopRightRadius: 8,
-                        borderLeft: 'none',
-                        '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <UpOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                    <Button
-                      key="three"
-                      color="secondary"
-                      variant="outlined"
-                      disabled={value <= 1}
-                      onClick={() => setValue(value - 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderBottomRightRadius: 8,
-                        borderTop: 'none',
-                        borderLeft: 'none',
-                        '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <DownOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                  </Stack>
-                </Stack>
-                {value === 0 && (
-                  <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
-                )}
-              </Stack>
-              <Typography color="text.secondary">Cases</Typography>
-              <Stack justifyContent="flex-end">
-                <Stack direction="row">
-                  <TextField
-                    name="rty-incre"
-                    value={value > 0 ? value : ''}
-                    onChange={(e: any) => setValue(Number(e.target.value))}
-                    sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
-                  />
-                  <Stack>
-                    <Button
-                      key="one"
-                      color="secondary"
-                      variant="outlined"
-                      onClick={() => setValue(value + 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderTopRightRadius: 8,
-                        borderLeft: 'none',
-                        '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <UpOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                    <Button
-                      key="three"
-                      color="secondary"
-                      variant="outlined"
-                      disabled={value <= 1}
-                      onClick={() => setValue(value - 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderBottomRightRadius: 8,
-                        borderTop: 'none',
-                        borderLeft: 'none',
-                        '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <DownOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                  </Stack>
-                </Stack>
-                {value === 0 && (
-                  <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
-                )}
-              </Stack>
-            </Stack>
-            </Stack>     
-
-             <Stack spacing={1}> 
-          <Typography  variant='h5'>Bar 2</Typography>
-            <Stack direction="row" alignItems="center" spacing={2}>
-              <Typography color="text.secondary">Bottles</Typography>
-              <Stack justifyContent="flex-end">
-                <Stack direction="row">
-                  <TextField
-                    name="rty-incre"
-                    value={value > 0 ? value : ''}
-                    onChange={(e: any) => setValue(Number(e.target.value))}
-                    sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
-                  />
-                  <Stack>
-                    <Button
-                      key="one"
-                      color="secondary"
-                      variant="outlined"
-                      onClick={() => setValue(value + 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderTopRightRadius: 8,
-                        borderLeft: 'none',
-                        '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <UpOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                    <Button
-                      key="three"
-                      color="secondary"
-                      variant="outlined"
-                      disabled={value <= 1}
-                      onClick={() => setValue(value - 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderBottomRightRadius: 8,
-                        borderTop: 'none',
-                        borderLeft: 'none',
-                        '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <DownOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                  </Stack>
-                </Stack>
-                {value === 0 && (
-                  <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
-                )}
-              </Stack>
-              <Typography color="text.secondary">Cases</Typography>
-              <Stack justifyContent="flex-end">
-                <Stack direction="row">
-                  <TextField
-                    name="rty-incre"
-                    value={value > 0 ? value : ''}
-                    onChange={(e: any) => setValue(Number(e.target.value))}
-                    sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
-                  />
-                  <Stack>
-                    <Button
-                      key="one"
-                      color="secondary"
-                      variant="outlined"
-                      onClick={() => setValue(value + 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderTopRightRadius: 8,
-                        borderLeft: 'none',
-                        '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <UpOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                    <Button
-                      key="three"
-                      color="secondary"
-                      variant="outlined"
-                      disabled={value <= 1}
-                      onClick={() => setValue(value - 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderBottomRightRadius: 8,
-                        borderTop: 'none',
-                        borderLeft: 'none',
-                        '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <DownOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                  </Stack>
-                </Stack>
-                {value === 0 && (
-                  <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
-                )}
-              </Stack>
-            </Stack>
-            </Stack>   
-
-             <Stack spacing={1}> 
-          <Typography  variant='h5'>Bar 3</Typography>
-            <Stack direction="row" alignItems="center" spacing={2}>
-              <Typography color="text.secondary">Bottles</Typography>
-              <Stack justifyContent="flex-end">
-                <Stack direction="row">
-                  <TextField
-                    name="rty-incre"
-                    value={value > 0 ? value : ''}
-                    onChange={(e: any) => setValue(Number(e.target.value))}
-                    sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
-                  />
-                  <Stack>
-                    <Button
-                      key="one"
-                      color="secondary"
-                      variant="outlined"
-                      onClick={() => setValue(value + 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderTopRightRadius: 8,
-                        borderLeft: 'none',
-                        '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <UpOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                    <Button
-                      key="three"
-                      color="secondary"
-                      variant="outlined"
-                      disabled={value <= 1}
-                      onClick={() => setValue(value - 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderBottomRightRadius: 8,
-                        borderTop: 'none',
-                        borderLeft: 'none',
-                        '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <DownOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                  </Stack>
-                </Stack>
-                {value === 0 && (
-                  <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
-                )}
-              </Stack>
-              <Typography color="text.secondary">Cases</Typography>
-              <Stack justifyContent="flex-end">
-                <Stack direction="row">
-                  <TextField
-                    name="rty-incre"
-                    value={value > 0 ? value : ''}
-                    onChange={(e: any) => setValue(Number(e.target.value))}
-                    sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
-                  />
-                  <Stack>
-                    <Button
-                      key="one"
-                      color="secondary"
-                      variant="outlined"
-                      onClick={() => setValue(value + 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderTopRightRadius: 8,
-                        borderLeft: 'none',
-                        '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <UpOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                    <Button
-                      key="three"
-                      color="secondary"
-                      variant="outlined"
-                      disabled={value <= 1}
-                      onClick={() => setValue(value - 1)}
-                      sx={{
-                        px: 1.5,
-                        py: 0.65,
-                        minWidth: '0px !important',
-                        borderRadius: 0,
-                        borderBottomRightRadius: 8,
-                        borderTop: 'none',
-                        borderLeft: 'none',
-                        '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                        '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                      }}
-                    >
-                      <DownOutlined style={{ fontSize: 'small' }} />
-                    </Button>
-                  </Stack>
-                </Stack>
-                {value === 0 && (
-                  <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
-                )}
-              </Stack>
-            </Stack>
-            </Stack>       
           
-            <Button type="submit" fullWidth disabled={value < 1 || !product.isStock} color="secondary" sx={{marginTop: 6}} variant="contained" size="large">
-              {!product.isStock ? 'Sold Out' : 'Update Inventory'}
-            </Button>
+           <Typography  variant='h5'>Bar 1</Typography>
+           <Grid container xs={12}> 
+         
+           
+              <Grid item xs={6}>
+                
+                <Stack spacing={6} alignItems='center' direction='row'>
+                <Typography color="text.secondary">Bottles</Typography>
+                  <Stack direction="row">
+                    <TextField
+                      name="rty-incre"
+                      value={value > 0 ? value : ''}
+                      onChange={(e: any) => setValue(Number(e.target.value))}
+                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
+                    />
+                    <Stack>
+                      <Button
+                        key="one"
+                        color="secondary"
+                        variant="outlined"
+                        onClick={() => setValue(value + 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderTopRightRadius: 8,
+                          borderLeft: 'none',
+                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <UpOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                      <Button
+                        key="three"
+                        color="secondary"
+                        variant="outlined"
+                        disabled={value <= 1}
+                        onClick={() => setValue(value - 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderBottomRightRadius: 8,
+                          borderTop: 'none',
+                          borderLeft: 'none',
+                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <DownOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                    </Stack>
+                  </Stack>
+                  {value === 0 && (
+                    <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
+                  )}
+                </Stack>
+              </Grid>
+
+
+              <Grid item xs={6}>
+                
+                <Stack spacing={6} alignItems='center' direction='row'>
+                <Typography color="text.secondary">Cases</Typography>
+                  <Stack direction="row">
+                    <TextField
+                      name="rty-incre"
+                      value={value > 0 ? value : ''}
+                      onChange={(e: any) => setValue(Number(e.target.value))}
+                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
+                    />
+                    <Stack>
+                      <Button
+                        key="one"
+                        color="secondary"
+                        variant="outlined"
+                        onClick={() => setValue(value + 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderTopRightRadius: 8,
+                          borderLeft: 'none',
+                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <UpOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                      <Button
+                        key="three"
+                        color="secondary"
+                        variant="outlined"
+                        disabled={value <= 1}
+                        onClick={() => setValue(value - 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderBottomRightRadius: 8,
+                          borderTop: 'none',
+                          borderLeft: 'none',
+                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <DownOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                    </Stack>
+                  </Stack>
+                  {value === 0 && (
+                    <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
+                  )}
+                </Stack>
+              </Grid>
+           
+            </Grid>     
+
+            <Typography  variant='h5'>Bar 2</Typography>
+           <Grid container xs={12}> 
+         
+           
+              <Grid item xs={6}>
+                
+                <Stack spacing={6} alignItems='center' direction='row'>
+                <Typography color="text.secondary">Bottles</Typography>
+                  <Stack direction="row">
+                    <TextField
+                      name="rty-incre"
+                      value={value > 0 ? value : ''}
+                      onChange={(e: any) => setValue(Number(e.target.value))}
+                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
+                    />
+                    <Stack>
+                      <Button
+                        key="one"
+                        color="secondary"
+                        variant="outlined"
+                        onClick={() => setValue(value + 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderTopRightRadius: 8,
+                          borderLeft: 'none',
+                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <UpOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                      <Button
+                        key="three"
+                        color="secondary"
+                        variant="outlined"
+                        disabled={value <= 1}
+                        onClick={() => setValue(value - 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderBottomRightRadius: 8,
+                          borderTop: 'none',
+                          borderLeft: 'none',
+                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <DownOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                    </Stack>
+                  </Stack>
+                  {value === 0 && (
+                    <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
+                  )}
+                </Stack>
+              </Grid>
+
+
+              <Grid item xs={6}>
+                
+                <Stack spacing={6} alignItems='center' direction='row'>
+                <Typography color="text.secondary">Cases</Typography>
+                  <Stack direction="row">
+                    <TextField
+                      name="rty-incre"
+                      value={value > 0 ? value : ''}
+                      onChange={(e: any) => setValue(Number(e.target.value))}
+                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
+                    />
+                    <Stack>
+                      <Button
+                        key="one"
+                        color="secondary"
+                        variant="outlined"
+                        onClick={() => setValue(value + 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderTopRightRadius: 8,
+                          borderLeft: 'none',
+                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <UpOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                      <Button
+                        key="three"
+                        color="secondary"
+                        variant="outlined"
+                        disabled={value <= 1}
+                        onClick={() => setValue(value - 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderBottomRightRadius: 8,
+                          borderTop: 'none',
+                          borderLeft: 'none',
+                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <DownOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                    </Stack>
+                  </Stack>
+                  {value === 0 && (
+                    <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
+                  )}
+                </Stack>
+              </Grid>
+           
+            </Grid>     
+
+            <Typography  variant='h5'>Bar 3</Typography>
+           <Grid container xs={12}> 
+         
+           
+              <Grid item xs={6}>
+                
+                <Stack spacing={6} alignItems='center' direction='row'>
+                <Typography color="text.secondary">Bottles</Typography>
+                  <Stack direction="row">
+                    <TextField
+                      name="rty-incre"
+                      value={value > 0 ? value : ''}
+                      onChange={(e: any) => setValue(Number(e.target.value))}
+                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
+                    />
+                    <Stack>
+                      <Button
+                        key="one"
+                        color="secondary"
+                        variant="outlined"
+                        onClick={() => setValue(value + 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderTopRightRadius: 8,
+                          borderLeft: 'none',
+                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <UpOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                      <Button
+                        key="three"
+                        color="secondary"
+                        variant="outlined"
+                        disabled={value <= 1}
+                        onClick={() => setValue(value - 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderBottomRightRadius: 8,
+                          borderTop: 'none',
+                          borderLeft: 'none',
+                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <DownOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                    </Stack>
+                  </Stack>
+                  {value === 0 && (
+                    <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
+                  )}
+                </Stack>
+              </Grid>
+
+
+              <Grid item xs={6}>
+                
+                <Stack spacing={6} alignItems='center' direction='row'>
+                <Typography color="text.secondary">Cases</Typography>
+                  <Stack direction="row">
+                    <TextField
+                      name="rty-incre"
+                      value={value > 0 ? value : ''}
+                      onChange={(e: any) => setValue(Number(e.target.value))}
+                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0, borderTopLeftRadius: 12, borderBottomLeftRadius: 12} }}
+                    />
+                    <Stack>
+                      <Button
+                        key="one"
+                        color="secondary"
+                        variant="outlined"
+                        onClick={() => setValue(value + 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderTopRightRadius: 8,
+                          borderLeft: 'none',
+                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <UpOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                      <Button
+                        key="three"
+                        color="secondary"
+                        variant="outlined"
+                        disabled={value <= 1}
+                        onClick={() => setValue(value - 1)}
+                        sx={{
+                          px: 1.5,
+                          py: 0.65,
+                          minWidth: '0px !important',
+                          borderRadius: 0,
+                          borderBottomRightRadius: 8,
+                          borderTop: 'none',
+                          borderLeft: 'none',
+                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
+                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
+                        }}
+                      >
+                        <DownOutlined style={{ fontSize: 'small' }} />
+                      </Button>
+                    </Stack>
+                  </Stack>
+                  {value === 0 && (
+                    <FormHelperText sx={{ color: theme.palette.error.main }}>Please select quantity more than 0</FormHelperText>
+                  )}
+                </Stack>
+              </Grid>
+           
+            </Grid>     
+
+           
+        
+           
+
+           
           </Stack>
        
         </Form>

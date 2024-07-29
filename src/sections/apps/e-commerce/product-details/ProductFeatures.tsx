@@ -6,7 +6,10 @@ import Typography from '@mui/material/Typography';
 
 export default function ProductFeatures() {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{paddingLeft:2}}>
+        <Grid item xs={12}>
+          <Typography variant="h5" >Item History</Typography>
+        </Grid>
         <Grid item xs={3}>
         <Typography color="text.secondary">Name :</Typography>
       </Grid>
