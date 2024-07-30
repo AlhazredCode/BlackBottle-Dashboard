@@ -20,7 +20,8 @@ import Divider from '@mui/material/Divider';
 // project import
 import Avatar from 'components/@extended/Avatar';
 import MainCard from 'components/MainCard';
-
+import LogHistoryModal from './LogHistoryModal';
+import { height } from '@mui/system';
 
 const avatar1 = '/assets/images/users/avatar-1.png';
 const avatar2 = '/assets/images/users/avatar-2.png';
@@ -245,18 +246,22 @@ export default function LogHistory() {
    </ListItemButton>
         </List>
 
-        <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <MainCard title="Inventory Details" modal darkTitle content={false}>
+        <Modal   open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" sx={{height:`calc(100% - 248px)`, alignSelf: 'center'}} >
+        <MainCard  sx={{ width: `calc(100% - 248px)`  }} title={<Typography sx={{ px : 2}} variant='h3'> Inventory Details</Typography>} modal darkTitle content={false}>
           <CardContent>
-            <Typography id="modal-modal-description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</Typography>
+           <LogHistoryModal/>
           </CardContent>
           <Divider />
-          <Stack direction="row" spacing={1} justifyContent="flex-end" sx={{ px: 2.5, py: 2 }}>
-            <Button color="error" size="small" onClick={handleClose}>
+          <Stack sx={{ px: 2.5, py: 2 }} direction='row' justifyContent='space-between'>
+          <Typography variant="h2" textAlign='right'>Total Value: </Typography>
+          <Typography variant="h2" color='GrayText' textAlign='right'>$30681.87 </Typography>
+        </Stack>
+          <Stack direction="row" spacing={4} justifyContent="flex-end" sx={{ px: 2.5, py: 2 }}>
+            <Button color="error" size="large" variant='outlined' onClick={handleClose}>
               Cancel
             </Button>
-            <Button variant="contained" size="small">
-              Submit
+            <Button variant="contained" color="secondary" size="large">
+              Export CSV
             </Button>
           </Stack>
         </MainCard>

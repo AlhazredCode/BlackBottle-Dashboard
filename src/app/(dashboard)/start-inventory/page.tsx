@@ -1,7 +1,8 @@
-import SamplePage from 'views/sample-page';
+
+import InventoryWizard from "sections/forms/wizard/inventory-wizard";
 
 // ==============================|| PAGE ||============================== //
 
 export default function StartInventoryPage() {
-  return <SamplePage />;
+  return <InventoryWizard />;
 }
