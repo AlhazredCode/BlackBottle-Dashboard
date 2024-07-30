@@ -22,6 +22,7 @@ import { productFilter, useGetProducts } from 'api/products';
 
 // types
 import { Products as ProductsTypo, ProductsFilter } from 'types/e-commerce';
+import { Typography } from '@mui/material';
 
 const drawerWidth = 320;
 
@@ -125,6 +126,7 @@ export default function ProductsPage() {
 
   return (
     <Box sx={{ display: 'flex' }}>
+
       <ProductFilterDrawer
         filter={filter}
         setFilter={setFilter}
@@ -134,6 +136,12 @@ export default function ProductsPage() {
       />
       <Main theme={theme} open={openFilterDrawer} container={container}>
         <Grid container spacing={2.5}>
+        <Grid item xs={6}>
+          <Typography variant='h2'> Cost of Stock</Typography>
+          </Grid>
+          <Grid item xs={6}>
+          <Typography variant='h2' color='GrayText' textAlign='right' > $ 1450</Typography>
+          </Grid>
           <Grid item xs={12}>
             <ProductsHeader filter={filter} handleDrawerOpen={handleDrawerOpen} setFilter={setFilter} />
           </Grid>

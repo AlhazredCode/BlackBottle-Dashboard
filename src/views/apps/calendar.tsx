@@ -47,7 +47,7 @@ export default function Calendar() {
     const calendarEl = calendarRef.current;
     if (calendarEl) {
       const calendarApi = calendarEl.getApi();
-      const newView = matchDownSM ? 'listWeek' : 'dayGridMonth';
+      const newView = matchDownSM ? 'listWeek' : 'timeGridDay';
       calendarApi.changeView(newView);
       setCalendarView(newView);
     }

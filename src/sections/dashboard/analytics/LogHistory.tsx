@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 // material-ui
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Button from '@mui/material/Button';
@@ -9,6 +13,9 @@ import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
+import CardContent from '@mui/material/CardContent';
+import Modal from '@mui/material/Modal';
+import Divider from '@mui/material/Divider';
 
 // project import
 import Avatar from 'components/@extended/Avatar';
@@ -40,6 +47,13 @@ const actionSX = {
 // ==============================|| Log HISTORY ||============================== //
 
 export default function LogHistory() {
+
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
   return (
     <>
       <Grid container alignItems="center" justifyContent="space-between">
@@ -60,7 +74,7 @@ export default function LogHistory() {
             }
           }}
         >
-          <ListItemButton divider>
+          <ListItemButton divider onClick={handleOpen}>
        
            
               <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="Spirits" />} secondary={<Typography variant="h6" color="secondary"> Today, 2:00 AM</Typography>} />
@@ -77,7 +91,7 @@ export default function LogHistory() {
             </ListItemSecondaryAction>
           </ListItemButton>
           
-          <ListItemButton divider>
+          <ListItemButton divider onClick={handleOpen}>
        
            
        <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="Soft Drinks" />} secondary={<Typography variant="h6" color="secondary"> Yesterday, 3:00 PM</Typography>} />
@@ -94,7 +108,7 @@ export default function LogHistory() {
      </ListItemSecondaryAction>
    </ListItemButton>
 
-   <ListItemButton divider>
+   <ListItemButton divider onClick={handleOpen}>
        
            
        <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="Beers" />} secondary={<Typography variant="h6" color="secondary"> 2024-07-17</Typography>} />
@@ -111,7 +125,7 @@ export default function LogHistory() {
      </ListItemSecondaryAction>
    </ListItemButton>
 
-   <ListItemButton divider>
+   <ListItemButton divider onClick={handleOpen}>
        
            
        <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="Tequila" />} secondary={<Typography variant="h6" color="secondary"> 2024-07-16</Typography>} />
@@ -128,7 +142,7 @@ export default function LogHistory() {
      </ListItemSecondaryAction>
    </ListItemButton>
 
-   <ListItemButton divider>
+   <ListItemButton divider onClick={handleOpen}>
        
            
        <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="Wine" />} secondary={<Typography variant="h6" color="secondary"> 2024-07-15</Typography>} />
@@ -145,7 +159,7 @@ export default function LogHistory() {
      </ListItemSecondaryAction>
    </ListItemButton>
 
-   <ListItemButton divider>
+   <ListItemButton divider onClick={handleOpen}>
        
            
        <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="By the glass" />} secondary={<Typography variant="h6" color="secondary">  2024-07-14</Typography>} />
@@ -162,7 +176,7 @@ export default function LogHistory() {
      </ListItemSecondaryAction>
    </ListItemButton>
 
-   <ListItemButton divider>
+   <ListItemButton divider onClick={handleOpen}>
        
            
        <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="Beers" />} secondary={<Typography variant="h6" color="secondary">  2024-07-14</Typography>} />
@@ -179,7 +193,7 @@ export default function LogHistory() {
      </ListItemSecondaryAction>
    </ListItemButton>
 
-   <ListItemButton divider>
+   <ListItemButton divider onClick={handleOpen}>
        
            
        <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="Wine" />} secondary={<Typography variant="h6" color="secondary">  2024-07-13</Typography>} />
@@ -196,7 +210,7 @@ export default function LogHistory() {
      </ListItemSecondaryAction>
    </ListItemButton>
 
-   <ListItemButton divider>
+   <ListItemButton divider onClick={handleOpen}>
        
            
        <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="Spirits" />} secondary={<Typography variant="h6" color="secondary">  2024-07-13</Typography>} />
@@ -213,7 +227,7 @@ export default function LogHistory() {
      </ListItemSecondaryAction>
    </ListItemButton>
 
-   <ListItemButton divider>
+   <ListItemButton divider onClick={handleOpen}>
        
            
        <ListItemText primary={<Chip variant="light" color="secondary" sx={{marginBottom: 2} } size="medium" label="Spirits" />} secondary={<Typography variant="h6" color="secondary">  2024-07-12</Typography>} />
@@ -230,6 +244,23 @@ export default function LogHistory() {
      </ListItemSecondaryAction>
    </ListItemButton>
         </List>
+
+        <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+        <MainCard title="Inventory Details" modal darkTitle content={false}>
+          <CardContent>
+            <Typography id="modal-modal-description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</Typography>
+          </CardContent>
+          <Divider />
+          <Stack direction="row" spacing={1} justifyContent="flex-end" sx={{ px: 2.5, py: 2 }}>
+            <Button color="error" size="small" onClick={handleClose}>
+              Cancel
+            </Button>
+            <Button variant="contained" size="small">
+              Submit
+            </Button>
+          </Stack>
+        </MainCard>
+      </Modal>
       </MainCard>
      
     </>

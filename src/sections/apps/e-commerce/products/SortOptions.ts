@@ -6,23 +6,23 @@ import { SortOptionsProps } from 'types/e-commerce';
 const SortOptions: SortOptionsProps[] = [
   {
     value: 'high',
-    label: 'Price: High To Low'
+    label: 'Tequila'
   },
   {
     value: 'low',
-    label: 'Price: Low To High'
+    label: 'Beers'
   },
   {
     value: 'popularity',
-    label: 'Popularity'
+    label: 'By the glass'
   },
   {
     value: 'discount',
-    label: 'Discount'
+    label: 'Wine'
   },
   {
     value: 'new',
-    label: 'Fresh Arrivals'
+    label: 'Cocktails'
   }
 ];
 

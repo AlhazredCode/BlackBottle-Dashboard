@@ -110,14 +110,8 @@ export default function ProductCard({
             sx={{ width: '100%', position: 'absolute', top: 0, pt: 1.75, pl: 2, pr: 1 }}
           >
             {!isStock && <Chip variant="light" color="error" size="small" label="Sold out" />}
-            {offer && <Chip label={offer} variant="combined" color="success" size="small" />}
-            <IconButton color="secondary" sx={{ ml: 'auto', '&:hover': { bgcolor: 'transparent' } }} onClick={addToFavourite}>
-              {wishlisted ? (
-                <HeartFilled style={{ fontSize: '1.15rem', color: theme.palette.error.main }} />
-              ) : (
-                <HeartOutlined style={{ fontSize: '1.15rem' }} />
-              )}
-            </IconButton>
+            {offer && <Chip label='In Stock' variant="combined" color="success" size="small" />}
+      
           </Stack>
           <Divider />
           <CardContent sx={{ p: 2 }}>
@@ -125,8 +119,14 @@ export default function ProductCard({
               <Grid item xs={12}>
                 <Stack>
                 <Stack spacing={1}>
+                <Stack spacing={2} direction='row' useFlexGap justifyContent="space-between">
+                  <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="large" label="2 : Unit" />
+                  <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="large" label="4 : Par" />
+                </Stack>
+
                   <NextLink href={`/apps/e-commerce/product-details/${id}`} passHref legacyBehavior>
-                   
+                    
+                    
                       <Typography
                         color="text.primary"
                         variant="h5"
@@ -141,13 +141,7 @@ export default function ProductCard({
                     </Stack>
                 </Stack>
                 </Grid>
-                <Grid item xs={12} >
-
-                <Stack spacing={2} direction='row'>
-                  <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="medium" label="2 : Unit" />
-                  <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="medium" label="4 : Par" />
-                </Stack>
-                </Grid>
+       
               <Grid item xs={12}>
                 <Stack direction="row" justifyContent="space-between" alignItems="flex-end" flexWrap="wrap" rowGap={1.75}>
                   <Stack>
