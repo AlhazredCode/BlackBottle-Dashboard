@@ -21,7 +21,7 @@ export default function AuthWrapper({ children }: Props) {
     <Box sx={{ minHeight: '100vh' }}>
       <AuthBackground />
       <Grid container direction="column" justifyContent="flex-end" sx={{ minHeight: '100vh' }}>
-        <Grid item xs={12} sx={{ ml: 3, mt: 3 }}>
+        <Grid item xs={12} sx={{ pl: 3, pt: 3, pb: 4 , backgroundImage: 'linear-gradient(to bottom, black 70%, rgba(0, 0, 0, 0))'  , opacity: '90%'}}>
           <Logo />
         </Grid>
         <Grid item xs={12}>
@@ -39,7 +39,7 @@ export default function AuthWrapper({ children }: Props) {
           </Grid>
         </Grid>
         <Grid item xs={12} sx={{ m: 3, mt: 1 }}>
-          <AuthFooter />
+         {/*  <AuthFooter />*/}
         </Grid>
       </Grid>
     </Box>

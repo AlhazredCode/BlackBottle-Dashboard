@@ -36,7 +36,7 @@ export default function CheckMail() {
         <Grid item xs={12}>
           <AnimateButton>
             <NextLink href="/login" passHref legacyBehavior>
-              <Button disableElevation fullWidth size="large" type="submit" variant="contained" color="primary">
+              <Button disableElevation fullWidth size="large" type="submit" variant="contained" color="secondary">
                 Sign in
               </Button>
             </NextLink>

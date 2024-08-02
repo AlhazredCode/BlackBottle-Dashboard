@@ -261,7 +261,7 @@ export default function AuthRegister({ providers, csrfToken }: any) {
               )}
               <Grid item xs={12}>
                 <AnimateButton>
-                  <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="primary">
+                  <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="secondary">
                     Create Account
                   </Button>
                 </AnimateButton>

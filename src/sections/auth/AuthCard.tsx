@@ -23,7 +23,9 @@ export default function AuthCard({ children, ...other }: MainCardProps) {
       boxShadow
       shadow={(theme: Theme) => theme.customShadows.z1}
     >
-       <LogoIcon />
+       <Box sx= {{ width : '100%', paddingTop: 5 , display: 'flex' ,alignItems: 'center', justifyContent: 'center' }}>
+         <LogoIcon/>
+       </Box>
       <Box sx={{ p: { xs: 2, sm: 3, md: 4, xl: 5 } }}>{children}</Box>
     </MainCard>
   );

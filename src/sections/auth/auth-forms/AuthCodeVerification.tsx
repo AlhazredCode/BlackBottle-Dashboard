@@ -50,7 +50,7 @@ export default function AuthCodeVerification() {
       </Grid>
       <Grid item xs={12}>
         <AnimateButton>
-          <Button disableElevation fullWidth size="large" type="submit" variant="contained">
+          <Button disableElevation fullWidth color='secondary' size="large" type="submit" variant="contained">
             Continue
           </Button>
         </AnimateButton>
