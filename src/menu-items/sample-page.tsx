@@ -4,13 +4,13 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {ChromeOutlined,DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined , PicCenterOutlined  } from '@ant-design/icons';
+import {ChromeOutlined, BarsOutlined,  FileMarkdownOutlined, ExperimentOutlined ,ReconciliationOutlined,ShopOutlined,OneToOneOutlined,ApiOutlined, DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined , PicCenterOutlined  } from '@ant-design/icons';
 
 // type
 import { NavItemType } from 'types/menu';
 
 // icons
-const icons = { ChromeOutlined,DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined, PicCenterOutlined };
+const icons = { ChromeOutlined, BarsOutlined,  FileMarkdownOutlined, ExperimentOutlined , ReconciliationOutlined, ShopOutlined, OneToOneOutlined, ApiOutlined, DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined, PicCenterOutlined };
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE ||============================== //
 
@@ -41,6 +41,14 @@ const samplePage: NavItemType = {
       target: false
     },
 
+    {
+      id: 'product-list',
+      title: <FormattedMessage id="Product List" />,
+      type: 'item',
+      url: '/product-list',
+      icon: icons.BarsOutlined,
+      target: false
+    },
 
     {
       id: 'add-product',
@@ -49,7 +57,26 @@ const samplePage: NavItemType = {
       url: '/add-product',
       icon: icons.DiffOutlined,
       target: false
-    }
+    } ,
+
+    {
+      id: 'add-product-recipe',
+      title: <FormattedMessage id="Add Recipe" />,
+      type: 'item',
+      url: '/add-product-recipe',
+      icon: icons.ExperimentOutlined,
+      target: false
+    }  ,
+
+    {
+      id: 'add-product-edit-recipe',
+      title: <FormattedMessage id="Edit Recipe" />,
+      type: 'item',
+      url: '/add-product-edit-recipe',
+      icon: icons.FileMarkdownOutlined,
+      target: false
+    } 
+
 
   ]
   },
@@ -85,6 +112,55 @@ const samplePage: NavItemType = {
   ]
   },
 
+  {
+    id: 'Orders',
+    title: <FormattedMessage id="Orders" />,
+    type: 'collapse',
+    icon: icons.ShopOutlined,
+    children: [
+
+
+
+    {
+      id: 'order-build',
+      title: <FormattedMessage id="Build Order" />,
+      type: 'item',
+      url: '/order-build', 
+      icon: icons.ReconciliationOutlined, 
+      target: false
+    },
+
+
+    {
+      id: 'order-par',
+      title: <FormattedMessage id="Par Flow" />,
+      type: 'item',
+      url: '/order-par', 
+      icon: icons.OneToOneOutlined, 
+      target: false
+    },
+
+    {
+      id: 'chat',
+      title: <FormattedMessage id="Orders Chat" />,
+      type: 'item',
+      url: '/chat',
+      icon: icons.MessageOutlined,
+      breadcrumbs: false
+    },
+
+    {
+      id: 'order-vendors',
+      title: <FormattedMessage id="Manage Vendors" />,
+      type: 'item',
+      url: '/order-vendors',
+      icon: icons.ApiOutlined, 
+      target: false
+    }
+
+  ]
+  },
+
   
 
   {
@@ -95,7 +171,14 @@ const samplePage: NavItemType = {
     icon: icons.TeamOutlined,
     breadcrumbs: false
   },
-
+  {
+    id: 'bar-health',
+    title: <FormattedMessage id="Bar Health" />,
+    type: 'item',
+    url: '/bar-health',
+    icon: icons.DotChartOutlined,
+    breadcrumbs: false
+  },
   {
     id: 'sales',
     title: <FormattedMessage id="Sales" />,
@@ -105,23 +188,9 @@ const samplePage: NavItemType = {
     breadcrumbs: false
   },
 
-    {
-      id: 'bar-health',
-      title: <FormattedMessage id="Bar Health" />,
-      type: 'item',
-      url: '/bar-health',
-      icon: icons.DotChartOutlined,
-      breadcrumbs: false
-    },
     
-    {
-      id: 'chat',
-      title: <FormattedMessage id="Chat" />,
-      type: 'item',
-      url: '/chat',
-      icon: icons.MessageOutlined,
-      breadcrumbs: false
-    },
+
+  
     
     
       ]

@@ -153,36 +153,15 @@ export default function ProfileTabs({ focusInput }: Props) {
             />
             {user && (
               <Stack spacing={0.5} alignItems="center">
-                <Typography variant="h5">{user.name}</Typography>
-                <Typography color="secondary">{user.role}</Typography>
+                <Typography variant="h5">Alvaro Celorio </Typography>
+                <Typography color="secondary">Owner</Typography>
               </Stack>
             )}
-            <Stack direction="row" spacing={3} sx={{ '& svg': { fontSize: '1.15rem', cursor: 'pointer' } }}>
-              <TwitterSquareFilled style={{ color: twitterColor }} />
-              <FacebookFilled style={{ color: facebookColor }} />
-              <LinkedinFilled style={{ color: linkedInColor }} />
-            </Stack>
+            
           </Stack>
         </Grid>
         <Grid item sm={3} sx={{ display: { sm: 'block', md: 'none' } }} />
-        <Grid item xs={12} sm={6} md={12}>
-          <Stack direction="row" justifyContent="space-around" alignItems="center">
-            <Stack spacing={0.5} alignItems="center">
-              <Typography variant="h5">86</Typography>
-              <Typography color="secondary">Post</Typography>
-            </Stack>
-            <Divider orientation="vertical" flexItem />
-            <Stack spacing={0.5} alignItems="center">
-              <Typography variant="h5">40</Typography>
-              <Typography color="secondary">Project</Typography>
-            </Stack>
-            <Divider orientation="vertical" flexItem />
-            <Stack spacing={0.5} alignItems="center">
-              <Typography variant="h5">4.5K</Typography>
-              <Typography color="secondary">Members</Typography>
-            </Stack>
-          </Stack>
-        </Grid>
+      
         <Grid item xs={12}>
           <ProfileTab />
         </Grid>

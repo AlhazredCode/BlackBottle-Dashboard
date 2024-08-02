@@ -127,7 +127,7 @@ export default function Profile() {
           <Stack direction="row" spacing={1.25} alignItems="center" sx={{ p: 0.5 }}>
             <Avatar alt={user.name} src={user.avatar} size="sm" />
             <Typography variant="subtitle1" sx={{ textTransform: 'capitalize' }}>
-              {user.name && user.name}
+              {/*user.name && user.name  */ 'Alvaro celorio'}
             </Typography>
           </Stack>
         )}

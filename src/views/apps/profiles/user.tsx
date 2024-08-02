@@ -35,9 +35,7 @@ export default function UserProfile({ tab }: Props) {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs={12}>
-        <ProfileCard focusInput={focusInput} />
-      </Grid>
+      
       <Grid item xs={12} md={3}>
         <ProfileTabs focusInput={focusInput} />
       </Grid>

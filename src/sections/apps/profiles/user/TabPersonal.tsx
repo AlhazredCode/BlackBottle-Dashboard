@@ -474,71 +474,13 @@ export default function TabPersonal() {
                 </Grid>
               </Grid>
             </Box>
-            <CardHeader title="Skills" />
-            <Divider />
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', listStyle: 'none', p: 2.5, m: 0 }} component="ul">
-              <Autocomplete
-                multiple
-                fullWidth
-                id="tags-outlined"
-                options={skills}
-                value={values.skill}
-                onBlur={handleBlur}
-                getOptionLabel={(label) => label}
-                onChange={(event, newValue) => {
-                  setFieldValue('skill', newValue);
-                }}
-                renderInput={(params) => <TextField {...params} name="skill" placeholder="Add Skills" />}
-                renderTags={(value, getTagProps) =>
-                  value.map((option: any, index: number) => (
-                    <Chip
-                      {...getTagProps({ index })}
-                      key={index}
-                      variant="combined"
-                      label={option}
-                      deleteIcon={<CloseOutlined style={{ fontSize: '0.75rem' }} />}
-                      sx={{ color: 'text.primary' }}
-                    />
-                  ))
-                }
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    p: 0,
-                    '& .MuiAutocomplete-tag': {
-                      m: 1
-                    },
-                    '& fieldset': {
-                      display: 'none'
-                    },
-                    '& .MuiAutocomplete-endAdornment': {
-                      display: 'none'
-                    },
-                    '& .MuiAutocomplete-popupIndicator': {
-                      display: 'none'
-                    }
-                  }
-                }}
-              />
-            </Box>
-            <CardHeader title="Note" />
-            <Divider />
+            
+            
+           
+           
             <Box sx={{ p: 2.5 }}>
-              <TextField
-                multiline
-                rows={5}
-                fullWidth
-                value={values.note}
-                name="note"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                id="personal-note"
-                placeholder="Note"
-              />
-              {touched.note && errors.note && (
-                <FormHelperText error id="personal-note-helper">
-                  {errors.note}
-                </FormHelperText>
-              )}
+              
+              
               <Stack direction="row" justifyContent="flex-end" alignItems="center" spacing={2} sx={{ mt: 2.5 }}>
                 <Button variant="outlined" color="secondary">
                   Cancel

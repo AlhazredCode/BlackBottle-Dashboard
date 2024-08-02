@@ -1,6 +1,5 @@
-
 import FormsWizard from 'views/forms/wizard';
-import ProductWizard from 'sections/forms/wizard/product-wizard';
+import RecipeWizard from 'sections/forms/wizard/recipe-wizard';
 // ==============================|| PAGE ||============================== //
 
 
@@ -11,7 +10,7 @@ export default function MainMenuPage() {
   return (
   <>
   <FormsWizard>
-    <ProductWizard/>
+    <RecipeWizard/>
   </FormsWizard>
  
   </>
