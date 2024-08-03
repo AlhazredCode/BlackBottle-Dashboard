@@ -1,7 +1,19 @@
-import SamplePage from 'views/sample-page';
+
+import FormsWizard from 'views/forms/wizard';
+import BuildOrderlWizard from 'sections/forms/wizard/order-build';
+// ==============================|| PAGE ||============================== //
+
+
 
 // ==============================|| PAGE ||============================== //
 
-export default function SampleViewPage() {
-  return <SamplePage />;
+export default function MainMenuPage() {
+  return (
+  <>
+  <FormsWizard>
+    <BuildOrderlWizard/>
+  </FormsWizard>
+ 
+  </>
+  );
 }

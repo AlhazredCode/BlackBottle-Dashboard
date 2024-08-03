@@ -42,7 +42,7 @@ interface Props {
   item: NavItemType;
   lastItem: number;
   remItems: NavItemType[];
-  lastItemId: string;
+  lastItemId: string | undefined; // Permitir undefined
   setSelectedItems: React.Dispatch<React.SetStateAction<string | undefined>>;
   selectedItems: string | undefined;
   setSelectedLevel: React.Dispatch<React.SetStateAction<number>>;
@@ -99,19 +99,22 @@ export default function NavGroup({
 
   const openMini = Boolean(anchorEl);
 
+ 
+
   useEffect(() => {
     if (lastItem) {
-      if (item.id === lastItemId) {
-        const localItem: any = { ...item };
+        if (item.id === lastItemId) { // <-- Verificar si lastItemId está definido
+          const localItem: any = { ...item };
         const elements = remItems.map((ele: NavItemType) => ele.elements);
         localItem.children = elements.flat(1);
         setCurrentItem(localItem);
-      } else {
-        setCurrentItem(item);
-      }
+        } else {
+          setCurrentItem(item);
+        }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [item, lastItem, downLG]);
+}, [item, lastItem, downLG]);
+
+
 
   const checkOpenForParent = (child: NavItemType[], id: string) => {
     child.forEach((ele: NavItemType) => {
@@ -146,6 +149,10 @@ export default function NavGroup({
       setAnchorEl(event?.currentTarget);
     }
   };
+
+
+
+
 
   const handleClose = () => {
     setAnchorEl(null);

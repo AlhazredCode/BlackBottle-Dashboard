@@ -15,6 +15,7 @@ export type KanbanComment = {
 };
 
 export type KanbanItem = {
+  columnId: string;
   assign?: string | null;
   attachments: [];
   commentIds?: string[];
@@ -45,3 +46,5 @@ export type KanbanUserStory = {
   title: string;
   priority: string;
 };
+
+

@@ -1,6 +1,7 @@
 'use client';
 
-import { useLayoutEffect, useState } from 'react';
+import { useState } from 'react';
+
 
 // material-ui
 import { Theme } from '@mui/material/styles';
@@ -13,77 +14,88 @@ import Typography from '@mui/material/Typography';
 // project import
 import NavItem from './NavItem';
 import NavGroup from './NavGroup';
-import menuItem from 'menu-items';
-import { MenuFromAPI } from 'menu-items/dashboard';
-
+import menuItem from 'menu-items'; // Asegúrate de que la ruta sea correcta
 import { HORIZONTAL_MAX_ITEM, MenuOrientation } from 'config';
 import useConfig from 'hooks/useConfig';
-import { useGetMenu, useGetMenuMaster } from 'api/menu';
+import { useGetMenuMaster } from 'api/menu';
 
 // types
 import { NavItemType } from 'types/menu';
 
-function isFound(arr: any, str: string) {
-  return arr.items.some((element: any) => {
-    if (element.id === str) {
-      return true;
-    }
-    return false;
-  });
-}
 
-// ==============================|| DRAWER CONTENT - NAVIGATION ||============================== //
+
+
+const miMenu: NavItemType[] = [
+  {
+    id: "group-dashboard",
+    title: "Black Bottle",
+    type: "group",
+    icon: "dashboard",
+    children: [
+      {
+        id: "dashboard",
+        title: "My Bar", 
+        type: "collapse",
+        icon: "dashboard",
+        children: [
+          {
+            id: "default",
+            title: "Dashboard",
+            type: "item",
+            url: "/dashboard/default",
+            breadcrumbs: false,
+          },
+          {
+            id: "analytics",
+            title: "Bar Cost Calculator",
+            type: "item",
+            url: "/dashboard/analytics",
+            breadcrumbs: false,
+          },
+        ],
+      },
+    ], 
+  },
+
+  
+];
 
 export default function Navigation() {
   const { menuOrientation } = useConfig();
-  const { menuLoading } = useGetMenu();
   const { menuMaster } = useGetMenuMaster();
   const drawerOpen = menuMaster.isDashboardDrawerOpened;
   const downLG = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'));
 
   const [selectedItems, setSelectedItems] = useState<string | undefined>('');
   const [selectedLevel, setSelectedLevel] = useState<number>(0);
-  const [menuItems, setMenuItems] = useState<{ items: NavItemType[] }>({ items: [] });
 
-  let dashboardMenu = MenuFromAPI();
-
-  useLayoutEffect(() => {
-    if (menuLoading && !isFound(menuItem, 'group-dashboard-loading')) {
-      menuItem.items.splice(0, 0, dashboardMenu);
-      setMenuItems({ items: [...menuItem.items] });
-    } else if (!menuLoading && dashboardMenu?.id !== undefined && !isFound(menuItem, 'group-dashboard')) {
-      menuItem.items.splice(0, 1, dashboardMenu);
-      setMenuItems({ items: [...menuItem.items] });
-    } else {
-      setMenuItems({ items: [...menuItem.items] });
-    }
-    // eslint-disable-next-line
-  }, [menuLoading]);
+  // Combinar `miMenu` con los elementos de `menuItem`
+  const combinedMenu: NavItemType[] = [
+    ...miMenu, 
+    ...menuItem.items // Accede a la propiedad 'items' de menuItem
+  ];
 
   const isHorizontal = menuOrientation === MenuOrientation.HORIZONTAL && !downLG;
 
+  // Calcular `lastItem`, `lastItemIndex`, `remItems` y `lastItemId`
   const lastItem = isHorizontal ? HORIZONTAL_MAX_ITEM : null;
-  let lastItemIndex = menuItems.items.length - 1;
+  let lastItemIndex = combinedMenu.length - 1;
   let remItems: NavItemType[] = [];
-  let lastItemId: string;
+  let lastItemId: string | undefined = undefined;
 
-  //  first it checks menu item is more than giving HORIZONTAL_MAX_ITEM after that get lastItemid by giving horizontal max
-  // item and it sets horizontal menu by giving horizontal max item lastly slice menuItem from array and set into remItems
-
-  if (lastItem && lastItem < menuItems.items.length) {
-    lastItemId = menuItems.items[lastItem - 1].id!;
+  if (lastItem && lastItem < combinedMenu.length) {
+    lastItemId = combinedMenu[lastItem - 1]?.id; 
     lastItemIndex = lastItem - 1;
-    remItems = menuItems.items.slice(lastItem - 1, menuItems.items.length).map((item) => ({
+    remItems = combinedMenu.slice(lastItem - 1, combinedMenu.length).map((item) => ({
       title: item.title,
-      elements: item.children,
+      elements: item.children, 
       icon: item.icon,
-      ...(item.url && {
-        url: item.url
-      })
+      ...(item.url && { url: item.url }),
     }));
   }
 
-  const navGroups = menuItems.items.slice(0, lastItemIndex + 1).map((item, index) => {
+  // Renderizar el menú
+  const navGroups = combinedMenu.slice(0, lastItemIndex + 1).map((item, index) => {
     switch (item.type) {
       case 'group':
         if (item.url && item.id !== lastItemId) {
@@ -104,7 +116,7 @@ export default function Navigation() {
             selectedItems={selectedItems}
             lastItem={lastItem!}
             remItems={remItems}
-            lastItemId={lastItemId}
+            lastItemId={lastItemId} // Asegúrate de que lastItemId se maneja correctamente en NavGroup
             item={item}
           />
         );

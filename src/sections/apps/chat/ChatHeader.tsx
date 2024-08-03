@@ -95,12 +95,12 @@ export default function ChatHeader({ loading, user, openChatDrawer, emailDetails
       </Grid>
       <Grid item>
         <Stack direction="row" alignItems="center" justifyContent="flex-end" spacing={1}>
-          <IconButton size="large" color="secondary">
+          {/*<IconButton size="large" color="secondary">
             <PhoneOutlined />
           </IconButton>
           <IconButton size="large" color="secondary">
             <VideoCameraOutlined />
-          </IconButton>
+          </IconButton> */}
           <IconButton onClick={handleUserChange} size="large" color={emailDetails ? 'error' : 'secondary'}>
             {emailDetails ? <CloseOutlined /> : <InfoCircleOutlined />}
           </IconButton>
