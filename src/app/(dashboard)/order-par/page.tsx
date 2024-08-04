@@ -1,7 +1,7 @@
-import SamplePage from 'views/sample-page';
+import ParFlow from "sections/dashboard/analytics/ParFlow";
 
 // ==============================|| PAGE ||============================== //
 
-export default function SampleViewPage() {
-  return <SamplePage />;
+export default function LogAppPage() {
+  return <ParFlow />;
 }
