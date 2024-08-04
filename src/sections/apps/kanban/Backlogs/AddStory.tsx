@@ -246,7 +246,7 @@ export default function AddStory({ open, handleDrawerOpen }: Props) {
                   </Grid>
                   <Grid item xs={12}>
                     <Stack spacing={1}>
-                      <InputLabel>Description</InputLabel>
+                      <InputLabel>Descriptionxxx</InputLabel>
                       <TextField
                         fullWidth
                         id="description"

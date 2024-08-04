@@ -281,7 +281,7 @@ export default function AddItem({ open, handleDrawerOpen, storyId }: Props) {
                   <Grid item xs={12}>
                     <Grid container spacing={1}>
                       <Grid item xs={12}>
-                        <InputLabel sx={{ mt: 0.5 }}>Attachments:</InputLabel>
+                        <InputLabel sx={{ mt: 0.5 }}>Attachmentswsx:</InputLabel>
                       </Grid>
                       <Grid item xs={12}>
                         <UploadMultiFile
@@ -304,7 +304,7 @@ export default function AddItem({ open, handleDrawerOpen, storyId }: Props) {
                   <Grid item xs={12}>
                     <AnimateButton>
                       <Button fullWidth variant="contained" type="submit">
-                        Save
+                        Savexxx
                       </Button>
                     </AnimateButton>
                   </Grid>

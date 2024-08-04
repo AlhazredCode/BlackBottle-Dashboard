@@ -1,22 +1,17 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { NavItemType } from 'types/menu'; 
-import menuItem from 'menu-items';
+import { useGetProducts } from 'api/products';
 
 export default function Backlogs() {
-  const [formattedMenu, setFormattedMenu] = useState('');
+ 
+  const {products} = useGetProducts();
 
-  useEffect(() => {
-    // Accede a menuItem.items directamente aquí
-    if (menuItem.items.length > 0) {
-      setFormattedMenu(JSON.stringify(menuItem.items, null, 2));
-    }
-  }, []); // Vacío para que se ejecute solo una vez al montar el componente
 
   return (
     <div>
-      <h2>Datos del Menú:</h2>
-      <pre>{formattedMenu}</pre>
+      <h2 color='white'>ssDatos del Menú:</h2>
+      <h2 color='white'>{JSON.stringify(products)}</h2>
     </div>
   );
 }

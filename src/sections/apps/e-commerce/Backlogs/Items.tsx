@@ -33,7 +33,6 @@ import { KanbanColumn, KanbanItem, KanbanProfile } from 'types/kanban';
 interface Props {
   itemId: string;
   index: number;
-  itemData: KanbanItem[]; // Añade la prop itemData
 }
 
 // drag wrapper
