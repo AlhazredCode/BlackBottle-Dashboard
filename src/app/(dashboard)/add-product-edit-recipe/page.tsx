@@ -1,7 +1,8 @@
 
-import SalesChart from 'views/apps/sales/chart';
+
+import RecipesListPage from 'views/apps/recipes-list/recipes-list';
 // ==============================|| PAGE ||============================== //
 
 export default function SampleViewPage() {
-  return <SalesChart />;
+  return <RecipesListPage />;
 }
