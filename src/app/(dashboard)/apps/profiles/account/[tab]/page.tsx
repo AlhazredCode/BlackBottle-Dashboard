@@ -18,7 +18,7 @@ export default function Page({ params }: Props) {
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
-  const response = ['basic', 'personal', 'my-account', 'password', 'role', 'settings'];
+  const response = ['personal', 'basic', 'my-account', 'password', 'role', 'settings'];
 
   return response.map((tab: string) => ({
     tab: tab

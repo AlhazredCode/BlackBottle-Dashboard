@@ -188,15 +188,7 @@ const samplePage: NavItemType = {
     breadcrumbs: false
   },
 
-  {
-    id: 'Lab',
-    title: <FormattedMessage id="Lab" />,
-    type: 'item',
-    url: '/sample-page',
-    icon: icons.DollarOutlined, 
-    breadcrumbs: false
-  },
-
+  
 
     
 

@@ -93,7 +93,7 @@ export default function TabRole() {
                       </Stack>
                     </TableCell>
                     <TableCell>
-                      {row.role === 1 && <Chip size="small" color="primary" label="Owner" />}
+                      {row.role === 1 && <Chip size="small" color="primary" label="Admin" />}
                       {row.role === 2 && <Chip size="small" variant="light" color="info" label="Manager" />}
                       {row.role === 3 && <Chip size="small" variant="light" color="warning" label="Staff" />}
                       {row.role === 0 && <Chip size="small" variant="light" color="success" label="Customer" />}
@@ -124,7 +124,7 @@ export default function TabRole() {
       <Grid item xs={12}>
         <Stack direction="row" justifyContent="flex-end" alignItems="center" spacing={2}>
           <Button color="error">Cancel</Button>
-          <Button variant="contained">Update Profile</Button>
+          <Button color='secondary' variant="contained">Update Profile</Button>
         </Stack>
       </Grid>
     </Grid>

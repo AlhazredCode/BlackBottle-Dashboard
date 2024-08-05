@@ -154,7 +154,7 @@ export default function ProfileTabs({ focusInput }: Props) {
             {user && (
               <Stack spacing={0.5} alignItems="center">
                 <Typography variant="h5">Alvaro Celorio </Typography>
-                <Typography color="secondary">Owner</Typography>
+                <Typography color="secondary"> Bar Manager</Typography>
               </Stack>
             )}
             

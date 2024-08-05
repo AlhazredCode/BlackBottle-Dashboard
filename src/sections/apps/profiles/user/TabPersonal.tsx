@@ -115,7 +115,7 @@ export default function TabPersonal() {
           dob: new Date('03-10-1993'),
           countryCode: '+91',
           contact: 9652364852,
-          designation: 'Full Stack Developer',
+          designation: 'Bar Manager',
           address: '3801 Chalk Butte Rd, Cut Bank, MT 59427, United States',
           address1: '301 Chalk Butte Rd, Cut Bank, NY 96572, New York',
           country: 'US',
@@ -364,43 +364,8 @@ export default function TabPersonal() {
             <Divider />
             <Box sx={{ p: 2.5 }}>
               <Grid container spacing={3}>
-                <Grid item xs={12} sm={6}>
-                  <Stack spacing={1}>
-                    <InputLabel htmlFor="personal-addrees1">Address 01</InputLabel>
-                    <TextField
-                      multiline
-                      rows={3}
-                      fullWidth
-                      id="personal-addrees1"
-                      value={values.address}
-                      name="address"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      placeholder="Address 01"
-                    />
-                  </Stack>
-                  {touched.address && errors.address && (
-                    <FormHelperText error id="personal-address-helper">
-                      {errors.address}
-                    </FormHelperText>
-                  )}
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <Stack spacing={1}>
-                    <InputLabel htmlFor="personal-addrees2">Address 02</InputLabel>
-                    <TextField
-                      multiline
-                      rows={3}
-                      fullWidth
-                      id="personal-addrees2"
-                      value={values.address1}
-                      name="address1"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      placeholder="Address 02"
-                    />
-                  </Stack>
-                </Grid>
+               
+             
                 <Grid item xs={12} sm={6}>
                   <Stack spacing={1}>
                     <InputLabel htmlFor="personal-country">Country</InputLabel>

@@ -134,7 +134,7 @@ export default function NavUser() {
           Profile
         </MenuItem>
         <MenuItem component={Link} href="/apps/profiles/account/basic" onClick={handleClose}>
-          My account
+          My Business
         </MenuItem>
       </Menu>
     </Box>

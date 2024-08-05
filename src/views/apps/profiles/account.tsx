@@ -53,10 +53,7 @@ export default function AccountProfile({ tab }: Props) {
   let breadcrumbHeading = '';
 
   switch (tab) {
-    case 'personal':
-      breadcrumbTitle = 'Personal';
-      breadcrumbHeading = 'Personal';
-      break;
+  
     case 'my-account':
       breadcrumbTitle = 'My Account';
       breadcrumbHeading = 'My Account';
@@ -98,9 +95,9 @@ export default function AccountProfile({ tab }: Props) {
       <MainCard border={false} boxShadow>
         <Box sx={{ borderBottom: 1, borderColor: 'divider', width: '100%' }}>
           <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons="auto" aria-label="account profile tab">
-            <Tab label="Profile" icon={<UserOutlined />} value="basic" iconPosition="start" />
-            <Tab label="Personal" icon={<FileTextOutlined />} value="personal" iconPosition="start" />
-            <Tab label="My Account" icon={<ContainerOutlined />} value="my-account" iconPosition="start" />
+            <Tab label="Business" icon={<UserOutlined />} value="basic" iconPosition="start" />
+            
+            <Tab label="Activity" icon={<ContainerOutlined />} value="my-account" iconPosition="start" />
             <Tab label="Change Password" icon={<LockOutlined />} value="password" iconPosition="start" />
             <Tab label="Role" icon={<TeamOutlined />} value="role" iconPosition="start" />
             <Tab label="Settings" icon={<SettingOutlined />} value="settings" iconPosition="start" />
@@ -108,7 +105,7 @@ export default function AccountProfile({ tab }: Props) {
         </Box>
         <Box sx={{ mt: 2.5 }}>
           {tab === 'basic' && <TabProfile />}
-          {tab === 'personal' && <TabPersonal />}
+          
           {tab === 'my-account' && <TabAccount />}
           {tab === 'password' && <TabPassword />}
           {tab === 'role' && <TabRole />}

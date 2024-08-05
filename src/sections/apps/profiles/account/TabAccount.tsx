@@ -58,42 +58,7 @@ export default function TabAccount() {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        <MainCard title="General Settings">
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              <Stack spacing={1}>
-                <InputLabel htmlFor="my-account-username">Username</InputLabel>
-                <TextField fullWidth defaultValue="Asoka_Tana_16" id="my-account-username" placeholder="Username" autoFocus />
-              </Stack>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Stack spacing={1}>
-                <InputLabel htmlFor="my-account-email">Account Email</InputLabel>
-                <TextField fullWidth defaultValue="user@tana.com" id="my-account-email" placeholder="Account Email" />
-              </Stack>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Stack spacing={1}>
-                <InputLabel htmlFor="my-account-lang">Language</InputLabel>
-                <TextField fullWidth defaultValue="New York" id="my-account-lang" placeholder="Language" />
-              </Stack>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Stack spacing={1}>
-                <InputLabel htmlFor="my-account-signing">Signing Using</InputLabel>
-                <Select fullWidth id="my-account-signing" value={signing} onChange={handleChange} MenuProps={MenuProps}>
-                  <MenuItem value="form">Basic Form</MenuItem>
-                  <MenuItem value="firebase">Firebase - Auth</MenuItem>
-                  <MenuItem value="facebook">Facebook</MenuItem>
-                  <MenuItem value="twitter">Twitter</MenuItem>
-                  <MenuItem value="gmail">Gmail</MenuItem>
-                  <MenuItem value="jwt">JWT</MenuItem>
-                  <MenuItem value="auth0">AUTH0</MenuItem>
-                </Select>
-              </Stack>
-            </Grid>
-          </Grid>
-        </MainCard>
+      
       </Grid>
       <Grid item xs={12} sm={6}>
         <MainCard title="Advance Settings" content={false}>
@@ -193,7 +158,7 @@ export default function TabAccount() {
           <Button variant="outlined" color="secondary">
             Cancel
           </Button>
-          <Button variant="contained">Update Profile</Button>
+          <Button variant="contained" color='secondary'>Update Changes</Button>
         </Stack>
       </Grid>
     </Grid>

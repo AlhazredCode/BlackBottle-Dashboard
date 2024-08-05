@@ -25,7 +25,7 @@ import { ThemeMode, facebookColor, linkedInColor, twitterColor } from 'config';
 
 // assets
 import FacebookFilled from '@ant-design/icons/FacebookFilled';
-import LinkedinFilled from '@ant-design/icons/LinkedinFilled';
+import InstagramFilled from '@ant-design/icons/InstagramFilled';
 import TwitterSquareFilled from '@ant-design/icons/TwitterSquareFilled';
 import CameraOutlined from '@ant-design/icons/CameraOutlined';
 
@@ -62,7 +62,7 @@ export default function TabPersonal() {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12} sm={6}>
-        <MainCard title="Personal Information">
+        <MainCard title="Business Information">
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <Stack spacing={2.5} alignItems="center" sx={{ m: 3 }}>
@@ -111,57 +111,42 @@ export default function TabPersonal() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <Stack spacing={1}>
-                <InputLabel htmlFor="personal-first-name">First Name</InputLabel>
-                <TextField fullWidth defaultValue="Anshan" id="personal-first-name" placeholder="First Name" autoFocus />
+                <InputLabel htmlFor="personal-first-name">Busines Name</InputLabel>
+                <TextField fullWidth defaultValue="Cantina la veinte" id="personal-first-name" placeholder="Cantina la veinte" autoFocus />
               </Stack>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Stack spacing={1}>
-                <InputLabel htmlFor="personal-first-name">Last Name</InputLabel>
-                <TextField fullWidth defaultValue="Handgun" id="personal-first-name" placeholder="Last Name" />
+                <InputLabel htmlFor="personal-first-name">Adress</InputLabel>
+                <TextField fullWidth defaultValue="Handgun" id="personal-first-name" placeholder="Brickell 124234" />
               </Stack>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Stack spacing={1}>
                 <InputLabel htmlFor="personal-location">Country</InputLabel>
-                <TextField fullWidth defaultValue="New York" id="personal-location" placeholder="Location" />
+                <TextField fullWidth defaultValue="USA" id="personal-location" placeholder="USA" />
               </Stack>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Stack spacing={1}>
-                <InputLabel htmlFor="personal-zipcode">Zipcode</InputLabel>
-                <TextField fullWidth defaultValue="956754" id="personal-zipcode" placeholder="Zipcode" />
+                <InputLabel htmlFor="personal-zipcode">City</InputLabel>
+                <TextField fullWidth defaultValue="Florida" id="personal-zipcode" placeholder="Florida" />
               </Stack>
             </Grid>
             <Grid item xs={12}>
               <Stack spacing={1}>
-                <InputLabel htmlFor="personal-location">Bio</InputLabel>
+                <InputLabel htmlFor="personal-location">Description</InputLabel>
                 <TextField
                   fullWidth
                   multiline
-                  rows={3}
-                  defaultValue="Hello, I’m Anshan Handgun Creative Graphic Designer & User Experience Designer based in Website, I create digital Products a more Beautiful and usable place. Morbid accusant ipsum. Nam nec tellus at."
+                  rows={5}
+                  defaultValue="Cantina la Veinte is a mixture of the mexican cusine with an american cooking style"
                   id="personal-location"
                   placeholder="Location"
                 />
               </Stack>
             </Grid>
-            <Grid item xs={12}>
-              <Stack spacing={1}>
-                <InputLabel htmlFor="personal-experience">Experiance</InputLabel>
-                <Select fullWidth id="personal-experience" value={experience} onChange={handleChange} MenuProps={MenuProps}>
-                  <MenuItem value="0">Start Up</MenuItem>
-                  <MenuItem value="0.5">6 Months</MenuItem>
-                  <MenuItem value="1">1 Year</MenuItem>
-                  <MenuItem value="2">2 Years</MenuItem>
-                  <MenuItem value="3">3 Years</MenuItem>
-                  <MenuItem value="4">4 Years</MenuItem>
-                  <MenuItem value="5">5 Years</MenuItem>
-                  <MenuItem value="6">6 Years</MenuItem>
-                  <MenuItem value="10">10+ Years</MenuItem>
-                </Select>
-              </Stack>
-            </Grid>
+          
           </Grid>
         </MainCard>
       </Grid>
@@ -170,17 +155,7 @@ export default function TabPersonal() {
           <Grid item xs={12}>
             <MainCard title="Social Network">
               <Stack spacing={1}>
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Button
-                    disableRipple
-                    size="small"
-                    startIcon={<TwitterSquareFilled style={{ color: twitterColor, fontSize: '1.15rem' }} />}
-                    sx={{ color: twitterColor, '&:hover': { bgcolor: 'transparent' } }}
-                  >
-                    Twitter
-                  </Button>
-                  <Button color="error">Connect</Button>
-                </Stack>
+                
                 <Stack direction="row" justifyContent="space-between" alignItems="center">
                   <Button
                     disableRipple
@@ -191,19 +166,19 @@ export default function TabPersonal() {
                     Facebook
                   </Button>
                   <Typography variant="subtitle1" sx={{ color: facebookColor }}>
-                    Anshan Handgun
+                    Black Bottle
                   </Typography>
                 </Stack>
                 <Stack direction="row" justifyContent="space-between" alignItems="center">
                   <Button
                     disableRipple
                     size="small"
-                    startIcon={<LinkedinFilled style={{ color: linkedInColor, fontSize: '1.15rem' }} />}
-                    sx={{ color: linkedInColor, '&:hover': { bgcolor: 'transparent' } }}
+                    startIcon={<InstagramFilled style={{ color: 'purple', fontSize: '1.15rem' }} />}
+                    sx={{ color: 'purple', '&:hover': { bgcolor: 'transparent' } }}
                   >
-                    LinkedIn
+                    Instagram
                   </Button>
-                  <Button color="error">Connect</Button>
+                  <Button color='secondary'>Connect</Button>
                 </Stack>
               </Stack>
             </MainCard>
@@ -213,9 +188,9 @@ export default function TabPersonal() {
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
                   <Stack spacing={1}>
-                    <InputLabel htmlFor="personal-phone">Phone Number</InputLabel>
+                    <InputLabel htmlFor="personal-phone">Public Phone Number</InputLabel>
                     <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
-                      <Select defaultValue="1-876">
+                      <Select defaultValue="+1">
                         <MenuItem value="91">+91</MenuItem>
                         <MenuItem value="1-671">1-671</MenuItem>
                         <MenuItem value="36">+36</MenuItem>
@@ -245,26 +220,22 @@ export default function TabPersonal() {
                 <Grid item xs={12} md={6}>
                   <Stack spacing={1}>
                     <InputLabel htmlFor="personal-email">Email Address</InputLabel>
-                    <TextField type="email" fullWidth defaultValue="stebin.ben@gmail.com" id="personal-email" placeholder="Email Address" />
+                    <TextField type="email" fullWidth defaultValue="admin@blackbottle.com" id="personal-email" placeholder="Email Address" />
                   </Stack>
                 </Grid>
                 <Grid item xs={12}>
                   <Stack spacing={1}>
                     <InputLabel htmlFor="personal-email">Portfolio URL</InputLabel>
-                    <TextField fullWidth defaultValue="https://anshan.dh.url" id="personal-url" placeholder="Portfolio URL" />
+                    <TextField fullWidth defaultValue="https://blackbottle.com" id="personal-url" placeholder="Portfolio URL" />
                   </Stack>
                 </Grid>
                 <Grid item xs={12}>
                   <Stack spacing={1}>
-                    <InputLabel htmlFor="personal-address">Address</InputLabel>
-                    <TextField
-                      fullWidth
-                      defaultValue="Street 110-B Kalians Bag, Dewan, M.P. New York"
-                      id="personal-address"
-                      placeholder="Address"
-                    />
+                    <InputLabel htmlFor="personal-email"> Linked Phone Number</InputLabel>
+                    <TextField fullWidth defaultValue="+1 000 000 00" id="personal-url" placeholder="Portfolio URL" />
                   </Stack>
                 </Grid>
+                
               </Grid>
             </MainCard>
           </Grid>
@@ -275,7 +246,7 @@ export default function TabPersonal() {
           <Button variant="outlined" color="secondary">
             Cancel
           </Button>
-          <Button variant="contained">Update Profile</Button>
+          <Button variant="contained" color='secondary'>Update Profile</Button>
         </Stack>
       </Grid>
     </Grid>
