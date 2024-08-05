@@ -400,7 +400,7 @@ function CreateForm({ lists, invoiceMaster }: FormProps) {
                                 variant="dashed"
                                 sx={{ bgcolor: 'transparent !important' }}
                               >
-                                Add Itemxx
+                                Add Item
                               </Button>
                             </Box>
                           </Grid>

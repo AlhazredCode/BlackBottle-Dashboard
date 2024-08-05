@@ -29,7 +29,7 @@ import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-
+import CreateRecipe from 'views/apps/recipes-list/recipes-create';
 import UpOutlined from '@ant-design/icons/UpOutlined';
 
 const getDragWrapper = (isDragging: boolean, theme: Theme, open: boolean): CSSProperties | undefined => {
@@ -136,7 +136,7 @@ export default function UserStory({ receipt, index }: UserStoryProps) { // Cambi
                     horizontal: 'right'
                   }}
                 >
-                  <MenuItem onClick={handleClose}>
+                  <MenuItem onClick={handleOpen1 }>
                     Edit
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
@@ -148,353 +148,83 @@ export default function UserStory({ receipt, index }: UserStoryProps) { // Cambi
 
             {/* Fila adicional para la información extra */}
             <TableRow>
-              <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={5}> 
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                  <Box sx={{ margin: 1, padding: 1 }}>
-                    <Grid container spacing={2} sx={{ paddingLeft: 2 }}>
-                      <Grid item xs={12} sm={3}>
-                        <MainCard sx={{ my: 2 }}>
-                          <CardMedia
-                            component="img"
-                            image={`/assets/images/e-commerce/${receipt.Image}`}
-                            title="Scroll Zoom"
-                            sx={{ borderRadius: `4px`, position: 'relative' }}
-                          />
-                        </MainCard>
-                      </Grid>
+      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={9}>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <Box sx={{ margin: 1, padding: 1 }}>
+            <Grid container spacing={4}>
+              <Grid item xs={12} sm={4} md={3}>
+                <MainCard>
+                  <CardMedia
+                    component="img"
+                    image={`/assets/images/e-commerce/${receipt.Image}`}
+                    alt={receipt.Name}
+                   
+                  />
+                </MainCard>
+              </Grid>
 
-                      <Grid item xs={12}>
-                        <Typography variant="h5">Recipe Details</Typography>
-                      </Grid>
+              <Grid item xs={12} sm={8} md={9}>
+                <Typography variant="h5" gutterBottom>
+                  {receipt.Name} 
+                </Typography>
 
-                      <Grid item xs={12}>
-                        <Typography color="text.secondary">Name:</Typography>
-                        <Typography>{receipt.Name}</Typography>
-                      </Grid>
+                <Grid container spacing={1}>
+                  <Grid item xs={12} sm={6}>
+                    <Typography variant="subtitle1" color="text.secondary">
+                     Description
+                    </Typography>
+                    <Typography variant="body2">{receipt.Description}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography variant="subtitle1" color="text.secondary">
+                     Category
+                    </Typography>
+                    <Typography variant="body2">{receipt.Category}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <Typography variant="subtitle1" color="text.secondary">
+                     Quantity
+                    </Typography>
+                    <Typography variant="body2">{receipt.inventory.TotalQty}</Typography>
+                  </Grid>
 
-                      <Grid item xs={12}>
-                        <Typography color="text.secondary">Description:</Typography>
-                        <Typography>{receipt.Description}</Typography>
-                      </Grid>
+                  {/* Ingredientes */}
+                  <Grid item xs={12}>
+                    <Typography variant="subtitle1" color="text.secondary">
+                      Ingredients:
+                    </Typography>
+                    <ul style={{ paddingLeft: 20 }}>
+                      {receipt.ingredients.map((ingredient) => (
+                        <li key={ingredient.name}>
+                          <Typography variant="body2">
+                            {ingredient.name}: {ingredient.quantity}
+                          </Typography>
+                        </li>
+                      ))}
+                    </ul>
+                  </Grid>
 
-                      <Grid item xs={12}>
-                        <Typography color="text.secondary">Category:</Typography>
-                        <Typography>{receipt.Category}</Typography>
-                      </Grid>
-
-                      <Grid item xs={12}>
-                        <Typography color="text.secondary">Total Quantity:</Typography>
-                        <Typography>{receipt.inventory.TotalQty}</Typography>
-                      </Grid>
- {/* Mostrar ingredientes */}
- <Grid item xs={12}>
-            <Typography variant="h6">Ingredients:</Typography> {/* Título para ingredientes */}
-            <ul>
-              {receipt.ingredients.map((ingredient) => (
-                <li key={ingredient.name}>
-                  <Typography variant="body2">
-                    {ingredient.name}: {ingredient.quantity}
-                  </Typography>
-                </li>
-              ))}
-            </ul>
-          </Grid>
-
-                      <Grid item xs={12}>
-                        <Typography color="text.secondary">Instructions:</Typography>
-                        <Typography>{receipt.instructions}</Typography>
-                      </Grid>
-                    </Grid>
-                  </Box>
-                </Collapse>
-              </TableCell>
-            </TableRow>
+                  <Grid item xs={12}>
+                    <Typography variant="subtitle1" color="text.secondary">
+                      Instruccions:
+                    </Typography>
+                    <Typography variant="body2">{receipt.instructions}</Typography>
+                  </Grid>
+                </Grid>
+              </Grid> 
+            </Grid>
+          </Box>
+        </Collapse>
+      </TableCell>
+    </TableRow>
           </>
         )}
       </Draggable>
 
       <Modal  open={open1} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-<MainCard title="Edit Inventory" modal darkTitle content={false}>
+<MainCard title="Edit Recipe" modal darkTitle content={false}>
   <CardContent>
-    <Stack spacing={1}>
-      <Typography variant='h5'>Bar 1</Typography>
-      <Stack direction="row" alignItems="center" spacing={2}>
-        <Typography color="text.secondary">Bottles</Typography>
-        <Stack justifyContent="flex-end">
-          <Stack direction="row">
-            <TextField
-              name="rty-incre"
-              sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-            />
-            <Stack>
-              <Button
-                key="one"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderLeft: 'none',
-                  '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <UpOutlined style={{ fontSize: 'small' }} />
-              </Button>
-              <Button
-                key="three"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderTop: 'none',
-                  borderLeft: 'none',
-                  '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <DownOutlined style={{ fontSize: 'small' }} />
-              </Button>
-            </Stack>
-          </Stack>
-        </Stack>
-        <Typography color="text.secondary">Cases</Typography>
-        <Stack justifyContent="flex-end">
-          <Stack direction="row">
-            <TextField
-              name="rty-incre"
-              sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-            />
-            <Stack>
-              <Button
-                key="one"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderLeft: 'none',
-                  '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <UpOutlined style={{ fontSize: 'small' }} />
-              </Button>
-              <Button
-                key="three"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderTop: 'none',
-                  borderLeft: 'none',
-                  '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <DownOutlined style={{ fontSize: 'small' }} />
-              </Button>
-            </Stack>
-          </Stack>
-        </Stack>
-      </Stack>
-    </Stack>
-    <Stack spacing={1}>
-      <Typography variant='h5'>Bar 2</Typography>
-      <Stack direction="row" alignItems="center" spacing={2}>
-        <Typography color="text.secondary">Bottles</Typography>
-        <Stack justifyContent="flex-end">
-          <Stack direction="row">
-            <TextField
-              name="rty-incre"
-              sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-            />
-            <Stack>
-              <Button
-                key="one"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderLeft: 'none',
-                  '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <UpOutlined style={{ fontSize: 'small' }} />
-              </Button>
-              <Button
-                key="three"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderTop: 'none',
-                  borderLeft: 'none',
-                  '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <DownOutlined style={{ fontSize: 'small' }} />
-              </Button>
-            </Stack>
-          </Stack>
-        </Stack>
-        <Typography color="text.secondary">Cases</Typography>
-        <Stack justifyContent="flex-end">
-          <Stack direction="row">
-            <TextField
-              name="rty-incre"
-              sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-            />
-            <Stack>
-              <Button
-                key="one"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderLeft: 'none',
-                  '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <UpOutlined style={{ fontSize: 'small' }} />
-              </Button>
-              <Button
-                key="three"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderTop: 'none',
-                  borderLeft: 'none',
-                  '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <DownOutlined style={{ fontSize: 'small' }} />
-              </Button>
-            </Stack>
-          </Stack>
-        </Stack>
-      </Stack>
-    </Stack>
-    <Stack spacing={1}>
-      <Typography variant='h5'>Bar 3</Typography>
-      <Stack direction="row" alignItems="center" spacing={2}>
-        <Typography color="text.secondary">Bottles</Typography>
-        <Stack justifyContent="flex-end">
-          <Stack direction="row">
-            <TextField
-              name="rty-incre"
-              sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-            />
-            <Stack>
-              <Button
-                key="one"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderLeft: 'none',
-                  '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <UpOutlined style={{ fontSize: 'small' }} />
-              </Button>
-              <Button
-                key="three"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderTop: 'none',
-                  borderLeft: 'none',
-                  '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <DownOutlined style={{ fontSize: 'small' }} />
-              </Button>
-            </Stack>
-          </Stack>
-        </Stack>
-        <Typography color="text.secondary">Cases</Typography>
-        <Stack justifyContent="flex-end">
-          <Stack direction="row">
-            <TextField
-              name="rty-incre"
-              sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-            />
-            <Stack>
-              <Button
-                key="one"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderLeft: 'none',
-                  '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <UpOutlined style={{ fontSize: 'small' }} />
-              </Button>
-              <Button
-                key="three"
-                color="secondary"
-                variant="outlined"
-                sx={{
-                  px: 1.5,
-                  py: 0.65,
-                  minWidth: '0px !important',
-                  borderRadius: 0,
-                  borderTop: 'none',
-                  borderLeft: 'none',
-                  '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                  '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                }}
-              >
-                <DownOutlined style={{ fontSize: 'small' }} />
-              </Button>
-            </Stack>
-          </Stack>
-        </Stack>
-      </Stack>
-    </Stack>
+   <CreateRecipe/>
   </CardContent>
   <Divider />
   <Stack direction="row" spacing={1} justifyContent="flex-end" sx={{ px: 2.5, py: 2 }}>

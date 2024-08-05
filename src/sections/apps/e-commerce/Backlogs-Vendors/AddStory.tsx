@@ -24,7 +24,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import RecipeWizard from 'sections/forms/wizard/recipe-wizard';
+import ProductWizard from 'sections/forms/wizard/product-wizard';
 // third party
 import * as yup from 'yup';
 import { Chance } from 'chance';
@@ -93,7 +93,7 @@ export default function AddStory({ open, handleDrawerOpen }: Props) {
         >
          
           <Box sx={{ p: 3 }}>
-            <RecipeWizard/>
+            <ProductWizard/>
           </Box>
         </SimpleBar>
       )}
