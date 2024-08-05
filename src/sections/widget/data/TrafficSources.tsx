@@ -8,78 +8,51 @@ import MainCard from 'components/MainCard';
 
 // ===========================|| DATA WIDGET - TRAFFIC SOURCES ||=========================== //
 
+const liquorCategories = [
+  { name: 'Whiskey', inventory: 65 },
+  { name: 'Wine', inventory: 30 },
+  { name: 'Beer', inventory: 85 },
+  { name: 'By the glass', inventory: 15 },
+  { name: 'Tequila', inventory: 45 },
+  { name: 'Special', inventory: 99 },
+  
+  // Add more categories here
+];
+
+
 export default function TrafficSources() {
   return (
     <MainCard
-      title="Traffic Sources"
+      title="Par Balance"
       subheader={
         <Typography variant="caption" color="secondary">
-          You’re getting more and more sources, keep it up!
+         Your inventory compared to your setted par flow, the items without a par flow assigned will be not counted 
         </Typography>
       }
     >
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
+     <Grid container spacing={3}>
+      {liquorCategories.map((category) => (
+        <Grid item xs={12} key={category.name}>
           <Grid container alignItems="center" spacing={1}>
             <Grid item sm zeroMinWidth>
-              <Typography variant="body2">Referral</Typography>
+              <Typography variant="body2">{category.name}</Typography>
             </Grid>
             <Grid item>
               <Typography variant="body2" align="right">
-                20%
+                {category.inventory}%
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <LinearProgress variant="determinate" value={20} color="primary" />
+              <LinearProgress
+                variant="determinate"
+                value={category.inventory}
+                color={category.inventory < 20 ? 'error' : 'primary'} // Change color based on inventory level
+              />
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <Grid container alignItems="center" spacing={1}>
-            <Grid item sm zeroMinWidth>
-              <Typography variant="body2">Bounce</Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body2" align="right">
-                58%
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <LinearProgress variant="determinate" value={60} color="secondary" />
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container alignItems="center" spacing={1}>
-            <Grid item sm zeroMinWidth>
-              <Typography variant="body2">Internet</Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body2" align="right">
-                40%
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <LinearProgress variant="determinate" value={40} color="primary" />
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container alignItems="center" spacing={1}>
-            <Grid item sm zeroMinWidth>
-              <Typography variant="body2">Social</Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="body2" align="right">
-                90%
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <LinearProgress variant="determinate" value={90} color="primary" />
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+      ))}
+    </Grid>
     </MainCard>
   );
 }
