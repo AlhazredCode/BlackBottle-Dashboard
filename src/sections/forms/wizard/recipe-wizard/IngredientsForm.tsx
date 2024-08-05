@@ -11,12 +11,14 @@ import MainCard from 'components/MainCard';
 import ProductsSearch from 'sections/apps/e-commerce/products/ProductsSearch';
 import { Box } from '@mui/material';
 import RecipesBacklog from 'sections/apps/e-commerce/Recipes';
+import CreateRecipe from 'views/apps/recipes-list/recipes-create';
 // ==============================|| BASIC WIZARD - ADDRESS ||============================== //
 
 export default function IngredientsForm() {
   return (
     <>
-     <RecipesBacklog/>
+    <CreateRecipe/>
+
     </>
   );
 }

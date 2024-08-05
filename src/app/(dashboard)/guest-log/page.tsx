@@ -1,8 +1,6 @@
-import CalendarApp from 'views/apps/calendar';
-
-
+import GuestListPage from 'views/apps/guests/list';
 // ==============================|| PAGE ||============================== //
 
-export default function SampleViewPage() {
-  return <CalendarApp />;
+export default function CustmListAppPage() {
+  return <GuestListPage />;
 }

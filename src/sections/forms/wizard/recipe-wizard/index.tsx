@@ -48,7 +48,7 @@ export default function RecipeWizard() {
   };
 
   return (
-    <MainCard title="Add product">
+    <MainCard title="Add Recipe">
       <Stepper activeStep={activeStep}  sx={{ pt: 3, pb: 5 }}>
         {steps.map((label) => (
           <Step key={label} >
@@ -85,7 +85,7 @@ export default function RecipeWizard() {
               )}
               <AnimateButton>
                 <Button variant="contained" color='secondary' size='large' onClick={handleNext} sx={{ my: 3, ml: 1 }}>
-                  {activeStep === steps.length - 1 ? 'Create Product' : 'Next'}
+                  {activeStep === steps.length - 1 ? 'Create Recipe' : 'Next'}
                 </Button>
               </AnimateButton>
             </Stack>

@@ -63,7 +63,7 @@ export default function InvoiceItem({ id, name, description, qty, price, onDelet
       touched: touchedName
     },
     {
-      placeholder: 'Description',
+      placeholder: 'Unit',
       label: 'Description',
       name: `invoice_detail.${index}.description`,
       type: 'text',

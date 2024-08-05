@@ -137,7 +137,7 @@ export default function CustomerTable({ data, columns, modalToggler }: Props) {
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems="center" sx={{ width: { xs: '100%', sm: 'auto' } }}>
           <SelectColumnSorting {...{ getState: table.getState, getAllColumns: table.getAllColumns, setSorting }} />
           <Stack direction="row" spacing={2} alignItems="center">
-            <Button variant="contained" startIcon={<PlusOutlined />} onClick={modalToggler}>
+            <Button variant="contained" color='secondary' startIcon={<PlusOutlined />} onClick={modalToggler}>
               Add Customer
             </Button>
             <CSVExport
