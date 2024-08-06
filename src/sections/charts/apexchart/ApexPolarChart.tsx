@@ -10,6 +10,8 @@ import ReactApexChart, { Props as ChartProps } from 'react-apexcharts';
 // project import
 import { ThemeMode } from 'config';
 import useConfig from 'hooks/useConfig';
+import { padding } from '@mui/system';
+import { color } from 'framer-motion';
 
 // chart options
 const polarChartOptions = {
@@ -18,12 +20,16 @@ const polarChartOptions = {
     height: 450,
     type: 'polarArea'
   },
+
+  labels: ['Beer', 'Tequila', 'Wine', 'Rose','By The Glass' ,'Wiskey','Reposado','Extra','Drinks'],
   fill: {
     opacity: 1
   },
   legend: {
+     position: 'bottom',
     show: true,
     fontFamily: `'Roboto', sans-serif`,
+   
     offsetX: 10,
     offsetY: 10,
     labels: {
@@ -35,10 +41,13 @@ const polarChartOptions = {
       radius: 5
     },
     itemMargin: {
-      horizontal: 25,
+      horizontal: 10,
       vertical: 4
     }
   },
+
+ 
+
   responsive: [
     {
       breakpoint: 450,
@@ -66,7 +75,7 @@ export default function ApexPolarChart() {
   const grey200 = theme.palette.grey[200];
   const backColor = theme.palette.background.paper;
 
-  const [series] = useState<number[]>([14, 23, 21, 17, 15, 10, 12, 17, 21]);
+  const [series] = useState<number[]>([15, 23, 21, 17, 15, 10, 12, 17, 21]);
   const [options, setOptions] = useState<ChartProps>(polarChartOptions);
 
   const secondary = theme.palette.primary[700];
@@ -87,11 +96,10 @@ export default function ApexPolarChart() {
         }
       },
       yaxis: {
-        labels: {
-          style: {
-            colors: [primary]
-          }
-        }
+        yaxis: {
+          show: false
+        },
+      
       },
       grid: {
         borderColor: line
@@ -110,9 +118,10 @@ export default function ApexPolarChart() {
             strokeColor: line
           },
           spokes: {
-            connectorColors: line
+            strokeWidth: 0
           }
         }
+        
       },
       theme: {
         mode: mode === ThemeMode.DARK ? 'dark' : 'light'
