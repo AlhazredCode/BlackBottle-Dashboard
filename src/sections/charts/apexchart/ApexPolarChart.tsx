@@ -77,7 +77,7 @@ export default function ApexPolarChart() {
   const grey200 = theme.palette.grey[200];
   const backColor = theme.palette.background.paper;
 
-  const [series] = useState<number[]>([25, 23, 21, 17, 15, 10, 12, 17, 31]);
+  const [series] = useState<number[]>([25, 23, 21, 17, 22, 16, 20, 17, 21]);
   const [options, setOptions] = useState<ChartProps>(polarChartOptions);
 
   const secondary = theme.palette.primary[700];

@@ -22,161 +22,107 @@ export default function TotalRevenue() {
   const errorSX = { color: 'error.main' };
 
   return (
-    <MainCard title="Total Revenue" content={false}>
-      <SimpleBar sx={{ height: 334 }}>
-        <List
-          component="nav"
-          aria-label="main mailbox folders"
-          sx={{
-            '& svg': {
-              width: 32,
-              my: -0.75,
-              ml: -0.75,
-              mr: 0.75
+    <MainCard title="Revenue by Category" content={false}>
+    <SimpleBar sx={{ height: 334 }}>
+      <List
+        component="nav"
+        aria-label="main mailbox folders"
+        sx={{
+          '& svg': {
+            width: 32,
+            my: -0.75,
+            ml: -0.75,
+            mr: 0.75
+          }
+        }}
+      >
+        <ListItemButton>
+          <ListItemIcon sx={successSX}> {/* Assuming successSX is for positive values */}
+            <CaretUpOutlined />
+          </ListItemIcon>
+          <ListItemText
+            primary={
+              <Stack direction="row" justifyContent="space-between" alignItems="center">
+                <span>Beers</span>
+                <Typography sx={successSX}>+ $245.85</Typography> 
+              </Stack>
             }
-          }}
-        >
-          <ListItemButton>
-            <ListItemIcon sx={successSX}>
-              <CaretUpOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Bitcoin</span>
-                  <Typography sx={successSX}>+ $145.85</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon sx={errorSX}>
-              <CaretDownOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Ethereum</span>
-                  <Typography sx={errorSX}>- $6.368</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon sx={successSX}>
-              <CaretUpOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Ripple</span>
-                  <Typography sx={successSX}>+ $458.63</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon sx={errorSX}>
-              <CaretDownOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Neo</span>
-                  <Typography sx={errorSX}>- $5.631</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon sx={errorSX}>
-              <CaretDownOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Ethereum</span>
-                  <Typography sx={errorSX}>- $6.368</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon sx={successSX}>
-              <CaretUpOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Ripple</span>
-                  <Typography sx={successSX}>+ $458.63</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon sx={errorSX}>
-              <CaretDownOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Neo</span>
-                  <Typography sx={errorSX}>- $5.631</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon sx={errorSX}>
-              <CaretDownOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Ethereum</span>
-                  <Typography sx={errorSX}>- $6.368</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon sx={successSX}>
-              <CaretUpOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Ripple</span>
-                  <Typography sx={successSX}>+ $458.63</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-          <Divider />
-          <ListItemButton>
-            <ListItemIcon sx={errorSX}>
-              <CaretDownOutlined />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <span>Neo</span>
-                  <Typography sx={errorSX}>- $5.631</Typography>
-                </Stack>
-              }
-            />
-          </ListItemButton>
-        </List>
-      </SimpleBar>
-    </MainCard>
+          />
+        </ListItemButton>
+        <Divider />
+        <ListItemButton>
+          <ListItemIcon sx={errorSX}> {/* Assuming errorSX is for negative values */}
+            <CaretDownOutlined />
+          </ListItemIcon>
+          <ListItemText
+            primary={
+              <Stack direction="row" justifyContent="space-between" alignItems="center">
+                <span>Wine</span>
+                <Typography sx={errorSX}>+ $1,368</Typography> 
+              </Stack>
+            }
+          />
+        </ListItemButton>
+        <Divider />
+        <ListItemButton>
+          <ListItemIcon sx={successSX}> {/* Assuming errorSX is for negative values */}
+            <CaretUpOutlined />
+          </ListItemIcon>
+          <ListItemText
+            primary={
+              <Stack direction="row" justifyContent="space-between" alignItems="center">
+                <span>Wiskey</span>
+                <Typography sx={successSX}>+ $1,368</Typography> 
+              </Stack>
+            }
+          />
+        </ListItemButton>
+        <Divider />
+        <ListItemButton>
+          <ListItemIcon sx={successSX}> {/* Assuming errorSX is for negative values */}
+            <CaretUpOutlined />
+          </ListItemIcon>
+          <ListItemText
+            primary={
+              <Stack direction="row" justifyContent="space-between" alignItems="center">
+                <span>Drinks</span>
+                <Typography sx={successSX}>- $1,368</Typography> 
+              </Stack>
+            }
+          />
+        </ListItemButton>
+        <Divider />
+        <ListItemButton>
+          <ListItemIcon sx={successSX}>
+            <CaretUpOutlined />
+          </ListItemIcon>
+          <ListItemText
+            primary={
+              <Stack direction="row" justifyContent="space-between" alignItems="center">
+                <span>Tequila</span>
+                <Typography sx={successSX}>+ $5,458.63</Typography> 
+              </Stack>
+            }
+          />
+        </ListItemButton>
+        <Divider />
+        <ListItemButton>
+          <ListItemIcon sx={successSX}> 
+            <CaretUpOutlined />
+          </ListItemIcon>
+          <ListItemText
+            primary={
+              <Stack direction="row" justifyContent="space-between" alignItems="center">
+                <span>Cocktails</span>
+                <Typography sx={successSX}>+ $890.00</Typography> 
+              </Stack>
+            }
+          />
+        </ListItemButton>
+        <Divider />
+        {/* ... Add more ListItemButtons for other liquor categories ... */}
+      </List>
+    </SimpleBar>
+  </MainCard>
   );
 }

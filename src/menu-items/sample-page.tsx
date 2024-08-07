@@ -132,6 +132,16 @@ const samplePage: NavItemType = {
 
 
     {
+      id: 'order-list',
+      title: <FormattedMessage id="Orders List" />,
+      type: 'item',
+      url: '/order-list', 
+      icon: icons.BarsOutlined, 
+      target: false
+    },
+
+
+    {
       id: 'order-par',
       title: <FormattedMessage id="Par Flow" />,
       type: 'item',

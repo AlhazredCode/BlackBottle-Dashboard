@@ -6,8 +6,8 @@ import './globals.css';
 import ProviderWrapper from './ProviderWrapper';
 
 export const metadata: Metadata = {
-  title: 'Mantis Material UI React Dashboard Template',
-  description: 'Mantis Material UI React Dashboard Template'
+  title: 'Black Bottle Software',
+  description: 'Automate your Bar and track your inventory and variance with Black Bottle'
 };
 
 export default function RootLayout({ children }: { children: React.ReactElement }) {
