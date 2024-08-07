@@ -25,6 +25,8 @@ const polarChartOptions = {
   fill: {
     opacity: 1
   },
+
+  
   legend: {
      position: 'bottom',
     show: true,
@@ -75,7 +77,7 @@ export default function ApexPolarChart() {
   const grey200 = theme.palette.grey[200];
   const backColor = theme.palette.background.paper;
 
-  const [series] = useState<number[]>([15, 23, 21, 17, 15, 10, 12, 17, 21]);
+  const [series] = useState<number[]>([25, 23, 21, 17, 15, 10, 12, 17, 31]);
   const [options, setOptions] = useState<ChartProps>(polarChartOptions);
 
   const secondary = theme.palette.primary[700];

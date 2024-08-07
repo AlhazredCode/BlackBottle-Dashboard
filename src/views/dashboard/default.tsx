@@ -27,6 +27,8 @@ import ApexPolarChart from 'sections/charts/apexchart/ApexPolarChart';
 // assets
 import { ContactsOutlined } from '@ant-design/icons';
 import GiftOutlined from '@ant-design/icons/GiftOutlined';
+import {UserOutlined} from '@ant-design/icons';
+import {ShoppingOutlined} from '@ant-design/icons';
 import MessageOutlined from '@ant-design/icons/MessageOutlined';
 import SettingOutlined from '@ant-design/icons/SettingOutlined';
 import RoundIconCard from 'components/cards/statistics/RoundIconCard';
@@ -73,13 +75,13 @@ export default function DashboardDefault() {
               <Typography variant="h5">Dashboard</Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <AnalyticEcommerce title="Total Page Views" count="4,42,236" percentage={59.3} extra="35,000" />
+              <AnalyticEcommerce color={'secondary'} title="Total Guests" count="4,42,236" percentage={59.3} extra="35,000" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <AnalyticEcommerce title="Total Users" count="78,250" percentage={70.5} extra="8,900" />
+              <AnalyticEcommerce title="Items Sold" color={'secondary'} count="78,250" percentage={70.5} extra="8,900" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <AnalyticEcommerce title="Total Order" count="18,800" percentage={27.4} isLoss color="warning" extra="1,943" />
+              <AnalyticEcommerce title="Total Orders" count="18,800" percentage={27.4} isLoss color="warning" extra="1,943" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
               <AnalyticEcommerce title="Total Sales" count="$35,078" percentage={27.4} isLoss color="warning" extra="$20,395" />
@@ -114,8 +116,8 @@ export default function DashboardDefault() {
 
       <Grid item xs={2} sx={{mt:5}} >
         <Stack spacing={5}>
-      <UserCountCard primary="Daily Guests" secondary="75" iconPrimary={ContactsOutlined} color="success.light"/>
-      <UserCountCard primary="Daily Guests" secondary="75" iconPrimary={ContactsOutlined} color="warning.light"/>
+      <UserCountCard primary="Daily Guests" secondary="75" iconPrimary={UserOutlined} color="success.light"/>
+      <UserCountCard primary="Pending Orders" secondary="12" iconPrimary={ShoppingOutlined} color='warning.light'/>
 
           <TotalRevenue/>
           </Stack>

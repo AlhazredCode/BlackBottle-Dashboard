@@ -54,7 +54,7 @@ const redialBarChartOptions = {
       useSeriesColors: true
     },
     markers: {
-      size: 0
+      size: 2
     },
     formatter(seriesName: string, opts: KeyedObject) {
       return `${seriesName}:  ${opts.w.globals.series[opts.seriesIndex]}`;

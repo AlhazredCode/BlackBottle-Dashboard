@@ -19,7 +19,7 @@ import FeatureBlock from 'sections/landing/FeatureBlock';
 import DemoBlock from 'sections/landing/DemoBlock';
 import TestimonialBlock from 'sections/landing/TestimonialBlock';
 import PartnerBlock from 'sections/landing/PartnerBlock';
-
+import SimpleSlider from 'sections/landing/simple-slider';
 import { ThemeDirection, ThemeMode } from 'config';
 import useConfig from 'hooks/useConfig';
 
@@ -107,6 +107,7 @@ export default function Landing() {
         <Hero />
       </Box>
       <BrowserBlock />
+      <SimpleSlider/>
       <FeatureBlock />
     
       <DemoBlock />

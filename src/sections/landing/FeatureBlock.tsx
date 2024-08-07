@@ -21,36 +21,7 @@ export default function FeatureBlock() {
   return (
     <Container>
       <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 } }}>
-        <Grid item xs={12}>
-          <Grid container spacing={1} justifyContent="center" sx={{ mb: 4, textAlign: 'center' }}>
-            <Grid item sm={10} md={6}>
-              <Grid container spacing={1} justifyContent="center">
-                <Grid item xs={12}>
-                  <Typography variant="subtitle1" color="primary">
-                    The last Bar Tool that you will ever need
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography variant="h2" sx={{ mb: 2 }}>
-                    Why Black Bottle
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography variant="body1">
-                    Take control of you bar and impress your guests with Black Bottle
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Animation
-            variants={{
-              hidden: { opacity: 0, translateY: 550 },
-              visible: { opacity: 1, translateY: 0 }
-            }}
-          >
+      <Grid item xs={12} sm={6} md={4}>
             <MainCard contentSX={{ p: 3 }}>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
@@ -58,25 +29,20 @@ export default function FeatureBlock() {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5" sx={{ fontWeight: 600, mt: 2 }}>
-                    Professional Design
+                    Products
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="body1" color="secondary">
-                    Mantis has fully professional grade user interface for any kind of backend project.
+                    Manage your bar's products with ease. Add, edit, and track all your offerings. 
                   </Typography>
                 </Grid>
               </Grid>
             </MainCard>
-          </Animation>
         </Grid>
+
+        {/* Bottle Database */}
         <Grid item xs={12} sm={6} md={4}>
-          <Animation
-            variants={{
-              hidden: { opacity: 0, translateY: 550 },
-              visible: { opacity: 1, translateY: 0 }
-            }}
-          >
             <MainCard contentSX={{ p: 3 }}>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
@@ -84,25 +50,20 @@ export default function FeatureBlock() {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5" sx={{ fontWeight: 600, mt: 2 }}>
-                    Flexible Solution
+                    Bottle Database
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="body1" color="secondary">
-                    Highly flexible to work around using Mantis React Template.
+                    Instantly access 10,000+ bottles. Quickly add spirits, wines, beers, and more. 
                   </Typography>
                 </Grid>
               </Grid>
             </MainCard>
-          </Animation>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <Animation
-            variants={{
-              hidden: { opacity: 0, translateY: 550 },
-              visible: { opacity: 1, translateY: 0 }
-            }}
-          >
+
+        {/* Recipes */}
+        <Grid item xs={12} sm={6} md={4}> 
             <MainCard contentSX={{ p: 3 }}>
               <Grid container spacing={1}>
                 <Grid item xs={12}>
@@ -110,19 +71,149 @@ export default function FeatureBlock() {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5" sx={{ fontWeight: 600, mt: 2 }}>
-                    Effective Documentation
+                    Recipes
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="body1" color="secondary">
-                    Need help? Check out the detailed Documentation guide.
+                    Craft your cocktail menu and calculate ingredient costs and potential profits.
                   </Typography>
                 </Grid>
               </Grid>
             </MainCard>
-          </Animation>
+        </Grid>
+
+        {/* Barlog */}
+        <Grid item xs={12} sm={6} md={4}>
+            <MainCard contentSX={{ p: 3 }}>
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Image src={imgfeature1} alt="feature" width={48} height={48} />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h5" sx={{ fontWeight: 600, mt: 2 }}>
+                    Barlog
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="body1" color="secondary">
+                    Simplify inventory audits, track usage, identify discrepancies, and optimize your stock levels.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </MainCard>
+        </Grid>
+
+        {/* Auto-Orders */}
+        <Grid item xs={12} sm={6} md={4}>
+            <MainCard contentSX={{ p: 3 }}>
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Image src={imgfeature2} alt="feature" width={48} height={48} />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h5" sx={{ fontWeight: 600, mt: 2 }}>
+                    Auto-Orders
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="body1" color="secondary">
+                    Automate ordering with AI-powered WhatsApp integration. Never run out of key ingredients again.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </MainCard>
+        </Grid>
+
+        {/* Par Flow */}
+        <Grid item xs={12} sm={6} md={4}>
+            <MainCard contentSX={{ p: 3 }}>
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Image src={imgfeature3} alt="feature" width={48} height={48} />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h5" sx={{ fontWeight: 600, mt: 2 }}>
+                    Par Flow
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="body1" color="secondary">
+                    Maintain optimal stock levels with automated Par level tracking. Streamline your ordering process.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </MainCard>
+        </Grid>
+
+        {/* Vendors */}
+        <Grid item xs={12} sm={6} md={4}>
+            <MainCard contentSX={{ p: 3 }}>
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Image src={imgfeature1} alt="feature" width={48} height={48} />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h5" sx={{ fontWeight: 600, mt: 2 }}>
+                    Vendors
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="body1" color="secondary">
+                    Source new products and manage suppliers. Connect with vendors in our marketplace or add your own.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </MainCard>
+        </Grid>
+
+        {/* Multi-Inventory */}
+        <Grid item xs={12} sm={6} md={4}>
+            <MainCard contentSX={{ p: 3 }}>
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Image src={imgfeature2} alt="feature" width={48} height={48} />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h5" sx={{ fontWeight: 600, mt: 2 }}>
+                    Multi-Inventory
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="body1" color="secondary">
+                    Effortlessly manage inventory across multiple locations. Track by bottle, case, or serving size.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </MainCard>
+        </Grid>
+
+        {/* Invoice Scan */}
+        <Grid item xs={12} sm={6} md={4}>
+            <MainCard contentSX={{ p: 3 }}>
+              <Grid container spacing={1}>
+                <Grid item xs={12}>
+                  <Image src={imgfeature3} alt="feature" width={48} height={48} />
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h5" sx={{ fontWeight: 600, mt: 2 }}>
+                    Invoice Scan
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="body1" color="secondary">
+                    Ditch manual entry. Scan invoices to add products from any supplier, saving time and errors.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </MainCard>
         </Grid>
       </Grid>
     </Container>
   );
 }
+
+
+
+
+
