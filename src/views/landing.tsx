@@ -106,17 +106,18 @@ export default function Landing() {
         />
         <Hero />
       </Box>
-      <BrowserBlock />
       <SimpleSlider/>
-      <FeatureBlock />
+     
+      <PartnerBlock />
+    
+      <BrowserBlock />
+      <CallToAction />
+  
     
       <DemoBlock />
      
       <NumberBlock />
-      <CallToAction />
-   
 
-      <PartnerBlock />
       <TestimonialBlock />
      
     </>

@@ -15,19 +15,11 @@ import Animation from './Animation';
 import { ThemeDirection, ThemeMode } from 'config';
 
 // assets
-const techCI = 'assets/images/landing/technology/tech-ci.png';
-const techReact = 'assets/images/landing/technology/tech-react.png';
-const techAngular = 'assets/images/landing/technology/tech-angular.png';
-const techBootstrap = 'assets/images/landing/technology/tech-bootstrap.png';
-const techDotnet = 'assets/images/landing/technology/tech-dot-net.png';
+const Web = 'assets/images/landing/technology/Web.png';
+const Ipad = 'assets/images/landing/technology/Ipad.png';
+const Iphone = 'assets/images/landing/technology/Iphone.png';
 
-const techCIDark = 'assets/images/landing/technology/tech-ci-dark.png';
-const techReactDark = 'assets/images/landing/technology/tech-react-dark.png';
-const techAngularDark = 'assets/images/landing/technology/tech-angular-dark.png';
-const techBootstrapDark = 'assets/images/landing/technology/tech-bootstrap-dark.png';
-const techDotnetDark = 'assets/images/landing/technology/tech-dot-net-dark.png';
 
-// ================================|| SLIDER - ITEMS ||================================ //
 
 function Item({ item }: { item: { text: string; highlight?: boolean } }) {
   return (
@@ -55,50 +47,58 @@ export default function PartnerBlock() {
 
   const partnerimage = [
     {
-      image: theme.palette.mode === ThemeMode.DARK ? techCIDark : techCI,
+      image: Iphone,
       link: 'https://codedthemes.com/item/mantis-codeigniter-admin-template/'
     },
     {
-      image: theme.palette.mode === ThemeMode.DARK ? techReactDark : techReact,
+      image: Ipad,
       link: 'https://mui.com/store/items/mantis-react-admin-dashboard-template/'
     },
     {
-      image: theme.palette.mode === ThemeMode.DARK ? techAngularDark : techAngular,
+      image: Web,
       link: 'https://codedthemes.com/item/mantis-angular-admin-template/'
     },
-    {
-      image: theme.palette.mode === ThemeMode.DARK ? techBootstrapDark : techBootstrap,
-      link: 'https://codedthemes.com/item/mantis-bootstrap-admin-dashboard/'
-    },
-    {
-      image: theme.palette.mode === ThemeMode.DARK ? techDotnetDark : techDotnet,
-      link: 'https://codedthemes.com/item/mantis-dotnet-bootstrap-dashboard-template/'
-    }
+
   ];
 
   const items = [
-    { text: 'Auth Methods' },
-    { text: '150+ Pages' },
-    { text: '6+ Preset Colors' },
-    { text: '50+ Widgets' },
-    { text: 'Best User Experience' },
-    { text: 'Live Customizer' },
-    { text: '5+ Apps' },
-    { text: 'Material UI v5' },
-    { text: 'Highly Flexible' },
-    { text: 'Always Updated' },
-    { text: 'Professional Design' },
-    { text: 'TypeScript Support' },
-    { text: 'Figma Design' },
-    { text: 'Dark Layout' },
-    { text: 'RTL Support' },
-    { text: 'Retina Ready' },
-    { text: 'Prettier Code' },
-    { text: 'i18n Support' }
+    { text: 'Complete Bar Tool' }, 
+    { text: '10,000+ Bottles Database' }, // Or any impressive data stat
+    { text: 'Customizable Reports' }, 
+    { text: 'Powerful Integrations' }, // E.g., POS, Payment, etc.
+    { text: 'Intuitive Bar Management' }, 
+    { text: 'Real-time Inventory' },
+    { text: 'Multi-Bar Support' }, 
+    { text: 'Cloud-Based Platform' }, 
+    { text: 'Flexible Role Management' }, 
+    { text: 'Vendors Marketplace' },
+    { text: 'Sleek & Modern Design' }, 
+    { text: 'Variance' }, // App-specific
+    { text: 'Data-Driven Insights' },
+    { text: 'Auto orders' }, 
+    { text: '24/7 Customer Support' }, 
+    { text: 'Mobile & Web Access' }, 
+    { text: 'AI Scan' } 
   ];
 
   return (
     <Box sx={{ overflowX: 'hidden' }}>
+       <Grid container spacing={4}>
+        <Grid item xs={12} sx={{ direction: theme.direction }}>
+          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'right' : 'left'}>
+            {items.map((item, index) => (
+              <Item key={index} item={item} />
+            ))}
+          </Marquee>
+        </Grid>
+        <Grid item xs={12} sx={{ direction: theme.direction }}>
+          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'left' : 'right'}>
+            {items.map((item, index) => (
+              <Item key={index} item={item} />
+            ))}
+          </Marquee>
+        </Grid>
+      </Grid>
       <Container>
         <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 5, xs: 2.5 } }}>
           <Grid item xs={12}>
@@ -107,19 +107,15 @@ export default function PartnerBlock() {
                 <Grid container spacing={1} justifyContent="center">
                   <Grid item xs={12}>
                     <Typography variant="subtitle1" color="primary">
-                      Multiple Tech Stack
+                    Your Bar, Your Way
                     </Typography>
                   </Grid>
                   <Grid item xs={12}>
-                    <Typography variant="h2">Available Technology</Typography>
+                    <Typography variant="h2"> Manage Your Bar, Anywhere</Typography>
                   </Grid>
                   <Grid item xs={12}>
                     <Typography variant="body1">
-                      Mantis is available in multiple technologies. Simply click to dive in and discover the perfect solution for your
-                      needs. Each sold{' '}
-                      <Link variant="subtitle1" href="https://codedthemes.gitbook.io/mantis/mantis-eco-system" target="_blank">
-                        separately
-                      </Link>
+                    Access Black Bottle from your computer, tablet, or phone. Our intuitive platform keeps you connected, no matter where you are.
                     </Typography>
                   </Grid>
                 </Grid>
@@ -146,22 +142,7 @@ export default function PartnerBlock() {
           </Grid>
         </Grid>
       </Container>
-      <Grid container spacing={4}>
-        <Grid item xs={12} sx={{ direction: theme.direction }}>
-          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'right' : 'left'}>
-            {items.map((item, index) => (
-              <Item key={index} item={item} />
-            ))}
-          </Marquee>
-        </Grid>
-        <Grid item xs={12} sx={{ direction: theme.direction }}>
-          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'left' : 'right'}>
-            {items.map((item, index) => (
-              <Item key={index} item={item} />
-            ))}
-          </Marquee>
-        </Grid>
-      </Grid>
+     
     </Box>
   );
 }
