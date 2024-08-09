@@ -97,14 +97,10 @@ export default function Header() {
               }}
               spacing={2}
             >
-              <NextLink href={user ? APP_DEFAULT_PATH : '/login'} passHref legacyBehavior>
-                <Link className="header-link" color="white" target="_blank" underline="none">
-                  {user ? 'Dashboard' : 'Login'}
-                </Link>
-              </NextLink>
+           
               <NextLink href="/components-overview/buttons" passHref legacyBehavior>
                 <Link className="header-link" color="white" underline="none">
-                  Components
+                  Pricing
                 </Link>
               </NextLink>
               <Link className="header-link" color="white" href="https://codedthemes.gitbook.io/mantis/" target="_blank" underline="none">
@@ -114,12 +110,12 @@ export default function Header() {
                 <AnimateButton>
                   <Button
                     component={Link}
-                    href="https://mui.com/store/items/mantis-react-admin-dashboard-template/"
+                    href={user ? APP_DEFAULT_PATH : '/login'}
                     disableElevation
-                    color="primary"
+                    color="secondary"
                     variant="contained"
                   >
-                    Purchase Now
+                    {user ? 'Dashboard' : 'Login'}
                   </Button>
                 </AnimateButton>
               </Box>

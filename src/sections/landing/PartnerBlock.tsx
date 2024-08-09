@@ -83,22 +83,6 @@ export default function PartnerBlock() {
 
   return (
     <Box sx={{ overflowX: 'hidden' }}>
-       <Grid container spacing={4}>
-        <Grid item xs={12} sx={{ direction: theme.direction }}>
-          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'right' : 'left'}>
-            {items.map((item, index) => (
-              <Item key={index} item={item} />
-            ))}
-          </Marquee>
-        </Grid>
-        <Grid item xs={12} sx={{ direction: theme.direction }}>
-          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'left' : 'right'}>
-            {items.map((item, index) => (
-              <Item key={index} item={item} />
-            ))}
-          </Marquee>
-        </Grid>
-      </Grid>
       <Container>
         <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 5, xs: 2.5 } }}>
           <Grid item xs={12}>
@@ -142,7 +126,22 @@ export default function PartnerBlock() {
           </Grid>
         </Grid>
       </Container>
-     
+      <Grid container spacing={4}>
+        <Grid item xs={12} sx={{ direction: theme.direction }}>
+          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'right' : 'left'}>
+            {items.map((item, index) => (
+              <Item key={index} item={item} />
+            ))}
+          </Marquee>
+        </Grid>
+        <Grid item xs={12} sx={{ direction: theme.direction }}>
+          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'left' : 'right'}>
+            {items.map((item, index) => (
+              <Item key={index} item={item} />
+            ))}
+          </Marquee>
+        </Grid>
+      </Grid>
     </Box>
   );
 }

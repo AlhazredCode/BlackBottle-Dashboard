@@ -4,13 +4,13 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import {ChromeOutlined, BarsOutlined,  FileMarkdownOutlined, ExperimentOutlined ,ReconciliationOutlined,ShopOutlined,OneToOneOutlined,ApiOutlined, DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined , PicCenterOutlined  } from '@ant-design/icons';
+import {ChromeOutlined, ScanOutlined, BarsOutlined,  FileMarkdownOutlined, ExperimentOutlined ,ReconciliationOutlined,ShopOutlined,OneToOneOutlined,ApiOutlined, DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined , PicCenterOutlined  } from '@ant-design/icons';
 
 // type
 import { NavItemType } from 'types/menu';
 
 // icons
-const icons = { ChromeOutlined, BarsOutlined,  FileMarkdownOutlined, ExperimentOutlined , ReconciliationOutlined, ShopOutlined, OneToOneOutlined, ApiOutlined, DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined, PicCenterOutlined };
+const icons = { ChromeOutlined, ScanOutlined, BarsOutlined,  FileMarkdownOutlined, ExperimentOutlined , ReconciliationOutlined, ShopOutlined, OneToOneOutlined, ApiOutlined, DollarOutlined, TeamOutlined, AuditOutlined, BookOutlined, AppstoreOutlined, MessageOutlined, DotChartOutlined, ProductOutlined, ReadOutlined, SnippetsOutlined, DiffOutlined, PicCenterOutlined };
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE ||============================== //
 
@@ -179,6 +179,14 @@ const samplePage: NavItemType = {
     type: 'item',
     url: '/guest-log',
     icon: icons.TeamOutlined,
+    breadcrumbs: false
+  },
+  {
+    id: 'invoice-scan',
+    title: <FormattedMessage id="Invoice Scanner" />,
+    type: 'item',
+    url: '/invoice-scan',
+    icon: icons.ScanOutlined,
     breadcrumbs: false
   },
   {

@@ -36,20 +36,17 @@ function SampleNextArrow(props: any) {
 function SimpleSlider() {
   const settings = {
     dots: true,
-    fade: false,
     infinite: true,
-    speed: 250,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 9999,
-    waitForAnimate: false,
-    cssEase: "linear",
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
   };
   return (
-    <MainCard>
+    <div>
     <Grid container xs={12}>
     <Grid item xs={1} >
     </Grid>
@@ -57,7 +54,7 @@ function SimpleSlider() {
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 } }}>
+        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 }, px: 2 }}>
 <Grid item xs={12} md={6} lg={4}>
     <MainCard contentSX={{ p: 3 }}>
       <Grid container spacing={1}>
@@ -128,7 +125,7 @@ function SimpleSlider() {
 </Grid>
         </div>
         <div>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 } }}>
+        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 }  , px: 2 }}>
 
 {/* Fourth Feature  */}
 <Grid item xs={12} md={6} lg={4}>
@@ -197,7 +194,7 @@ function SimpleSlider() {
         </div>
 
         <div>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 } }}>
+        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 }, px: 2  }}>
 
 
  {/* Seventh Feature  */}
@@ -336,7 +333,7 @@ function SimpleSlider() {
     <Grid item xs={1} >
     </Grid>
     </Grid>
-    </MainCard>
+    </div>
   );
 }
 

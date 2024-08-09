@@ -45,7 +45,7 @@ const miMenu: NavItemType[] = [
             url: "/dashboard/default",
             breadcrumbs: false,
           },
-          {
+         {
             id: "analytics",
             title: "Bar Cost Calculator",
             type: "item",
