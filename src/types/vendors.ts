@@ -11,6 +11,7 @@ export interface Address {
   
   export interface Vendor {
     id: string;
+    Image: string;
     companyName: string;
     contactName: string;
     phoneNumber: string;

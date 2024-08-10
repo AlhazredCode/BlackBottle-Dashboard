@@ -107,7 +107,7 @@ export default function UserStory({ receipt, index }: UserStoryProps) { // Cambi
             
                 </TableCell>
               <TableCell>
-                <img src={`/assets/images/e-commerce/${receipt.Image}`} alt={receipt.Name} width={50} height={50} />
+                <img src={`/assets/images/recipes/${receipt.Image}`} alt={receipt.Name} width={50} height={50} />
               </TableCell>
            
                {/* Mostrar datos básicos de la receta */}
@@ -156,7 +156,7 @@ export default function UserStory({ receipt, index }: UserStoryProps) { // Cambi
                 <MainCard>
                   <CardMedia
                     component="img"
-                    image={`/assets/images/e-commerce/${receipt.Image}`}
+                    image={`/assets/images/recipes/${receipt.Image}`}
                     alt={receipt.Name}
                    
                   />

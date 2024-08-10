@@ -356,7 +356,7 @@ const productsData: Product[] = [
     {
         "Name": "Cabernet Sauvignon",
         "Brand": "Robert Mondavi",
-        "Image": "Product-11",
+        "Image": "prod-11.png",
         "Description": "A full-bodied red wine with aromas of black currant, vanilla, and cedar.",
         "Price": 22.99,
         "PurchaseCost": 14.50,
@@ -391,7 +391,7 @@ const productsData: Product[] = [
     {
         "Name": "Pinot Noir",
         "Brand": "Erath",
-        "Image": "Product-12",
+        "Image": "prod-12.png",
         "Description": "A light-bodied red wine with notes of cherry, raspberry, and spice.",
         "Price": 18.75,
         "PurchaseCost": 11.00,
@@ -426,7 +426,7 @@ const productsData: Product[] = [
     {
         "Name": "Chardonnay",
         "Brand": "Kendall-Jackson",
-        "Image": "Product-13",
+        "Image": "prod-13.png",
         "Description": "A medium-bodied white wine with flavors of pear, citrus, and a touch of oak.",
         "Price": 19.99,
         "PurchaseCost": 12.00,
@@ -461,7 +461,7 @@ const productsData: Product[] = [
     {
         "Name": "Sauvignon Blanc",
         "Brand": "Kim Crawford",
-        "Image": "Product-14",
+        "Image": "prod-14.png",
         "Description": "A crisp, refreshing white wine with aromas of grapefruit, passionfruit, and herbs.",
         "Price": 17.50,
         "PurchaseCost": 10.50,
@@ -496,7 +496,7 @@ const productsData: Product[] = [
     {
         "Name": "Merlot",
         "Brand": "Chateau Ste. Michelle",
-        "Image": "Product-15",
+        "Image": "prod-15.png",
         "Description": "A smooth, approachable red wine with flavors of plum, cherry, and chocolate.",
         "Price": 21.00,
         "PurchaseCost": 13.00,
@@ -531,7 +531,7 @@ const productsData: Product[] = [
     {
         "Name": "Pinot Grigio",
         "Brand": "Santa Margherita",
-        "Image": "Product-16",
+        "Image": "prod-16.png",
         "Description": "A light, crisp white wine with aromas of pear, lemon, and white flowers.",
         "Price": 19.50,
         "PurchaseCost": 11.75,
@@ -566,7 +566,7 @@ const productsData: Product[] = [
     {
         "Name": "Zinfandel",
         "Brand": "Bogle",
-        "Image": "Product-17",
+        "Image": "prod-17.png",
         "Description": "A bold, fruity red wine with notes of blackberry, jam, and spice.",
         "Price": 16.99,
         "PurchaseCost": 9.99,
@@ -601,7 +601,7 @@ const productsData: Product[] = [
     {
         "Name": "Riesling",
         "Brand": "Dr. Loosen",
-        "Image": "Product-18",
+        "Image": "prod-18.png",
         "Description": "A sweet, aromatic white wine with flavors of peach, apricot, and honey.",
         "Price": 20.50,
         "PurchaseCost": 12.75,
@@ -636,7 +636,7 @@ const productsData: Product[] = [
     {
         "Name": "Malbec",
         "Brand": "Catena Zapata",
-        "Image": "Product-19",
+        "Image": "prod-19.png",
         "Description": "A full-bodied red wine with aromas of blackberry, plum, and vanilla.",
         "Price": 24.99,
         "PurchaseCost": 15.00,
@@ -671,7 +671,7 @@ const productsData: Product[] = [
     {
         "Name": "Rosé",
         "Brand": "Whispering Angel",
-        "Image": "Product-20",
+        "Image": "prod-20.png",
         "Description": "A dry, refreshing rosé wine with notes of strawberry, raspberry, and citrus.",
         "Price": 23.75,
         "PurchaseCost": 14.25,
@@ -707,7 +707,7 @@ const productsData: Product[] = [
     {
         "Name": "Tequila Blanco",
         "Brand": "Patron Silver",
-        "Image": "Product-21",
+        "Image": "prod-21.png",
         "Description": "A smooth, crisp tequila with aromas of agave, citrus, and pepper.",
         "Price": 45.99,
         "PurchaseCost": 28.00,
@@ -742,7 +742,7 @@ const productsData: Product[] = [
     {
         "Name": "Tequila Reposado",
         "Brand": "Casamigos",
-        "Image": "Product-22",
+        "Image": "prod-22.png",
         "Description": "An aged tequila with notes of caramel, vanilla, and spice.",
         "Price": 54.75,
         "PurchaseCost": 33.50,
@@ -777,7 +777,7 @@ const productsData: Product[] = [
     {
         "Name": "Tequila Añejo",
         "Brand": "Don Julio 1942",
-        "Image": "Product-23",
+        "Image": "prod-23.png",
         "Description": "A smooth, complex tequila with flavors of oak, chocolate, and dried fruit.",
         "Price": 129.99,
         "PurchaseCost": 80.00,
@@ -812,7 +812,7 @@ const productsData: Product[] = [
     {
         "Name": "Tequila Cristalino",
         "Brand": "Maestro Dobel Diamante",
-        "Image": "Product-24",
+        "Image": "prod-24.png",
         "Description": "A crystal-clear aged tequila with a smooth, refined taste.",
         "Price": 72.50,
         "PurchaseCost": 45.00,
@@ -847,7 +847,7 @@ const productsData: Product[] = [
     {
         "Name": "Tequila Extra Añejo",
         "Brand": "Clase Azul Reposado",
-        "Image": "Product-25",
+        "Image": "prod-25.png",
         "Description": "An exceptionally smooth and complex tequila with a long, warm finish.",
         "Price": 210.00,
         "PurchaseCost": 130.00,
@@ -880,7 +880,7 @@ const productsData: Product[] = [
     {
         "Name": "Tequila Blanco Organico",
         "Brand": "Fortaleza",
-        "Image": "Product-26",
+        "Image": "prod-26.png",
         "Description": "An organic tequila with a clean, crisp taste and a hint of citrus.",
         "Price": 48.50,
         "PurchaseCost": 30.00,
@@ -915,7 +915,7 @@ const productsData: Product[] = [
     {
         "Name": "Tequila Reposado Especial",
         "Brand": "Herradura",
-        "Image": "Product-27",
+        "Image": "prod-27.png",
         "Description": "A smooth, well-balanced reposado tequila with notes of oak and vanilla.",
         "Price": 59.99,
         "PurchaseCost": 36.00,
@@ -950,7 +950,7 @@ const productsData: Product[] = [
     {
         "Name": "Tequila Añejo Cristalino",
         "Brand": "Volcan De Mi Tierra",
-        "Image": "Product-28",
+        "Image": "prod-28.png",
         "Description": "A crystal-clear añejo tequila with a smooth, complex flavor.",
         "Price": 87.50,
         "PurchaseCost": 53.00,
@@ -985,7 +985,7 @@ const productsData: Product[] = [
     {
         "Name": "Tequila Extra Añejo Limited Edition",
         "Brand": "Gran Patron Burdeos",
-        "Image": "Product-29",
+        "Image": "prod-29.png",
         "Description": "An ultra-premium tequila aged in Bordeaux wine barrels.",
         "Price": 325.00,
         "PurchaseCost": 200.00,
@@ -1019,7 +1019,7 @@ const productsData: Product[] = [
         {
         "Name": "Tequila Blanco Small Batch",
         "Brand": "Tapatio",
-        "Image": "Product-30",
+        "Image": "prod-30.png",
         "Description": "A handcrafted tequila made in small batches with a smooth, agave-forward flavor.",
         "Price": 49.99,
         "PurchaseCost": 31.00,

@@ -4,6 +4,7 @@ import { Vendor } from "types/vendors";
 const vendorsData: Vendor[] = [
     {
       "id": "v001",
+      "Image": "vendors-1.png",
       "companyName": "Southern Spirits Distributors",
       "contactName": "Emily Carter",
       "phoneNumber": "+1-305-555-1001",
@@ -23,6 +24,7 @@ const vendorsData: Vendor[] = [
     },
     {
       "id": "v002",
+      "Image": "vendors-2.png",
       "companyName": "Sunshine State Beverages",
       "contactName": "David Miller",
       "phoneNumber": "+1-786-555-1002",
@@ -42,6 +44,7 @@ const vendorsData: Vendor[] = [
     },
     {
       "id": "v003",
+      "Image": "vendors-3.png",
       "companyName": "Coastal Wine & Spirits Imports",
       "contactName": "Sophia Garcia",
       "phoneNumber": "+1-954-555-1003",
@@ -61,6 +64,7 @@ const vendorsData: Vendor[] = [
     },
     {
       "id": "v004",
+      "Image": "vendors-4.png",
       "companyName": "Florida Beverage Supply",
       "contactName": "Daniel Rodriguez",
       "phoneNumber": "+1-407-555-1004",
@@ -80,6 +84,7 @@ const vendorsData: Vendor[] = [
     },
     {
       "id": "v005",
+      "Image": "vendors-5.png",
       "companyName": "Gulf Coast Liquor Distributors",
       "contactName": "Olivia Wilson",
       "phoneNumber": "+1-813-555-1005",
@@ -99,6 +104,7 @@ const vendorsData: Vendor[] = [
     },
     {
       "id": "v006",
+      "Image": "vendors-6.png",
       "companyName": "Miami River Imports",
       "contactName": "Michael Lee",
       "phoneNumber": "+1-305-555-1006",
@@ -118,6 +124,7 @@ const vendorsData: Vendor[] = [
     },
     {
       "id": "v007",
+      "Image": "vendors-7.png",
       "companyName": "Everglades Beverage Company",
       "contactName": "Isabella Martinez",
       "phoneNumber": "+1-561-555-1007",
@@ -137,6 +144,7 @@ const vendorsData: Vendor[] = [
     },
     {
       "id": "v008",
+      "Image": "vendors-8.png",
       "companyName": "Atlantic Spirits & Wine",
       "contactName": "Ethan Brown",
       "phoneNumber": "+1-904-555-1008",
@@ -154,44 +162,7 @@ const vendorsData: Vendor[] = [
       "paymentTerms": "Net 60", 
       "notes": "Offers a wide selection of spirits and wines at competitive prices."
     },
-    {
-      "id": "v009",
-      "companyName": "Panhandle Beverage Distributors",
-      "contactName": "Ava Williams",
-      "phoneNumber": "+1-850-555-1009",
-      "email": "ava.williams@panhandlebev.com",
-      "address": {
-        "street": "1234 Scenic Highway 98",
-        "city": "Destin",
-        "state": "FL",
-        "zipCode": "32541"
-      },
-      "productsOffered": [
-        {"SKU": "WINE-CH-17"}, 
-        {"SKU": "BEER-ST-18"}
-      ],
-      "paymentTerms": "Net 30",
-      "notes": "Serves the Florida Panhandle region."
-    },
-    {
-      "id": "v010",
-      "companyName": "Key West Imports",
-      "contactName": "James Jones",
-      "phoneNumber": "+1-305-555-1010",
-      "email": "james.jones@keywestimports.com",
-      "address": {
-        "street": "5678 Duval Street",
-        "city": "Key West",
-        "state": "FL",
-        "zipCode": "33040"
-      },
-      "productsOffered": [
-        {"SKU": "LIQU-AM-19"},
-        {"SKU": "RUM-AG-20"} 
-      ],
-      "paymentTerms": "Net 15", 
-      "notes": "Specializes in imported Caribbean rums and liqueurs."
-    }
+   
   ];
 
 export default vendorsData;

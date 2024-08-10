@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react';
 
 // next
@@ -46,37 +48,15 @@ export default function ProductCard({
   description,
   offerPrice,
   salePrice,
-  rating
+  rating,
+  products2
 }: ProductCardProps) {
   const theme = useTheme();
-  const { cart } = useGetCart();
+
 
   const prodProfile = image && `/assets/images/e-commerce/${image}`;
-  const [wishlisted, setWishlisted] = useState<boolean>(false);
 
-  const addCart = () => {
-    addToCart({ id, name, image, salePrice, offerPrice, color, size: 8, quantity: 1, description }, cart.products);
-    openSnackbar({
-      open: true,
-      message: 'Add To Cart Success',
-      variant: 'alert',
-      alert: {
-        color: 'success'
-      }
-    } as SnackbarProps);
-  };
 
-  const addToFavourite = () => {
-    setWishlisted(!wishlisted);
-    openSnackbar({
-      open: true,
-      message: 'Added to favourites',
-      variant: 'alert',
-      alert: {
-        color: 'success'
-      }
-    } as SnackbarProps);
-  };
 
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
@@ -115,48 +95,51 @@ export default function ProductCard({
           </Stack>
           <Divider />
           <CardContent sx={{ p: 2 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <Stack>
-                <Stack spacing={1}>
-                <Stack spacing={2} direction='row' useFlexGap justifyContent="space-between">
-                  <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="large" label="2 : Unit" />
-                  <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="large" label="4 : Par" />
-                </Stack>
+                    <Grid container spacing={2}>
+                      <Grid item xs={12}>
+                        <Stack>
+                        <Stack spacing={1}>
+                        <Stack spacing={2} direction='row' useFlexGap justifyContent="space-between">
+                          <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="large" label="2 : Unit" />
+                          <Chip variant="light" color="secondary" sx={{ marginBottom: 2 }} size="large" label="4 : Par" />
+                        </Stack>
 
-                  <NextLink href={`/apps/e-commerce/product-details/${id}`} passHref legacyBehavior>
-                    
-                    
-                      <Typography
-                        color="text.primary"
-                        variant="h5"
-                        sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block', cursor: 'pointer' }}
-                      >
-                        {name}
-                      </Typography>
-                                        </NextLink>
-                                        <Typography variant="h6" color="text.secondary">
-                      {brand}
-                                        </Typography>
-                    </Stack>
-                </Stack>
-                </Grid>
+                          <NextLink href={`/apps/e-commerce/product-details/${id}`} passHref legacyBehavior>
+                            
+                            
+                              <Typography
+                                color="text.primary"
+                                variant="h5"
+                                sx={{overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block', cursor: 'pointer' }}
+                              >
+                          {products2[Number(id)]?.Name ?? 'Loading...'}
+                              {/* Optional Chaining and Nullish Coalescing */}
+                              </Typography>
+                                                </NextLink>
+                                                <Typography variant="h6" color="text.secondary">
+                                                {products2[Number(id)]?.Brand ?? ''} 
+                                                {/* Optional Chaining and Default Value */}
+                                                </Typography>
+                            </Stack>
+                        </Stack>
+                        </Grid>
        
-              <Grid item xs={12}>
-                <Stack direction="row" justifyContent="space-between" alignItems="flex-end" flexWrap="wrap" rowGap={1.75}>
-                  <Stack>
-                    <Stack direction="row" spacing={1} alignItems="center">
-                      <Typography variant="h2">${offerPrice}</Typography>
-                  
-                    </Stack>
+                      <Grid item xs={12}>
+                        <Stack direction="row" justifyContent="space-between" alignItems="flex-end" flexWrap="wrap" rowGap={1.75}>
+                          <Stack>
+                            <Stack direction="row" spacing={1} alignItems="center">
+                              <Typography variant="h2"> {products2[Number(id)]?.Price ?? '$0.00'} </Typography> 
+                              {/* Optional Chaining and Default Value */}
+                          
+                            </Stack>
 
-                  </Stack>
+                          </Stack>
 
 
-                </Stack>
-              </Grid>
-            </Grid>
-          </CardContent>
+                        </Stack>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
         </MainCard>
       )}
     </>

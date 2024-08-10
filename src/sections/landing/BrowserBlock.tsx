@@ -1,6 +1,7 @@
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Image from 'next/image';
 
 // third-party
 import { ReactCompareSlider, ReactCompareSliderImage, ReactCompareSliderHandle } from 'react-compare-slider';
@@ -29,7 +30,9 @@ export default function BrowserBlockPage() {
         }
         itemOne={<ReactCompareSliderImage src={`/assets/images/landing/${presetColor}-dark.jpg`} />}
         itemTwo={<ReactCompareSliderImage src={`/assets/images/landing/${presetColor}-light.jpg`} />}
+        
       />
+    
     </Box>
   );
 }

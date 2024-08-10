@@ -48,7 +48,7 @@ export default function VendorView() {
                 <Grid container alignItems="center" spacing={2}>
                   <Grid item sx={{m:1}}>
                     <img 
-                      src={`/assets/images/e-commerce/placeholder-vendor.png`} 
+                      src={`/assets/images/vendors/${vendor.Image}`}
                       alt={vendor.companyName}
                       style={mediaSX} 
                     

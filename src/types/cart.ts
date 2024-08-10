@@ -55,6 +55,7 @@ export interface CartPaymentStateProps {
 
 export interface ProductCardProps extends KeyedObjects {
   id?: string | number;
+ 
   color?: string;
   name: string;
   image: string;
@@ -62,6 +63,7 @@ export interface ProductCardProps extends KeyedObjects {
   offerPrice?: number;
   salePrice?: number;
   rating?: number;
+  products2?: any; 
 }
 
 export interface DefaultRootStateProps {

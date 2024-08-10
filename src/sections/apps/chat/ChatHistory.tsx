@@ -62,6 +62,7 @@ export default function ChatHistory({ theme, user }: ChatHistoryProps) {
       }}
     >
       <Box sx={{ pl: 1, pr: 3, height: '100%' }}>
+
         <Grid container spacing={2.5}>
           {chat.map((history, index) => (
             <Grid item xs={12} key={index}>

@@ -23,7 +23,8 @@ import { productFilter, useGetProducts } from 'api/products';
 // types
 import { Products as ProductsTypo, ProductsFilter } from 'types/e-commerce';
 import { Typography } from '@mui/material';
-
+import { Product } from 'types/products';
+import productsData from 'api/sample-products';
 const drawerWidth = 320;
 
 const Main = styled('main', { shouldForwardProp: (prop: string) => prop !== 'open' && prop !== 'container' })(
@@ -55,7 +56,8 @@ const Main = styled('main', { shouldForwardProp: (prop: string) => prop !== 'ope
 
 export default function ProductsPage() {
   const theme = useTheme();
-
+  
+  const products2: Product[] = productsData; 
   // product data
   const { productsLoading, products } = useGetProducts();
 
@@ -112,6 +114,8 @@ export default function ProductsPage() {
           offerPrice={product.offerPrice}
           salePrice={product.salePrice}
           rating={product.rating}
+          products2={products2}
+          index={index}
         
         />
       </Grid>

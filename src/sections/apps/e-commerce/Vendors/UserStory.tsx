@@ -122,7 +122,7 @@ export default function VendorStory({ vendor, index }: VendorStoryProps) {
               <TableCell>{vendor.id}</TableCell> 
               <TableCell>
                 {/* Puedes colocar una imagen por defecto si no hay imagen del vendor */}
-                <img src={`/assets/images/placeholder-vendor.png`} alt={vendor.companyName} width={50} height={50} />
+                <img src={`/assets/images/vendors/${vendor.Image}`} alt={vendor.companyName} width={50} height={50} />
               </TableCell>
               <TableCell>{vendor.companyName}</TableCell>
        

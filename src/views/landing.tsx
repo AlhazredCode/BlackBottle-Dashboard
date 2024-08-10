@@ -13,6 +13,7 @@ import CardMedia from '@mui/material/CardMedia';
 
 import Hero from 'sections/landing/Header';
 import NumberBlock from 'sections/landing/NumberBlock';
+import MockBlockPage from 'sections/landing/MockBlock';
 import BrowserBlock from 'sections/landing/BrowserBlock';
 import CallToAction from 'sections/landing/CallToAction';
 import FeatureBlock from 'sections/landing/FeatureBlock';
@@ -107,10 +108,10 @@ export default function Landing() {
         <Hero />
       </Box>
       <SimpleSlider/>
-     
+      <MockBlockPage />
       <PartnerBlock />
     
-      <BrowserBlock />
+
       <CallToAction />
   
     

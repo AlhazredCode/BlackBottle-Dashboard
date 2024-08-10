@@ -25,6 +25,7 @@ import { useGetUsers } from 'api/chat';
 
 // types
 import { UserProfile } from 'types/user-profile';
+import { Typography } from '@mui/material';
 
 const drawerWidth = 320;
 
@@ -119,6 +120,7 @@ export default function Chat() {
               }}
             >
               <Grid container spacing={3}>
+          { /*   <Typography color='white' variant='h5' >   {JSON.stringify(useGetUsers())}</Typography> */}
                 <Grid
                   item
                   xs={12}
