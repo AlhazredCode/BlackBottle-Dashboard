@@ -23,7 +23,7 @@ import PartnerBlock from 'sections/landing/PartnerBlock';
 import SimpleSlider from 'sections/landing/simple-slider';
 import { ThemeDirection, ThemeMode } from 'config';
 import useConfig from 'hooks/useConfig';
-
+import LandingAnimation from 'sections/landing/LandingAnimation';
 // third-party
 
 // types
@@ -37,7 +37,7 @@ import useConfig from 'hooks/useConfig';
 
 export default function Landing() {
   const theme = useTheme();
-  const { mode, presetColor } = useConfig();
+
 
   const [visible, setVisible] = useState(false);
 
@@ -64,7 +64,7 @@ export default function Landing() {
 
   return (
     <>
-      <Box
+     {/* <Box
         sx={{
           position: 'relative',
           bgcolor: mode === ThemeMode.DARK ? 'grey.0' : 'grey.800',
@@ -106,7 +106,8 @@ export default function Landing() {
           }}
         />
         <Hero />
-      </Box>
+      </Box> */}
+      <LandingAnimation/>
       <SimpleSlider/>
       <MockBlockPage />
       <PartnerBlock />
