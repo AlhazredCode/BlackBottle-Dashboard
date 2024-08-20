@@ -23,6 +23,7 @@ import SearchOutlined from '@ant-design/icons/SearchOutlined';
 import DownOutlined from '@ant-design/icons/DownOutlined';
 import FilterOutlined from '@ant-design/icons/FilterOutlined';
 import { width } from '@mui/system';
+import { LinkOutlined, PlusOutlined, ShareAltOutlined } from '@ant-design/icons';
 
 
 // ==============================|| APPLICATION - KANBAN ||============================== //
@@ -81,9 +82,24 @@ export default function ProductListPage() {
                         size="medium"
                       />
                     </Stack>
-                    <Button variant="outlined" size="large" color="secondary" endIcon={<DownOutlined />}>
+                    <Stack direction="row" alignItems="center" spacing={2}>
+                    <Button  size="large" color="secondary" endIcon={<DownOutlined />}>
                       Sort by
                     </Button>
+                    <Button variant="dashed" size="large" color="secondary" endIcon={<PlusOutlined />}>
+                      Menu
+                    </Button>
+                    <Button variant="dashed" size="large" color="secondary" endIcon={<PlusOutlined />}>
+                      Sub Menu
+                    </Button>
+                    <Button variant="contained" size="large" color="secondary" endIcon={<LinkOutlined />}>
+                     Link
+                    </Button>
+                    <Button variant="outlined" size="large"  endIcon={<ShareAltOutlined />}>
+                      Share
+                    </Button>
+                  
+                    </Stack>
                   </Stack>
                 </MainCard>
               </Grid>

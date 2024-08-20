@@ -30,7 +30,8 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import BottleInventory from 'views/forms/bottleinventory';
-
+import CustomerModal from 'sections/apps/customer/CustomerModal';
+import GuestModal from 'sections/apps/customer/GuestModal';
 import UpOutlined from '@ant-design/icons/UpOutlined';
 // ... (other imports)
 
@@ -80,7 +81,9 @@ export default function UserStory({ guest, index }: UserStoryProps) {
     setAnchorEl(null);
   };
   const handleClose1 = () => setOpen1(false);
+  
 
+  const [customerModalOpen, setCustomerModalOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -121,33 +124,33 @@ export default function UserStory({ guest, index }: UserStoryProps) {
 
             {/* Menú de opciones */}
             <TableCell sx={{ width: 60, minWidth: 60 }}>
-              <IconButton size="small" aria-controls="menu-comment" onClick={handleClick} aria-haspopup="true" color="secondary">
-                <MoreOutlined style={{ color: theme.palette.text.primary }} />
-              </IconButton>
-              <Menu
-                id="menu-comment"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-                variant="selectedMenu"
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'right'
-                }}
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right'
-                }}
-              >
-                <MenuItem onClick={handleClose}>
-                  Edit
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                  Delete
-                </MenuItem>
-              </Menu>
-            </TableCell>
+        <IconButton size="small" aria-controls="menu-comment" onClick={handleClick} aria-haspopup="true" color="secondary">
+          <MoreOutlined style={{ color: theme.palette.text.primary }} />
+        </IconButton>
+        <Menu
+          id="menu-comment"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          variant="selectedMenu"
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'right'
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right'
+          }}
+        >
+          <MenuItem onClick={() => { handleClose(); setCustomerModalOpen(true); }}>  {/* Abre la modal al hacer clic en Edit */}
+            Edit
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            Delete
+          </MenuItem>
+        </Menu>
+      </TableCell>
           
 
             </TableRow>
@@ -222,6 +225,7 @@ export default function UserStory({ guest, index }: UserStoryProps) {
           </>
         )}
       </Draggable>
+      <GuestModal open={customerModalOpen} modalToggler={setCustomerModalOpen}  />
       <Modal  open={open1} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
 <BottleInventory/>
 </Modal>

@@ -12,6 +12,7 @@ import TableRow from '@mui/material/TableRow';
 import Tooltip from '@mui/material/Tooltip';
 import guestsData from 'api/sample-guests';
 import { Guest } from 'types/guests';
+import GuestModal from 'sections/apps/customer/GuestModal';
 
 
 // third-party
@@ -43,11 +44,17 @@ export default function GuestsBacklog() {
   const handleDrawerOpen = () => {
     setOpenDrawer((prevState) => !prevState);
   };
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
+
 
   const addStory = () => {
     setOpenDrawer((prevState) => !prevState);
   };
 
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const [customerModalOpen, setCustomerModalOpen] = useState<boolean>(false);
 
   return (
     <MainCard content={false}>
@@ -73,7 +80,7 @@ export default function GuestsBacklog() {
                   <TableRow>
                     <TableCell sx={{ pl: 3 }}>
                       <Tooltip title="Add User Story">
-                        <Button variant="dashed" size="extraSmall" color="secondary" onClick={addStory} endIcon={<PlusOutlined />}>
+                        <Button variant="dashed" size="extraSmall" color="secondary" onClick={() => { handleClose(); setCustomerModalOpen(true); }} endIcon={<PlusOutlined />}>
                           ADD
                         </Button>
                       </Tooltip>
@@ -109,9 +116,11 @@ export default function GuestsBacklog() {
             )}
           </Droppable>
         </DragDropContext>
+        <GuestModal open={customerModalOpen} modalToggler={setCustomerModalOpen}  />
         <AddStory open={openDrawer} handleDrawerOpen={handleDrawerOpen} />
         <ItemDetails />
       </TableContainer>
     </MainCard>
   );
 }
+

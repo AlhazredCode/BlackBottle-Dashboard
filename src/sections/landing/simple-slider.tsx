@@ -36,8 +36,10 @@ function SampleNextArrow(props: any) {
 function SimpleSlider() {
   const settings = {
     dots: true,
+    rows: 2,
     infinite: true,
     slidesToShow: 1,
+    
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
@@ -54,7 +56,7 @@ function SimpleSlider() {
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 }, px: 2 }}>
+        <Grid container alignItems="center" justifyContent="center" spacing={4} sx={{ mt: 2, mb: 2, px: 2 }}>
 <Grid item xs={12} md={6} lg={4}>
     <MainCard contentSX={{ p: 3 }}>
       <Grid container spacing={1}>
@@ -90,7 +92,7 @@ function SimpleSlider() {
                         </Grid>
                         <Grid item xs={12}>
                           <Typography variant="body1" color="secondary">
-                            Say goodbye to manual entry! Search our database of over 10,000 bottles, add them to your inventory, and keep track of everything with ease.
+                            Say goodbye to manual entry! Search our database of over 10,000 bottles, add them to your inventory, and keep track of everything.
                           </Typography>
                         </Grid>
                       </Grid>
@@ -125,7 +127,7 @@ function SimpleSlider() {
 </Grid>
         </div>
         <div>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 }  , px: 2 }}>
+        <Grid container alignItems="center" justifyContent="center" spacing={4} sx={{ mt: 2, mb: 2, px: 2 }}>
 
 {/* Fourth Feature  */}
 <Grid item xs={12} md={6} lg={4}>
@@ -141,7 +143,7 @@ function SimpleSlider() {
                         </Grid>
                         <Grid item xs={12}>
                           <Typography variant="body1" color="secondary">
-                           Maintain airtight inventory control. Start and stop inventory sessions, review logs, calculate variance, and identify potential issues within your bar.
+                           Maintain airtight inventory control. Start and stop inventory sessions, review logs, calculate variance, and identify potential issues.
                           </Typography>
                         </Grid>
                       </Grid>
@@ -161,7 +163,7 @@ function SimpleSlider() {
                         </Grid>
                         <Grid item xs={12}>
                           <Typography variant="body1" color="secondary">
-                          Never run out of essentials again.  Our AI-powered system integrates with WhatsApp to automate orders from your vendors, simplifying restocking.
+                          Never run out of essentials again.  Our AI-powered system integrates with WhatsApp to automate orders from your vendors.
                           </Typography>
                         </Grid>
                       </Grid>
@@ -181,7 +183,7 @@ function SimpleSlider() {
                         </Grid>
                         <Grid item xs={12}>
                           <Typography variant="body1" color="secondary">
-                            Set your ideal stock levels (Par) for every item. Our system automatically calculates your inventory needs and helps streamline your ordering process.
+                            Set your ideal stock levels (Par) for every item. Our system automatically calculates your inventory needs.
                           </Typography>
                         </Grid>
                       </Grid>
@@ -194,7 +196,7 @@ function SimpleSlider() {
         </div>
 
         <div>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 }, px: 2  }}>
+        <Grid container alignItems="center" justifyContent="center" spacing={4} sx={{ mt: 2, mb: 2, px: 2 }}>
 
 
  {/* Seventh Feature  */}
@@ -232,7 +234,7 @@ function SimpleSlider() {
      </Grid>
      <Grid item xs={12}>
        <Typography variant="body1" color="secondary">
-       Manage multiple bars or storage locations within one system. Track inventory by bottles, cases, servings, and gain comprehensive control over your stock. 
+       Manage multiple bars or storage locations within one system. Track by bottles, cases, servings, and gain control over your stock. 
        </Typography>
      </Grid>
    </Grid>
@@ -253,7 +255,7 @@ function SimpleSlider() {
      </Grid>
      <Grid item xs={12}>
        <Typography variant="body1" color="secondary">
-         Ditch manual data entry. Scan invoices from any supplier to automatically update your inventory, saving you time and reducing errors. 
+         Scan invoices from any supplier to automatically update your inventory, saving you time and reducing errors. 
        </Typography>
      </Grid>
    </Grid>
@@ -265,7 +267,7 @@ function SimpleSlider() {
         </div>
      
         <div>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 10, xs: 2.5 } }}>
+        <Grid container alignItems="center" justifyContent="center" spacing={4} sx={{ mt: 2, mb: 2, px: 2 }}>
 <Grid item xs={12} md={6} lg={4}>
     <MainCard contentSX={{ p: 3 }}>
       <Grid container spacing={1}>

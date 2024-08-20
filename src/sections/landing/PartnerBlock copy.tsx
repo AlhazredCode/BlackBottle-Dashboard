@@ -42,7 +42,7 @@ function Item({ item }: { item: { text: string; highlight?: boolean } }) {
 
 // ==============================|| LANDING - PARTNER PAGE ||============================== //
 
-export default function PartnerBlock() {
+export default function QuotesBlock() {
   const theme = useTheme();
 
   const partnerimage = [
@@ -84,16 +84,12 @@ export default function PartnerBlock() {
   return (
     <Box sx={{ overflowX: 'hidden' }}>
       <Container>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: 2, mb: 2 }}>
+        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 5, xs: 2.5 }, mb: { md: 5, xs: 2.5 } }}>
           <Grid item xs={12}>
             <Grid container spacing={1} justifyContent="center" sx={{ mb: 4, textAlign: 'center' }}>
               <Grid item sm={10} md={6}>
                 <Grid container spacing={1} justifyContent="center">
-                  <Grid item xs={12}>
-                    <Typography variant="subtitle1" color="primary">
-                    Your Bar, Your Way
-                    </Typography>
-                  </Grid>
+                  
                   <Grid item xs={12}>
                     <Typography variant="h2"> Manage Your Bar, Anywhere</Typography>
                   </Grid>
@@ -106,10 +102,42 @@ export default function PartnerBlock() {
               </Grid>
             </Grid>
           </Grid>
-       
+          <Grid item xs={12}>
+            <Grid container spacing={5} justifyContent="center" sx={{ mb: 4, textAlign: 'center' }}>
+              {partnerimage.map((item, index) => (
+                <Grid item key={index}>
+                  <Animation
+                    variants={{
+                      visible: { opacity: 1 },
+                      hidden: { opacity: 0 }
+                    }}
+                  >
+                    <Link href={item.link} target="_blank">
+                      <CardMedia component="img" src={item.image} alt="feature" />
+                    </Link>
+                  </Animation>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
         </Grid>
       </Container>
-   
+      <Grid container spacing={4} sx={{ mb : 4}}>
+        <Grid item xs={12} sx={{ direction: theme.direction }}>
+          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'right' : 'left'}>
+            {items.map((item, index) => (
+              <Item key={index} item={item} />
+            ))}
+          </Marquee>
+        </Grid>
+        <Grid item xs={12} sx={{ direction: theme.direction }}>
+          <Marquee pauseOnHover direction={theme.direction === ThemeDirection.RTL ? 'left' : 'right'}>
+            {items.map((item, index) => (
+              <Item key={index} item={item} />
+            ))}
+          </Marquee>
+        </Grid>
+      </Grid>
     </Box>
   );
 }
