@@ -1,40 +1,34 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
-import Grid from '@mui/material';
-const LandingAnimation = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const frameCount = 148;
-  const [paddingTop, setPaddingTop] = useState(0);
-  const maxPadding = 770; // Altura del canvas - puedes ajustarlo
 
-  const currentFrame = (index: number) =>
-    `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${index
-      .toString()
-      .padStart(4, '0')}.jpg`;
+const LandingAnimation = () => {
+  const frameCount = 301;
+  const [paddingTop, setPaddingTop] = useState(0);
+  const maxPadding = 770;
+  const startFrame = 70;
+  const frameStep = 2;
+  const [currentImageSrc, setCurrentImageSrc] = useState(`/assets/images/animation/${startFrame}.png`);
+  const [opacity, setOpacity] = useState(0); // Estado para la opacidad
+
+  const currentFrame = (index: number) => `/assets/images/animation/${index}.png`;
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const context = canvas?.getContext('2d');
-
     const preloadImages = () => {
       for (let i = 1; i < frameCount; i++) {
-        const img = new Image();
-        img.src = currentFrame(i);
+        new Image().src = currentFrame(i);
       }
     };
 
-    const img = new Image();
-    img.src = currentFrame(1);
-    canvas!.width = 1158;
-    canvas!.height = 770;
-
-    img.onload = () => {
-      context?.drawImage(img, 0, 0);
-    };
-
     const updateImage = (index: number) => {
-      img.src = currentFrame(index);
-      context?.drawImage(img, 0, 0);
+      const frameIndex = index * frameStep + startFrame - 1;
+      setCurrentImageSrc(currentFrame(frameIndex));
+
+      // Calcula la opacidad gradualmente
+      let newOpacity = index / 2;
+      if (newOpacity > 1) {
+        newOpacity = 1;
+      }
+      setOpacity(newOpacity);
     };
 
     const handleScroll = () => {
@@ -42,19 +36,17 @@ const LandingAnimation = () => {
       const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
       const scrollFraction = scrollTop / maxScrollTop;
       const frameIndex = Math.min(
-        frameCount - 1,
-        Math.ceil(scrollFraction * frameCount)
+        Math.floor((frameCount - startFrame) / frameStep),
+        Math.ceil(scrollFraction * ((frameCount - startFrame) / frameStep + 1))
       );
 
-      // Calculate paddingTop based on scroll and stop at maxPadding
       const calculatedPadding = Math.min(maxPadding, scrollTop);
       setPaddingTop(calculatedPadding);
 
-      requestAnimationFrame(() => updateImage(frameIndex + 1));
+      requestAnimationFrame(() => updateImage(frameIndex));
     };
 
     window.addEventListener('scroll', handleScroll);
-
     preloadImages();
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -62,24 +54,45 @@ const LandingAnimation = () => {
 
   return (
     <>
-    <div style={{ height: paddingTop * 0.7, width: '100%' }}></div>
-     <Box sx={{ 
- 
-  mt: 20, 
-  pb: 20,
-  position: 'relative', 
-  top: paddingTop * 0.2,
-  display: 'flex', // Activa Flexbox
-  justifyContent: 'center', // Centra horizontalmente
-}}>
+    
+      <Box
+        sx={{
+          mt: 20,
+          pb: 20,
+          position: 'relative',
+          top: paddingTop ,
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <div style={{ 
+          position: 'relative', 
+          width: '1158px', // Ajusta el ancho si es necesario
+          height: '770px', // Ajusta la altura si es necesario
+          overflow: 'hidden'
+        }}>
+          <img
+            src={currentImageSrc}
+            alt="Animation"
+            style={{ 
+              width: '100%', 
+              height: 'auto', // Ajusta la altura a 'auto' para evitar la deformación
+              opacity: opacity
+            }}
+          />
+          <div style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: '30%',
+            background: 'linear-gradient(to top, black, transparent)'
+          }} />
+        </div>
+        
 
-
-  <canvas 
-    ref={canvasRef} 
-    id="hero-lightpass" 
-
-  />
-</Box>
+      </Box>
+      <div style={{ height: paddingTop , width: '100%' }}></div>
     </>
   );
 };

@@ -84,7 +84,7 @@ export default function PartnerBlock() {
   return (
     <Box sx={{ overflowX: 'hidden' }}>
       <Container>
-        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 15, xs: 2.5 }, mb: { md: 5, xs: 2.5 } }}>
+        <Grid container alignItems="center" justifyContent="center" spacing={2} sx={{ mt: { md: 5, xs: 2.5 }, mb: { md: 5, xs: 2.5 } }}>
           <Grid item xs={12}>
             <Grid container spacing={1} justifyContent="center" sx={{ mb: 4, textAlign: 'center' }}>
               <Grid item sm={10} md={6}>

@@ -58,9 +58,7 @@ export default function LogHistory() {
   return (
     <>
       <Grid container alignItems="center" justifyContent="space-between">
-        <Grid item>
-          <Typography variant="h5">Log History</Typography>
-        </Grid>
+    
         <Grid item />
       </Grid>
       <MainCard sx={{ mt: 2 }} content={false}>

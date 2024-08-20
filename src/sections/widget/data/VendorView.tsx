@@ -3,8 +3,14 @@ import NextLink from 'next/link';
 
 // material-ui
 import CardContent from '@mui/material/CardContent';
+import { Table } from '@mui/material';
+import {TableCell} from '@mui/material';
+import {TableRow} from '@mui/material';
+import {TableBody} from '@mui/material';
+import {TableContainer} from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
+import {Stack} from '@mui/system';
 import Typography from '@mui/material/Typography';
 import ProductsSearch from 'sections/apps/e-commerce/products/ProductsSearch';
 // project imports
@@ -15,8 +21,8 @@ import { margin, padding } from '@mui/system';
 
 // Estilos para la imagen
 const mediaSX = {
-  width: 70,
-  height: 70,
+  width: 80,
+  height: 80,
   padding: 4,
   borderRadius: 1
 };
@@ -36,39 +42,52 @@ export default function VendorView() {
           <Link color="primary">View all</Link>
         </NextLink>
       }
+
+     
     >
       <CardContent>
-        <Grid  sx={{mb:2}}>
-        <ProductsSearch/>
-        </Grid>
-        <Grid container spacing={3}>
+      
+
+      <TableContainer>
+        <Table>
+          <TableBody>
+            <TableRow>
+                <TableCell>
+                <Stack spacing={3} direction='row'>
           {vendors.map((vendor) => (
             <Grid item xs={12} sm={12} md={12} key={vendor.id}> 
               <MainCard content={false}> 
-                <Grid container alignItems="center" spacing={2}>
+                <Stack  alignItems="center" spacing={2} direction='row'>
                   <Grid item sx={{m:1}}>
                     <img 
                       src={`/assets/images/vendors/${vendor.Image}`}
                       alt={vendor.companyName}
                       style={mediaSX} 
+                      
                     
                     />
                   </Grid>
-                  <Grid item xs zeroMinWidth>
+                  <Grid item xs sx={{minWidth: 120}}>
                     <Grid container spacing={1}>
                       <Grid item xs={12}>
-                        <Typography variant="subtitle1">{vendor.companyName}</Typography>
+                        <Typography variant="h6">{vendor.companyName}</Typography>
                         <Typography variant="caption" color="secondary">
                           {vendor.address.city}, {vendor.address.state}
                         </Typography>
                       </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
+                </Stack>
               </MainCard>
             </Grid>
           ))}
-        </Grid>
+        </Stack>
+                </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+        
       </CardContent>
     </MainCard>
   );

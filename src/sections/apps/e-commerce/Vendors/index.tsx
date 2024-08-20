@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 // material-ui
 import { alpha, useTheme, Theme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import { Box } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,7 +11,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Tooltip from '@mui/material/Tooltip';
-
+import VendorView from 'sections/widget/data/VendorView';
 // third-party
 import { DragDropContext, Droppable } from '@hello-pangea/dnd';
 
@@ -48,6 +49,11 @@ export default function VendorsBacklog() {
   };
 
   return (
+<>
+<Box  sx={{mb: 4}}>
+<VendorView />
+
+</Box>
     <MainCard content={false}>
       <TableContainer sx={{ '& .MuiTableCell-root': { p: 1.25 } }}>
         <DragDropContext onDragEnd={() => { }}>
@@ -111,5 +117,6 @@ export default function VendorsBacklog() {
         <ItemDetails /> 
       </TableContainer>
     </MainCard>
+    </>
   );
 }

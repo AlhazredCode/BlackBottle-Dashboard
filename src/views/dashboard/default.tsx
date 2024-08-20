@@ -25,6 +25,7 @@ import SaleReportCard from 'sections/dashboard/default/SaleReportCard';
 import OrdersTable from 'sections/dashboard/default/OrdersTable';
 import ApexPolarChart from 'sections/charts/apexchart/ApexPolarChart';
 // assets
+import LogHistory from 'sections/dashboard/analytics/LogHistory';
 import { ContactsOutlined } from '@ant-design/icons';
 import GiftOutlined from '@ant-design/icons/GiftOutlined';
 import {UserOutlined} from '@ant-design/icons';
@@ -127,34 +128,34 @@ export default function DashboardDefault() {
       <Grid item xs={12} md={7} lg={8}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
-            <Typography variant="h5">Recent Orders</Typography>
+            <Typography variant="h5">Recent Inventories</Typography>
           </Grid>
           <Grid item />
         </Grid>
-        <MainCard sx={{ mt: 2 }} content={false}>
-          <OrdersTable />
-        </MainCard>
+   
+          <LogHistory />
+      
       </Grid>
       <Grid item xs={12} md={5} lg={4}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
-            <Typography variant="h5">Analytics Report</Typography>
+            <Typography variant="h5">Inventory Value</Typography>
           </Grid>
           <Grid item />
         </Grid>
         <MainCard sx={{ mt: 2 }} content={false}>
           <List sx={{ p: 0, '& .MuiListItemButton-root': { py: 2 } }}>
             <ListItemButton divider>
-              <ListItemText primary="Company Finance Growth" />
+              <ListItemText primary="Wine" />
               <Typography variant="h5">+45.14%</Typography>
             </ListItemButton>
             <ListItemButton divider>
-              <ListItemText primary="Company Expenses Ratio" />
+              <ListItemText primary="Spirits" />
               <Typography variant="h5">0.58%</Typography>
             </ListItemButton>
             <ListItemButton>
-              <ListItemText primary="Business Risk Cases" />
-              <Typography variant="h5">Low</Typography>
+              <ListItemText primary="Beer" />
+              <Typography variant="h5">+1.14%</Typography>
             </ListItemButton>
           </List>
           <ReportAreaChart />
