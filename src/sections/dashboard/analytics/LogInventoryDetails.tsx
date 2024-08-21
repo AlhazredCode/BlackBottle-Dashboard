@@ -24,7 +24,8 @@ import { useTheme } from '@mui/material/styles';
 // project import
 import Avatar from 'components/@extended/Avatar';
 import MainCard from 'components/MainCard';
-
+import { Box } from '@mui/material';
+import BottleInventory from 'views/forms/bottleinventory';
 import DownOutlined from '@ant-design/icons/DownOutlined';
 
 import UpOutlined from '@ant-design/icons/UpOutlined';
@@ -204,300 +205,28 @@ export default function LogInventoryDetails() {
 
 
       </MainCard>
-      <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <MainCard title="Edit Inventory" modal darkTitle content={false}>
-          <CardContent>
-            <Stack spacing={1}>
-              <Typography variant='h5'>Bar 1</Typography>
-              <Stack direction="row" alignItems="center" spacing={2}>
-                <Typography color="text.secondary">Bottles</Typography>
-                <Stack justifyContent="flex-end">
-                  <Stack direction="row">
-                    <TextField
-                      name="rty-incre"
-                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-                    />
-                    <Stack>
-                      <Button
-                        key="one"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderLeft: 'none',
-                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <UpOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                      <Button
-                        key="three"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderTop: 'none',
-                          borderLeft: 'none',
-                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <DownOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                    </Stack>
-                  </Stack>
-                </Stack>
-                <Typography color="text.secondary">Cases</Typography>
-                <Stack justifyContent="flex-end">
-                  <Stack direction="row">
-                    <TextField
-                      name="rty-incre"
-                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-                    />
-                    <Stack>
-                      <Button
-                        key="one"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderLeft: 'none',
-                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <UpOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                      <Button
-                        key="three"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderTop: 'none',
-                          borderLeft: 'none',
-                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <DownOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                    </Stack>
-                  </Stack>
-                </Stack>
-              </Stack>
-            </Stack>
-            <Stack spacing={1}>
-              <Typography variant='h5'>Bar 2</Typography>
-              <Stack direction="row" alignItems="center" spacing={2}>
-                <Typography color="text.secondary">Bottles</Typography>
-                <Stack justifyContent="flex-end">
-                  <Stack direction="row">
-                    <TextField
-                      name="rty-incre"
-                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-                    />
-                    <Stack>
-                      <Button
-                        key="one"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderLeft: 'none',
-                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <UpOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                      <Button
-                        key="three"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderTop: 'none',
-                          borderLeft: 'none',
-                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <DownOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                    </Stack>
-                  </Stack>
-                </Stack>
-                <Typography color="text.secondary">Cases</Typography>
-                <Stack justifyContent="flex-end">
-                  <Stack direction="row">
-                    <TextField
-                      name="rty-incre"
-                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-                    />
-                    <Stack>
-                      <Button
-                        key="one"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderLeft: 'none',
-                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <UpOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                      <Button
-                        key="three"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderTop: 'none',
-                          borderLeft: 'none',
-                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <DownOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                    </Stack>
-                  </Stack>
-                </Stack>
-              </Stack>
-            </Stack>
-            <Stack spacing={1}>
-              <Typography variant='h5'>Bar 3</Typography>
-              <Stack direction="row" alignItems="center" spacing={2}>
-                <Typography color="text.secondary">Bottles</Typography>
-                <Stack justifyContent="flex-end">
-                  <Stack direction="row">
-                    <TextField
-                      name="rty-incre"
-                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-                    />
-                    <Stack>
-                      <Button
-                        key="one"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderLeft: 'none',
-                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <UpOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                      <Button
-                        key="three"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderTop: 'none',
-                          borderLeft: 'none',
-                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <DownOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                    </Stack>
-                  </Stack>
-                </Stack>
-                <Typography color="text.secondary">Cases</Typography>
-                <Stack justifyContent="flex-end">
-                  <Stack direction="row">
-                    <TextField
-                      name="rty-incre"
-                      sx={{ '& .MuiOutlinedInput-input': { p: 1.9 }, width: '50%', '& .MuiOutlinedInput-root': { borderRadius: 0 } }}
-                    />
-                    <Stack>
-                      <Button
-                        key="one"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderLeft: 'none',
-                          '&:hover': { borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <UpOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                      <Button
-                        key="three"
-                        color="secondary"
-                        variant="outlined"
-                        sx={{
-                          px: 1.5,
-                          py: 0.65,
-                          minWidth: '0px !important',
-                          borderRadius: 0,
-                          borderTop: 'none',
-                          borderLeft: 'none',
-                          '&:hover': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light },
-                          '&.Mui-disabled': { borderTop: 'none', borderLeft: 'none', borderColor: theme.palette.secondary.light }
-                        }}
-                      >
-                        <DownOutlined style={{ fontSize: 'small' }} />
-                      </Button>
-                    </Stack>
-                  </Stack>
-                </Stack>
-              </Stack>
-            </Stack>
-          </CardContent>
-          <Divider />
-          <Stack direction="row" spacing={1} justifyContent="flex-end" sx={{ px: 2.5, py: 2 }}>
-            <Button color="error" variant='outlined' size="large" onClick={handleClose}>
-              Cancel
-            </Button>
-            <Button variant="contained" size="large" color='secondary'>
-              Update
-            </Button>
-          </Stack>
-        </MainCard>
-      </Modal>
+
+      <Modal 
+  sx={{ 
+    height: '100%',
+    width: '100%' ,
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center'
+  }} 
+  open={open} 
+  onClose={handleClose} 
+  aria-labelledby="modal-modal-title" 
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={{maxWidth: 800}}>
+  <BottleInventory />
+  </Box>
+</Modal>
+
+
+
+      
     </>
   );
 }

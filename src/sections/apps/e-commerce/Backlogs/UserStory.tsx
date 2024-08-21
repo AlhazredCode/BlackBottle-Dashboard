@@ -32,7 +32,7 @@ import Divider from '@mui/material/Divider';
 import BottleInventory from 'views/forms/bottleinventory';
 
 import UpOutlined from '@ant-design/icons/UpOutlined';
-import { width } from '@mui/system';
+import { maxWidth, width } from '@mui/system';
 const getDragWrapper = (isDragging: boolean, theme: Theme, open: boolean): CSSProperties | undefined => {
   let bgcolor = 'transparent';
   if (open) {
@@ -307,8 +307,22 @@ export default function UserStory({ product, index }: UserStoryProps) {
       )}
     </Draggable>
 
-<Modal  open={open1} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-<BottleInventory/>
+    <Modal 
+  sx={{ 
+    height: '100%',
+    width: '100%' ,
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center'
+  }} 
+  open={open1} 
+  onClose={handleClose} 
+  aria-labelledby="modal-modal-title" 
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={{maxWidth: 800}}>
+  <BottleInventory />
+  </Box>
 </Modal>
 </>
   );
