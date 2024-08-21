@@ -10,14 +10,12 @@ import VendorsCheckout from 'views/apps/e-commerce/vendors-checkout';
 
 export default function SampleViewPage() {
   return <Grid container spacing={2}>
-    <Grid item xs={8}>
+    <Grid item xs={12}>
     <MainCard title="Your vendors">
-    <VendorsBacklog   sx={{mb: 2}}/>
+    <VendorsBacklog   />
     </MainCard>
      
     </Grid>
-    <Grid item xs={4}>
-      <VendorsCheckout />
-    </Grid>
+    
   </Grid>;
 }

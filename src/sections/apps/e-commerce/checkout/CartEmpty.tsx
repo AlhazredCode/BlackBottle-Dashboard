@@ -30,15 +30,15 @@ export default function CartEmpty() {
         container
         alignItems="center"
         justifyContent="center"
-        spacing={3}
+       
         sx={{ my: 3, height: { xs: 'auto', md: 'calc(100vh - 240px)' }, p: { xs: 2.5, md: 'auto' } }}
       >
-        <Grid item>
+        <Grid item xs={12} sx={{width: '100%' , display: 'flex', justifyContent: 'center',  pl: 8}}>
           <CardMedia
             component="img"
             image={theme.palette.mode === ThemeMode.DARK ? imageDarkEmpty : imageEmpty}
             title="Cart Empty"
-            sx={{ width: { xs: 240, md: 320, lg: 440 } }}
+            sx={{ width: { xs: 140, md: 220, lg: 240 } }}
           />
         </Grid>
         <Grid item>
@@ -49,11 +49,7 @@ export default function CartEmpty() {
             <Typography variant="h5" color="text.secondary">
               Explore around to add items in your shopping bag.
             </Typography>
-            <Box sx={{ pt: 3 }}>
-              <Button variant="contained" size="large" endIcon={<RightOutlined />}>
-                Explore your bag
-              </Button>
-            </Box>
+          
           </Stack>
         </Grid>
       </Grid>

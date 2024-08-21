@@ -31,7 +31,7 @@ import VendorsProductBacklog from '../Backlogs-Vendors';
 import UpOutlined from '@ant-design/icons/UpOutlined';
 import { Vendor } from 'types/vendors';
 import { Chip } from '@mui/material';
-
+import VendorsModal from 'sections/apps/customer/VendorstModal';
 // Estilos para el Modal
 const modalStyle = {
   position: 'absolute' as 'absolute', 
@@ -89,6 +89,9 @@ export default function VendorStory({ vendor, index }: VendorStoryProps) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+
+  const [customerModalOpen, setCustomerModalOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -151,7 +154,7 @@ export default function VendorStory({ vendor, index }: VendorStoryProps) {
                     horizontal: 'right'
                   }}
                 >
-                  <MenuItem onClick={handleClose}>Edit</MenuItem>
+                  <MenuItem onClick={() => { handleClose(); setCustomerModalOpen(true); }}>Edit</MenuItem>
                   <MenuItem onClick={handleClose}>Delete</MenuItem>
                 </Menu>
               </TableCell>
@@ -196,24 +199,8 @@ export default function VendorStory({ vendor, index }: VendorStoryProps) {
       </Draggable>
 
       {/* Modal para editar el inventario */}
-      <Modal open={openModal} onClose={handleCloseModal} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <Box sx={modalStyle}> 
-          <MainCard title="Vendor Product List" modal darkTitle content={false}>
-            <CardContent>
-              <VendorsProductBacklog/>
-            </CardContent>
-            <Divider />
-            <Stack direction="row" spacing={1} justifyContent="flex-end" sx={{ px: 2.5, py: 2 }}>
-              <Button color="error" variant="outlined" size="large" onClick={handleCloseModal}>
-                Cancel
-              </Button>
-              <Button variant="contained" size="large" color="secondary">
-                Update
-              </Button>
-            </Stack>
-          </MainCard>
-        </Box>
-      </Modal>
+      <VendorsModal open={customerModalOpen} modalToggler={setCustomerModalOpen}  />
+
     </>
   );
 }

@@ -121,19 +121,11 @@ const samplePage: NavItemType = {
 
 
 
-    {
-      id: 'order-build',
-      title: <FormattedMessage id="Build Order" />,
-      type: 'item',
-      url: '/order-build', 
-      icon: icons.ReconciliationOutlined, 
-      target: false
-    },
 
 
     {
       id: 'order-list',
-      title: <FormattedMessage id="Orders List" />,
+      title: <FormattedMessage id="Build Order" />,
       type: 'item',
       url: '/order-list', 
       icon: icons.BarsOutlined, 

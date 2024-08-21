@@ -26,6 +26,7 @@ import PlusOutlined from '@ant-design/icons/PlusOutlined';
 
 import { Vendor } from 'types/vendors';
 import vendorsData from 'api/sample-vendors';
+import VendorsModal from 'sections/apps/customer/VendorstModal';
 
 const getDropWrapper = (isDraggingOver: boolean, theme: Theme) => ({
   background: isDraggingOver ? alpha(theme.palette.secondary.lighter, 0.65) : 'transparent'
@@ -44,9 +45,17 @@ export default function VendorsBacklog() {
     setOpenDrawer((prevState) => !prevState);
   };
 
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
+
+
   const addStory = () => {
     setOpenDrawer((prevState) => !prevState);
   };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const [customerModalOpen, setCustomerModalOpen] = useState<boolean>(false);
 
   return (
 <>
@@ -77,7 +86,7 @@ export default function VendorsBacklog() {
                   <TableRow>
                     <TableCell sx={{ pl: 3 }}>
                       <Tooltip title="Add Vendor"> 
-                        <Button variant="dashed" size="extraSmall" color="secondary" onClick={addStory} endIcon={<PlusOutlined />}>
+                        <Button variant="dashed" size="extraSmall" color="secondary" onClick={() => { handleClose(); setCustomerModalOpen(true); }} endIcon={<PlusOutlined />}>
                           ADD
                         </Button>
                       </Tooltip>
@@ -117,6 +126,7 @@ export default function VendorsBacklog() {
         <ItemDetails /> 
       </TableContainer>
     </MainCard>
+    <VendorsModal open={customerModalOpen} modalToggler={setCustomerModalOpen}  />
     </>
   );
 }
