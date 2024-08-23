@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
-
+import NumberFeatures from 'sections/landing/NumberFeatures';
 
 // project import
 
@@ -109,21 +109,23 @@ export default function Landing() {
         <Hero />
       </Box> */}
       <LandingAnimation/>
-      <NumberBlock />
+      <NumberFeatures />
       <MockBlockPage />
-    
-      <PartnerBlock />
-      <SimpleSlider/>
-      <QuotesBlock/>
+
 
       <CallToAction />
+      <DemoBlock />
+      <QuotesBlock/>
+      <PartnerBlock />
+      <SimpleSlider/>
+ 
   
     
-      <DemoBlock />
+    
      
-      <NumberBlock />
+      
 
-      <TestimonialBlock />
+    
      
     </>
   );
