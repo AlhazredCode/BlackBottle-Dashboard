@@ -109,7 +109,7 @@ export default function Landing() {
         <Hero />
       </Box> */}
       <LandingAnimation/>
-     
+      <NumberBlock />
       <MockBlockPage />
     
       <PartnerBlock />
