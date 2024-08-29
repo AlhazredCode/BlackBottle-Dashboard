@@ -113,7 +113,9 @@ export default function Landing() {
       <MockBlockPage />
 
 
-      <CallToAction />
+      <Box sx={{paddingTop: 4}}>
+        <CallToAction />
+      </Box>
       <DemoBlock />
       <QuotesBlock/>
       <PartnerBlock />

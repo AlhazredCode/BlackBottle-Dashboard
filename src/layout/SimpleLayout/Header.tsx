@@ -98,14 +98,7 @@ export default function Header() {
               spacing={2}
             >
            
-              <NextLink href="/components-overview/buttons" passHref legacyBehavior>
-                <Link className="header-link" color="white" underline="none">
-                  Pricing
-                </Link>
-              </NextLink>
-              <Link className="header-link" color="white" href="https://codedthemes.gitbook.io/mantis/" target="_blank" underline="none">
-                Documentation
-              </Link>
+             
               <Box sx={{ display: 'inline-block' }}>
                 <AnimateButton>
                   <Button

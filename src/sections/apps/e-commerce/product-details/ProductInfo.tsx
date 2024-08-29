@@ -29,7 +29,8 @@ import { openSnackbar } from 'api/snackbar';
 // types
 import { SnackbarProps } from 'types/snackbar';
 import {  Products } from 'types/e-commerce';
-
+import { Product } from 'types/products';
+import productsData from 'api/sample-products';
 // assets
 import DownOutlined from '@ant-design/icons/DownOutlined';
 
@@ -49,11 +50,11 @@ const validationSchema = yup.object({
 
 export default function ProductInfo({ product }: { product: Products }) {
   const theme = useTheme();
-
+  const data: Product[] = productsData; 
   const [value, setValue] = useState<number>(1);
   const router = useRouter();
   const { cart } = useGetCart();
-
+  const sampledata = productsData
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -83,14 +84,14 @@ export default function ProductInfo({ product }: { product: Products }) {
     }
   });
 
-  const {  handleSubmit } = formik;
+  const {  handleSubmit } = formik; 
 
 
 
   return (
     <Stack spacing={2}>
 
-      <Typography variant="h2">{product.name}</Typography>
+      <Typography variant="h2">{data[Number(product.id)]?.Name}</Typography>
       <Chip
         size="small"
         label={product.isStock ? 'In Stock' : 'Out of Stock'}
@@ -102,14 +103,14 @@ export default function ProductInfo({ product }: { product: Products }) {
         }}
       />
         <Stack direction="row" alignItems="center" spacing={1}>
-              <Typography variant="h1">${product.offerPrice}</Typography>
+              <Typography variant="h1">${data[Number(product.id)]?.Price}</Typography>
               {product.salePrice && (
                 <Typography variant="h4" color="text.secondary" sx={{ textDecoration: 'line-through', opacity: 0.5, fontWeight: 400 }}>
                   ${product.salePrice}
                 </Typography>
               )}
             </Stack>
-      <Typography color="text.secondary" variant='subtitle1'>{product.about}</Typography>
+      <Typography color="text.secondary" variant='subtitle1'>{data[Number(product.id)]?.Description}</Typography>
       <FormikProvider value={formik}>
         <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
           

@@ -3,6 +3,7 @@ import { Product } from "types/products";
 
 const productsData: Product[] = [
     {
+        "id": 1,
         "Name": "Craft IPA Beer",
         "Brand": "Brewdog",
         "Image": "prod-1.png",
@@ -38,6 +39,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 2,
         "Name": "Lager Beer",
         "Brand": "Heineken",
         "Image": "prod-2.png",
@@ -73,6 +75,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 3,
         "Name": "Wheat Beer",
         "Brand": "Paulaner",
         "Image": "prod-3.png",
@@ -108,6 +111,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 4,
         "Name": "Pale Ale Beer",
         "Brand": "Sierra Nevada",
         "Image": "prod-4.png",
@@ -143,6 +147,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 5,
         "Name": "Stout Beer",
         "Brand": "Guinness",
         "Image": "prod-5.png",
@@ -178,6 +183,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 6,
         "Name": "Amber Ale Beer",
         "Brand": "New Belgium",
         "Image":"prod-6.png",
@@ -213,6 +219,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 7,
         "Name": "Pilsner Beer",
         "Brand": "Stella Artois",
         "Image": "prod-7.png",
@@ -248,6 +255,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 8,
         "Name": "Porter Beer",
         "Brand": "Deschutes",
         "Image": "prod-8.png",
@@ -283,6 +291,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 9,
         "Name": "Saison Beer",
         "Brand": "Boulevard",
         "Image": "prod-9.png",
@@ -318,6 +327,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 10,
         "Name": "Sour Ale Beer",
         "Brand": "Dogfish Head",
         "Image": "prod-10.png",
@@ -354,6 +364,7 @@ const productsData: Product[] = [
     },
 
     {
+        "id":11 ,
         "Name": "Cabernet Sauvignon",
         "Brand": "Robert Mondavi",
         "Image": "prod-11.png",
@@ -389,6 +400,7 @@ const productsData: Product[] = [
         }
     },
     {
+        "id": 12,
         "Name": "Pinot Noir",
         "Brand": "Erath",
         "Image": "prod-12.png",
@@ -423,7 +435,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {"id": 13,
         "Name": "Chardonnay",
         "Brand": "Kendall-Jackson",
         "Image": "prod-13.png",
@@ -458,7 +470,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {"id": 14,
         "Name": "Sauvignon Blanc",
         "Brand": "Kim Crawford",
         "Image": "prod-14.png",
@@ -493,7 +505,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {"id": 15,
         "Name": "Merlot",
         "Brand": "Chateau Ste. Michelle",
         "Image": "prod-15.png",
@@ -528,7 +540,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 16,
         "Name": "Pinot Grigio",
         "Brand": "Santa Margherita",
         "Image": "prod-16.png",
@@ -563,7 +575,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 17,
         "Name": "Zinfandel",
         "Brand": "Bogle",
         "Image": "prod-17.png",
@@ -598,7 +610,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 18,
         "Name": "Riesling",
         "Brand": "Dr. Loosen",
         "Image": "prod-18.png",
@@ -633,7 +645,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 19,
         "Name": "Malbec",
         "Brand": "Catena Zapata",
         "Image": "prod-19.png",
@@ -668,7 +680,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 20,
         "Name": "Rosé",
         "Brand": "Whispering Angel",
         "Image": "prod-20.png",
@@ -704,7 +716,7 @@ const productsData: Product[] = [
         }
     },
 
-    {
+    {   "id": 21,
         "Name": "Tequila Blanco",
         "Brand": "Patron Silver",
         "Image": "prod-21.png",
@@ -739,7 +751,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 22,
         "Name": "Tequila Reposado",
         "Brand": "Casamigos",
         "Image": "prod-22.png",
@@ -774,7 +786,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 23,
         "Name": "Tequila Añejo",
         "Brand": "Don Julio 1942",
         "Image": "prod-23.png",
@@ -809,7 +821,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 24,
         "Name": "Tequila Cristalino",
         "Brand": "Maestro Dobel Diamante",
         "Image": "prod-24.png",
@@ -844,7 +856,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 25,
         "Name": "Tequila Extra Añejo",
         "Brand": "Clase Azul Reposado",
         "Image": "prod-25.png",
@@ -877,7 +889,7 @@ const productsData: Product[] = [
                     "CasesBar3": 7
                 }
     }}},
-    {
+    {   "id": 26,
         "Name": "Tequila Blanco Organico",
         "Brand": "Fortaleza",
         "Image": "prod-26.png",
@@ -912,7 +924,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 27,
         "Name": "Tequila Reposado Especial",
         "Brand": "Herradura",
         "Image": "prod-27.png",
@@ -947,7 +959,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 28,
         "Name": "Tequila Añejo Cristalino",
         "Brand": "Volcan De Mi Tierra",
         "Image": "prod-28.png",
@@ -982,7 +994,7 @@ const productsData: Product[] = [
             }
         }
     },
-    {
+    {   "id": 29,
         "Name": "Tequila Extra Añejo Limited Edition",
         "Brand": "Gran Patron Burdeos",
         "Image": "prod-29.png",
@@ -1016,7 +1028,7 @@ const productsData: Product[] = [
                 }
             }
         }},
-        {
+        {"id": 30,
         "Name": "Tequila Blanco Small Batch",
         "Brand": "Tapatio",
         "Image": "prod-30.png",

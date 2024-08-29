@@ -111,10 +111,10 @@ export default function FooterBlock({ isFull }: showProps) {
         </Box>
       )}
 
-      <Box sx={{ pt: isFull ? 0 : 10, pb: 10, bgcolor: 'grey.A700' }}>
+      <Box sx={{ pt: isFull ? 0 : 10, pb: 10, bgcolor: 'grey.A700' }}  >
         <Container>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={4}>
+          <Grid container spacing={2} sx={{ justifyContent:'center'}}>
+            <Grid item xs={12} md={4} >
               <motion.div
                 initial={{ opacity: 0, translateY: 550 }}
                 animate={{ opacity: 1, translateY: 0 }}
@@ -124,9 +124,9 @@ export default function FooterBlock({ isFull }: showProps) {
                   damping: 30
                 }}
               >
-                <Grid container spacing={2}>
-                  <Grid item xs={12}>
-                    <CardMedia component="img" image={imgfooterlogo} sx={{ width: 'auto' }} />
+                <Grid container spacing={2} >
+                  <Grid item xs={12} > 
+                    <CardMedia component="img" image={imgfooterlogo} sx={{ width: 'auto' , justifySelf: 'center'}} />
                   </Grid>
                   <Grid item xs={12}>
                     <Typography variant="subtitle1" sx={{ fontWeight: 400, color: 'common.white' }}>
@@ -137,86 +137,7 @@ export default function FooterBlock({ isFull }: showProps) {
                 </Grid>
               </motion.div>
             </Grid>
-            <Grid item xs={12} md={8}>
-              <Grid container spacing={{ xs: 5, md: 2 }}>
-                <Grid item xs={6} sm={3}>
-                  <Stack spacing={{ xs: 3, md: 5 }}>
-                    <Typography variant="h5" color={textColor} sx={{ fontWeight: 500 }}>
-                      Help
-                    </Typography>
-                    <Stack spacing={{ xs: 1.5, md: 2.5 }}>
-                      <FooterLink href="https://blog.mantisdashboard.io/" target="_blank" underline="none">
-                        Blog
-                      </FooterLink>
-                      <FooterLink href="https://codedthemes.gitbook.io/mantis/" target="_blank" underline="none">
-                        Documentation
-                      </FooterLink>
-                      <FooterLink href="https://codedthemes.gitbook.io/mantis/changelog" target="_blank" underline="none">
-                        Change Log
-                      </FooterLink>
-                      <FooterLink href="https://codedthemes.support-hub.io/" target="_blank" underline="none">
-                        Support
-                      </FooterLink>
-                    </Stack>
-                  </Stack>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <Stack spacing={{ xs: 3, md: 5 }}>
-                    <Typography variant="h5" color={textColor} sx={{ fontWeight: 500 }}>
-                      Store Help
-                    </Typography>
-                    <Stack spacing={{ xs: 1.5, md: 2.5 }}>
-                      <FooterLink href="https://mui.com/store/license/" target="_blank" underline="none">
-                        License
-                      </FooterLink>
-                      <FooterLink href="https://mui.com/store/customer-refund-policy/" target="_blank" underline="none">
-                        Refund Policy
-                      </FooterLink>
-                      <FooterLink
-                        href="https://support.mui.com/hc/en-us/sections/360002564979-For-customers"
-                        target="_blank"
-                        underline="none"
-                      >
-                        Submit a Request
-                      </FooterLink>
-                    </Stack>
-                  </Stack>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <Stack spacing={{ xs: 3, md: 5 }}>
-                    <Typography variant="h5" color={textColor} sx={{ fontWeight: 500 }}>
-                      Mantis Eco-System
-                    </Typography>
-                    <Stack spacing={{ xs: 1.5, md: 2.5 }}>
-                      {frameworks.map((item, index) => (
-                        <FooterLink href={item.link} target="_blank" underline="none" key={index}>
-                          {item.title}
-                          {/* {item.isUpcoming && <Chip variant="outlined" size="small" label="Upcoming" sx={{ ml: 0.5 }} />} */}
-                        </FooterLink>
-                      ))}
-                    </Stack>
-                  </Stack>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <Stack spacing={{ xs: 3, md: 5 }}>
-                    <Typography variant="h5" color={textColor} sx={{ fontWeight: 500 }}>
-                      More Products
-                    </Typography>
-                    <Stack spacing={{ xs: 1.5, md: 2.5 }}>
-                      <FooterLink href="http://mui.com/store/previews/berry-react-material-admin/" target="_blank" underline="none">
-                        Berry React Material
-                      </FooterLink>
-                      <FooterLink href="https://mui.com/store/previews/berry-react-material-admin-free/" target="_blank" underline="none">
-                        Free Berry React
-                      </FooterLink>
-                      <FooterLink href="https://github.com/codedthemes/mantis-free-react-admin-template" target="_blank" underline="none">
-                        Free Mantis React
-                      </FooterLink>
-                    </Stack>
-                  </Stack>
-                </Grid>
-              </Grid>
-            </Grid>
+         
           </Grid>
         </Container>
       </Box>

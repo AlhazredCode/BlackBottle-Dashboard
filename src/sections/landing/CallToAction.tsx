@@ -37,6 +37,7 @@ export default function CallToActionPage() {
           width: '100%',
           height: '80%',
           bottom: 0,
+        
           left: 0,
           background: `linear-gradient(180deg, transparent, ${theme.palette.secondary[theme.palette.mode === ThemeMode.DARK ? 100 : 800]})`
         }
@@ -82,18 +83,18 @@ export default function CallToActionPage() {
                     variant="h2"
                     sx={{
                       color: 'common.white',
-                      fontSize: { xs: '1.25rem', sm: '1.56rem', md: '1.875rem' },
+                      fontSize: { xs: '2.25rem', sm: '2.56rem', md: '2.875rem' },
                       fontWeight: 700,
                       lineHeight: { xs: 1.4, sm: 1.4, md: 1.4 }
                     }}
                   >
                     <Box component="span" sx={{ mx: 0 }}>
-                      Check Mantis
+                      Check Black Bottle for
                     </Box>
                     <Box component="span" sx={{ mx: 0, color: 'primary.main' }}>
-                      &nbsp;Free&nbsp;
+                      &nbsp; 30 days&nbsp;
                     </Box>
-                    Version Before Purchase
+                    Free
                   </Typography>
                 </motion.div>
               </Grid>
@@ -114,11 +115,11 @@ export default function CallToActionPage() {
                       target="_blank"
                       href="https://github.com/codedthemes/mantis-free-react-admin-template"
                       size="large"
-                      color="primary"
+                      color="secondary"
                       variant="contained"
-                      startIcon={<DownloadOutlined />}
+                  
                     >
-                      Download Now
+                      Start Free Trial
                     </Button>
                   </AnimateButton>
                 </motion.div>
