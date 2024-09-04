@@ -32,7 +32,7 @@ export default function MockBlockPage() {
     <Box
       sx={{
         position: 'relative',
-        height: 700,
+        height: 700, // Mantén la altura para desktop
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -43,9 +43,9 @@ export default function MockBlockPage() {
       <Image
         src={`/assets/images/landing/${currentImage}`}
         alt="image"
-        fill
+        layout="fill" // Usa layout "fill"
+        objectFit="contain" // Ajusta la imagen al contenedor sin deformarla
         style={{
-          objectFit: 'contain',
           transition: 'opacity 5s ease-in-out, transform 0.5s ease-in-out',
           opacity: isVisible ? (currentImage === 'Tablet.png' ? 1 : 0.7) : 0, // Opacidad condicional combinada
           transform: currentImage === 'Tablet.png' ? 'scale(1)' : 'scale(1.03)',

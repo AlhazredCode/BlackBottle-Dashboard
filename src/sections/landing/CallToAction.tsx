@@ -37,7 +37,6 @@ export default function CallToActionPage() {
           width: '100%',
           height: '80%',
           bottom: 0,
-        
           left: 0,
           background: `linear-gradient(180deg, transparent, ${theme.palette.secondary[theme.palette.mode === ThemeMode.DARK ? 100 : 800]})`
         }
@@ -51,10 +50,11 @@ export default function CallToActionPage() {
           position: 'absolute',
           top: 0,
           right: 0,
+          opacity: 0.7, // Opacidad de la imagen al 70%
           ...(theme.direction === ThemeDirection.RTL && { transform: 'scaleX(-1)', float: 'none' })
         }}
       />
-      <Container>
+            <Container>
         <Grid
           container
           alignItems="center"
